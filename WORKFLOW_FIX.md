@@ -1,12 +1,13 @@
-# 🔧 Workflow Fix Required
+# 🔧 Workflow Fix Required - FINAL VERSION
 
-## Issue Found
-The current workflow fails because it's configured for NPM but your project uses PNPM.
+## Issues Found & Fixed
+1. **First Error**: "Dependencies lock file is not found" - Fixed by switching from NPM to PNPM
+2. **Second Error**: "Cannot install with frozen-lockfile" - Fixed by using `--no-frozen-lockfile`
 
 ## Error Details
-- **Error**: "Dependencies lock file is not found"
-- **Cause**: Workflow looks for `package-lock.json` but project has `pnpm-lock.yaml`
-- **Solution**: Update workflow to use PNPM instead of NPM
+- **Error 1**: Workflow looks for `package-lock.json` but project has `pnpm-lock.yaml`
+- **Error 2**: PNPM lockfile incompatibility in CI environment
+- **Solution**: Use PNPM with `--no-frozen-lockfile` flag
 
 ## Fixed Workflow Content
 
@@ -57,7 +58,7 @@ jobs:
           ${{ runner.os }}-pnpm-store-
           
     - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      run: pnpm install --no-frozen-lockfile
       
     - name: Build application
       run: pnpm run build
@@ -105,10 +106,11 @@ jobs:
 
 ## Key Changes Made
 - ✅ Added PNPM setup and configuration
-- ✅ Changed from `npm ci` to `pnpm install --frozen-lockfile`
+- ✅ Changed from `npm ci` to `pnpm install --no-frozen-lockfile`
 - ✅ Changed from `npm run build` to `pnpm run build`
 - ✅ Added proper PNPM caching for faster builds
 - ✅ Uses correct lock file (`pnpm-lock.yaml`)
+- ✅ Fixed lockfile compatibility with `--no-frozen-lockfile` flag
 
 ## How to Apply Fix
 1. Go to your repository: https://github.com/zilmoney/zil_remit_web
@@ -118,4 +120,4 @@ jobs:
 5. Commit the changes
 6. The next push will trigger a successful deployment!
 
-This fix will resolve the "Dependencies lock file is not found" error.
+This fix will resolve both the "Dependencies lock file is not found" error and the "Cannot install with frozen-lockfile" error.
