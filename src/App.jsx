@@ -83,14 +83,13 @@ function App() {
   ]
 
   const countries = [
+    { name: "Estonia", flag: "🇪🇪" },
+    { name: "France", flag: "🇫🇷" },
+    { name: "Germany", flag: "🇩🇪" },
     { name: "India", flag: "🇮🇳" },
     { name: "Philippines", flag: "🇵🇭" },
-    { name: "Mexico", flag: "🇲🇽" },
-    { name: "Nigeria", flag: "🇳🇬" },
-    { name: "Bangladesh", flag: "🇧🇩" },
-    { name: "Pakistan", flag: "🇵🇰" },
-    { name: "Vietnam", flag: "🇻🇳" },
-    { name: "Kenya", flag: "🇰🇪" }
+    { name: "Sweden", flag: "🇸🇪" },
+    { name: "UK", flag: "🇬🇧" }
   ]
 
   return (
