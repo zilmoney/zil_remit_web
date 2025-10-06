@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.jsx'
 import { ArrowRight, Shield, Clock, TrendingUp, Globe, Users, CheckCircle, Star, Menu, X } from 'lucide-react'
-import ZilRemitLogo from './assets/ZilremitLogo.svg'
+import ZilRemitLogo from './assets/ZilremitSVG.svg'
 import './App.css'
 
 function App() {
@@ -146,8 +146,8 @@ function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                International Payments
-                <span className="block text-green-600">with Lowest Fees & Best Exchange Rates</span>
+                Send money worldwide in minutes
+                <span className="block text-green-600">with zero platform fee</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Process global business payments in minutes with industry-leading exchange rates, zero hidden fees, and lowest transaction costs.
@@ -279,7 +279,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Send Money to 200+ Countries
+              Send Money to 7+ Countries
             </h2>
             <p className="text-xl text-gray-600">
               Trusted by millions worldwide for fast, secure international transfers
