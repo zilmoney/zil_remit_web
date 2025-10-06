@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZilRemit - International Money Transfer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'green': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+        .exchange-rate {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDE0IiBoZWlnaHQ9IjEwNyIgdmlld0JveD0iMCAwIDQxNCAxMDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMjEuNSAyMS41QzEyMS41IDIxLjUgMTM1IDEwIDEzNSAyMS41QzEzNSAzMyAxMjEuNSAyMS41IDEyMS41IDIxLjVaIiBmaWxsPSIjMDBGRjdGIi8+CjxwYXRoIGQ9Ik0xMzUgMjEuNUMxMzUgMjEuNSAxNDguNSAxMCAxNDguNSAyMS41QzE0OC41IDMzIDEzNSAyMS41IDEzNSAyMS41WiIgZmlsbD0iIzAwRkY3RiIvPgo8cGF0aCBkPSJNMTQ4LjUgMjEuNUMxNDguNSAyMS41IDE2MiAxMCAxNjIgMjEuNUMxNjIgMzMgMTQ4LjUgMjEuNSAxNDguNSAyMS41WiIgZmlsbD0iIzAwRkY3RiIvPgo8Y2lyY2xlIGN4PSIyMzQiIGN5PSIzNSIgcj0iMjAiIGZpbGw9IiMxRTQwQUYiLz4KPHRleHQgeD0iMjc4IiB5PSI0NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFFNDBBRiI+WmlsUmVtaXQ8L3RleHQ+Cjx0ZXh0IHg9IjM3MCIgeT0iNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NjY2NiI+UG93ZXJlZCBieSBaaWwgTW9uZXk8L3RleHQ+Cjwvc3ZnPgo=" alt="ZilRemit" class="h-10 w-auto">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Features</a>
+                        <a href="#rates" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Rates</a>
+                        <a href="#about" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors">Sign Up</button>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-green-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="#features" class="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Features</a>
+                <a href="#rates" class="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Rates</a>
+                <a href="#about" class="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Contact</a>
+                <button class="bg-green-600 hover:bg-green-700 text-white w-full mt-2 px-6 py-2 rounded-md text-base font-medium">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        International Payments
+                        <span class="block text-green-600">with Lowest Fees & Best Exchange Rates</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Process global business payments in minutes with industry-leading exchange rates, zero hidden fees, and lowest transaction costs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg rounded-md font-medium transition-colors">
+                            Start Sending Money
+                        </button>
+                        <button class="border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 text-lg rounded-md font-medium transition-colors">
+                            See How It Works
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exchange Rate Calculator -->
+                <div class="lg:pl-8">
+                    <div class="w-full max-w-md mx-auto bg-white rounded-xl shadow-xl border-0 p-6">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Calculate your transfer</h3>
+                            <p class="text-green-600 font-semibold exchange-rate">
+                                1 USD = <span id="exchangeRate">0.8520</span> EUR
+                            </p>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Send Amount</label>
+                                <div class="flex gap-2">
+                                    <input
+                                        type="number"
+                                        id="sendAmount"
+                                        value="100"
+                                        onchange="calculateExchange()"
+                                        class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                                        placeholder="0.00"
+                                    >
+                                    <select class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="GBP">GBP</option>
+                                        <option value="CAD">CAD</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Receiving amount</label>
+                                <div class="flex gap-2">
+                                    <input
+                                        type="number"
+                                        id="receiveAmount"
+                                        value="85.20"
+                                        readonly
+                                        class="flex-1 px-3 py-2 border border-gray-300 rounded-md bg-gray-50"
+                                        placeholder="0.00"
+                                    >
+                                    <select class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                                        <option value="EUR">EUR</option>
+                                        <option value="USD">USD</option>
+                                        <option value="GBP">GBP</option>
+                                        <option value="INR">INR</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button class="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg rounded-md font-medium transition-colors">
+                                Sign Up to Send Money
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Complete B2B International Payment Solutions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Advanced payment technology designed for businesses managing global operations and international suppliers.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                    <div class="flex justify-center mb-4">
+                        <svg class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Lightning Fast</h3>
+                    <p class="text-gray-600">Process international payments in minutes, not days. Our optimized payment infrastructure delivers funds faster than traditional banks.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                    <div class="flex justify-center mb-4">
+                        <svg class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Bank-Level Security</h3>
+                    <p class="text-gray-600">Bank-level encryption and regulatory compliance protect every international business transaction with advanced fraud prevention.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                    <div class="flex justify-center mb-4">
+                        <svg class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Best Exchange Rates</h3>
+                    <p class="text-gray-600">Get the best currency conversion rates with real-time pricing that beats traditional banks and payment processors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-green-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">90%</div>
+                    <div class="text-green-100 text-sm md:text-base">Lower Fees than Banks</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">91B+</div>
+                    <div class="text-green-100 text-sm md:text-base">Transaction Value</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">22K+</div>
+                    <div class="text-green-100 text-sm md:text-base">Bank Partnerships</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-green-100 text-sm md:text-base">Customer Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Send Money to 200+ Countries
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Trusted by millions worldwide for fast, secure international transfers
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇮🇳</div>
+                    <div class="text-sm font-medium text-gray-700">India</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇵🇭</div>
+                    <div class="text-sm font-medium text-gray-700">Philippines</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇲🇽</div>
+                    <div class="text-sm font-medium text-gray-700">Mexico</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇳🇬</div>
+                    <div class="text-sm font-medium text-gray-700">Nigeria</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇧🇩</div>
+                    <div class="text-sm font-medium text-gray-700">Bangladesh</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇵🇰</div>
+                    <div class="text-sm font-medium text-gray-700">Pakistan</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇻🇳</div>
+                    <div class="text-sm font-medium text-gray-700">Vietnam</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-2">🇰🇪</div>
+                    <div class="text-sm font-medium text-gray-700">Kenya</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    How It Works
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Send money globally in just 3 simple steps
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Recipient Details</h3>
+                    <p class="text-gray-600">Enter the recipient's name, account details, and the amount you want to send.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Source</h3>
+                    <p class="text-gray-600">Select the source of funds, then choose the purpose of the transfer.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Confirmation</h3>
+                    <p class="text-gray-600">Review all details, check the fees, and confirm your transfer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Real Stories, Real Results
+                </h2>
+                <p class="text-xl text-gray-600">
+                    See what our customers say about ZilRemit
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg border-0 p-6">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">"ZilRemit has transformed how we handle international payments. The rates are excellent and transfers arrive within minutes."</p>
+                    <div>
+                        <div class="font-semibold text-gray-900">Sarah Johnson</div>
+                        <div class="text-sm text-gray-500">Business Owner</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg border-0 p-6">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">"I send money to my family monthly. ZilRemit saves me hundreds in fees compared to traditional banks."</p>
+                    <div>
+                        <div class="font-semibold text-gray-900">Michael Chen</div>
+                        <div class="text-sm text-gray-500">Software Engineer</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg border-0 p-6">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">"Perfect for our business! We pay international suppliers through ZilRemit. The dashboard makes tracking payments super easy."</p>
+                    <div>
+                        <div class="font-semibold text-gray-900">Maria Rodriguez</div>
+                        <div class="text-sm text-gray-500">E-commerce Director</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-green-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Start Sending Money?
+            </h2>
+            <p class="text-xl text-green-100 mb-8">
+                Join millions of users who trust ZilRemit for their international transfers
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-md font-medium transition-colors">
+                    Create Free Account
+                </button>
+                <button class="border border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 text-lg rounded-md font-medium transition-colors">
+                    Contact Sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDE0IiBoZWlnaHQ9IjEwNyIgdmlld0JveD0iMCAwIDQxNCAxMDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMjEuNSAyMS41QzEyMS41IDIxLjUgMTM1IDEwIDEzNSAyMS41QzEzNSAzMyAxMjEuNSAyMS41IDEyMS41IDIxLjVaIiBmaWxsPSIjMDBGRjdGIi8+CjxwYXRoIGQ9Ik0xMzUgMjEuNUMxMzUgMjEuNSAxNDguNSAxMCAxNDguNSAyMS41QzE0OC41IDMzIDEzNSAyMS41IDEzNSAyMS41WiIgZmlsbD0iIzAwRkY3RiIvPgo8cGF0aCBkPSJNMTQ4LjUgMjEuNUMxNDguNSAyMS41IDE2MiAxMCAxNjIgMjEuNUMxNjIgMzMgMTQ4LjUgMjEuNSAxNDguNSAyMS41WiIgZmlsbD0iIzAwRkY3RiIvPgo8Y2lyY2xlIGN4PSIyMzQiIGN5PSIzNSIgcj0iMjAiIGZpbGw9IiMxRTQwQUYiLz4KPHRleHQgeD0iMjc4IiB5PSI0NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFFNDBBRiI+WmlsUmVtaXQ8L3RleHQ+Cjx0ZXh0IHg9IjM3MCIgeT0iNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NjY2NiI+UG93ZXJlZCBieSBaaWwgTW9uZXk8L3RleHQ+Cjwvc3ZnPgo=" alt="ZilRemit" class="h-10 w-auto mb-4 filter brightness-0 invert">
+                    <p class="text-gray-400">
+                        Fast, secure, and affordable international money transfers powered by Zil Money.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Send Money</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Business Payments</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mobile App</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Security</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 ZilRemit. All rights reserved. Powered by Zil Money.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function calculateExchange() {
+            const sendAmount = document.getElementById('sendAmount').value;
+            const rate = parseFloat(document.getElementById('exchangeRate').textContent);
+            const receiveAmount = (parseFloat(sendAmount) * rate).toFixed(2);
+            document.getElementById('receiveAmount').value = receiveAmount;
+        }
+
+        // Simulate exchange rate updates
+        setInterval(() => {
+            const baseRate = 0.852;
+            const variation = (Math.random() - 0.5) * 0.01;
+            const newRate = (baseRate + variation).toFixed(4);
+            document.getElementById('exchangeRate').textContent = newRate;
+            calculateExchange();
+        }, 5000);
+
+        // Initialize calculation
+        calculateExchange();
+    </script>
+</body>
+</html>
