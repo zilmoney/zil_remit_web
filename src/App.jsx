@@ -108,6 +108,7 @@ function App() {
                 <a href="#features" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Features</a>
                 <a href="#rates" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Rates</a>
                 <a href="#about" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                <a href="/blogs/" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Blog</a>
                 <a href="#contact" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
                 <Button className="bg-green-600 hover:bg-green-700 text-white">Sign Up</Button>
               </div>
@@ -133,6 +134,7 @@ function App() {
               <a href="#features" className="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Features</a>
               <a href="#rates" className="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Rates</a>
               <a href="#about" className="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">About</a>
+              <a href="/blogs/" className="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Blog</a>
               <a href="#contact" className="text-gray-700 hover:text-green-600 block px-3 py-2 text-base font-medium">Contact</a>
               <Button className="bg-green-600 hover:bg-green-700 text-white w-full mt-2">Sign Up</Button>
             </div>
@@ -540,7 +542,7 @@ function App() {
                 <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="/blogs/" className="hover:text-white transition-colors">Blog</a></li>
               </ul>
             </div>
             
