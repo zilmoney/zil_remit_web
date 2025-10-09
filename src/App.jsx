@@ -125,7 +125,7 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,16 +138,16 @@ function App() {
             
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">Features</a>
-                <a href="#solutions" className="text-gray-700 hover:text-blue-600 transition-colors">Solutions</a>
-                <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-                <a href="#support" className="text-gray-700 hover:text-blue-600 transition-colors">Support</a>
+                <a href="#features" className="text-gray-700 hover:text-green-600 transition-colors">Features</a>
+                <a href="#solutions" className="text-gray-700 hover:text-green-600 transition-colors">Solutions</a>
+                <a href="#pricing" className="text-gray-700 hover:text-green-600 transition-colors">Pricing</a>
+                <a href="#support" className="text-gray-700 hover:text-green-600 transition-colors">Support</a>
               </div>
             </div>
             
             <div className="hidden md:flex items-center space-x-4">
               <Button variant="ghost">Sign In</Button>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+              <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
                 Get Started
               </Button>
             </div>
@@ -168,13 +168,13 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#features" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Features</a>
-              <a href="#solutions" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Solutions</a>
-              <a href="#pricing" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
-              <a href="#support" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Support</a>
+              <a href="#features" className="block px-3 py-2 text-gray-700 hover:text-green-600">Features</a>
+              <a href="#solutions" className="block px-3 py-2 text-gray-700 hover:text-green-600">Solutions</a>
+              <a href="#pricing" className="block px-3 py-2 text-gray-700 hover:text-green-600">Pricing</a>
+              <a href="#support" className="block px-3 py-2 text-gray-700 hover:text-green-600">Support</a>
               <div className="px-3 py-2 space-y-2">
                 <Button variant="ghost" className="w-full">Sign In</Button>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">Get Started</Button>
+                <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600">Get Started</Button>
               </div>
             </div>
           </div>
@@ -186,12 +186,12 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-200">
+              <Badge className="mb-4 bg-green-100 text-green-700 hover:bg-green-200">
                 🚀 Now supporting 150+ countries
               </Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 The Future of{' '}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   International Payments
                 </span>{' '}
                 is Here
@@ -201,7 +201,7 @@ function App() {
                 lightning-fast transfers, and bank-grade security. Join millions who trust ZilRemit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-3">
+                <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-lg px-8 py-3">
                   Get Started for Free
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -226,51 +226,49 @@ function App() {
             </div>
             
             <div className="relative">
-              <Card className="p-6 bg-white/80 backdrop-blur-sm border-0 shadow-2xl">
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold mb-4">Quick Transfer Calculator</h3>
+              <Card className="p-8 bg-white/95 backdrop-blur-sm border-0 shadow-2xl rounded-2xl">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Calculate your transfer</h3>
+                    <p className="text-gray-600">1 USD = 88.25 INR</p>
+                  </div>
+                  
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">You send</label>
-                      <div className="flex">
-                        <select 
-                          className="px-3 py-2 border border-gray-300 rounded-l-md bg-gray-50"
-                          value={selectedCurrency}
-                          onChange={(e) => setSelectedCurrency(e.target.value)}
-                        >
-                          <option value="USD">USD</option>
-                          <option value="EUR">EUR</option>
-                          <option value="GBP">GBP</option>
-                        </select>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Send Amount</label>
+                      <div className="relative">
                         <input
                           type="number"
                           value={amount}
                           onChange={(e) => setAmount(Number(e.target.value))}
-                          className="flex-1 px-3 py-2 border border-l-0 border-gray-300 rounded-r-md"
+                          className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 pr-20"
+                          placeholder="20000"
                         />
+                        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+                          <span className="text-lg font-medium">🇺🇸</span>
+                          <span className="text-lg font-medium text-gray-700">USD</span>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <ArrowRight className="w-6 h-6 mx-auto text-gray-400" />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium mb-2">Recipient gets</label>
-                      <div className="grid grid-cols-3 gap-2">
-                        {Object.entries(exchangeRates[selectedCurrency] || {}).map(([currency, rate]) => (
-                          <div key={currency} className="text-center p-2 bg-gray-50 rounded">
-                            <div className="font-semibold text-sm">{currency}</div>
-                            <div className="text-lg font-bold text-blue-600">
-                              {(amount * rate).toLocaleString()}
-                            </div>
-                          </div>
-                        ))}
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Receiving amount</label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          value={(amount * 88.25).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                          readOnly
+                          className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg bg-gray-50 pr-20"
+                        />
+                        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+                          <span className="text-lg font-medium">🇮🇳</span>
+                          <span className="text-lg font-medium text-gray-700">INR</span>
+                        </div>
                       </div>
                     </div>
                     
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
-                      Start Transfer
+                    <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 text-lg rounded-lg">
+                      Sign Up to Send Money
                     </Button>
                   </div>
                 </div>
@@ -381,7 +379,7 @@ function App() {
           <Card className="max-w-4xl mx-auto p-8 border-0 bg-white/80 backdrop-blur-sm">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">0.5%</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">0.5%</div>
                 <div className="text-gray-600">Exchange rate markup</div>
               </div>
               <div>
@@ -389,13 +387,13 @@ function App() {
                 <div className="text-gray-600">Setup fees</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-purple-600 mb-2">$2.99</div>
+                <div className="text-3xl font-bold text-emerald-600 mb-2">$2.99</div>
                 <div className="text-gray-600">Transfer fee</div>
               </div>
             </div>
             
             <div className="mt-8 text-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+              <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
                 Calculate Your Savings
               </Button>
             </div>
@@ -424,20 +422,20 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Go Global?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-green-100 mb-8">
             Join millions of users who trust ZilRemit for their international payments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8 py-3">
               Get Started for Free
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-3">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 text-lg px-8 py-3">
               Contact Sales
             </Button>
           </div>
