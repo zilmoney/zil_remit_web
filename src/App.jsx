@@ -363,6 +363,77 @@ function App() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-600">
+              Send money globally in just 3 simple steps
+            </p>
+          </div>
+          
+          <div className="relative">
+            {/* Connection lines */}
+            <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+              <div className="flex justify-between items-center px-20">
+                <div className="flex-1 h-0.5 bg-green-600 mx-8"></div>
+                <div className="flex-1 h-0.5 bg-green-600 mx-8"></div>
+              </div>
+            </div>
+            
+            <div className="grid lg:grid-cols-3 gap-12 lg:gap-8">
+              {/* Step 1 */}
+              <div className="text-center">
+                <div className="relative mb-8">
+                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">1</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Recipient Details
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Enter the recipient's name, account details, and the amount you want to send.
+                </p>
+              </div>
+              
+              {/* Step 2 */}
+              <div className="text-center">
+                <div className="relative mb-8">
+                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">2</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Source
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Select the source of funds, then choose the purpose of the transfer.
+                </p>
+              </div>
+              
+              {/* Step 3 */}
+              <div className="text-center">
+                <div className="relative mb-8">
+                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">3</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Confirmation
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Review all details, check the fees, and confirm your transfer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases Section */}
       <section id="solutions" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
