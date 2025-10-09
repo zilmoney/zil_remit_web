@@ -304,6 +304,65 @@ function App() {
         </div>
       </section>
 
+      {/* Global Business Payments Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="relative bg-gradient-to-br from-green-400 to-teal-500 rounded-2xl p-8 overflow-hidden">
+                {/* Background city skyline effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-700/30 to-transparent"></div>
+                
+                {/* Browser-like header */}
+                <div className="flex items-center space-x-2 mb-8">
+                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+                
+                {/* Currency conversion display */}
+                <div className="relative z-10 flex items-center justify-center space-x-6">
+                  <div className="bg-white rounded-full px-6 py-4 flex items-center space-x-3 shadow-lg">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="text-xl font-bold text-gray-800">USD</span>
+                  </div>
+                  
+                  <div className="bg-white rounded-full p-3 shadow-lg">
+                    <ArrowRight className="w-6 h-6 text-green-600" />
+                  </div>
+                  
+                  <div className="bg-white rounded-full px-6 py-4 flex items-center space-x-3 shadow-lg">
+                    <span className="text-2xl">🇵🇭</span>
+                    <span className="text-xl font-bold text-gray-800">PHP</span>
+                  </div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute top-20 left-8 w-2 h-2 bg-white/30 rounded-full"></div>
+                <div className="absolute top-32 right-12 w-1 h-1 bg-white/40 rounded-full"></div>
+                <div className="absolute bottom-20 left-16 w-1.5 h-1.5 bg-white/20 rounded-full"></div>
+              </div>
+            </div>
+            
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Global Business Payments in Minutes
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Execute international business payments with real-time exchange rates and 
+                instant processing. Our B2B payment platform delivers funds to suppliers, vendors, 
+                and partners.
+              </p>
+              <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-lg px-8 py-3">
+                Start International Payments
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases Section */}
       <section id="solutions" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
