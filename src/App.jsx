@@ -130,63 +130,71 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 to-white py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 min-h-screen flex items-center overflow-hidden">
+        {/* Background Elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="absolute top-20 right-10 w-32 h-32 bg-green-100 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-float" style={{animationDelay: '1s'}}></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div className="animate-fade-in-up">
-              <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">
-                🚀 No competitors can match ZilRemit's ultra-low fees
+              {/* Highlight Bar */}
+              <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
+                💸 No one beats ZilRemit's ultra-low transfer fees
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Send International
-                <span className="block gradient-text">Payments Instantly</span>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                The Smartest Way to Send
+                <span className="block gradient-text">International Payments</span>
+                <span className="block text-2xl lg:text-3xl xl:text-4xl font-normal text-gray-600 mt-2">
+                  Fast, Secure & Low Fee
+                </span>
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Send international payments in minutes with ZilRemit. Enjoy the lowest fees in the market, 
-                transparent rates, and instant payment tracking across 7+ countries.
+              <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
+                Enjoy instant transfers with transparent rates and zero hidden fees. 
+                Experience how effortless sending money abroad can be.
               </p>
 
               {/* Contact Form */}
-              <div className="grid sm:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
                 <input
                   type="text"
                   placeholder="Full Name"
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-sm"
                 />
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-sm"
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-sm"
                 />
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
-                  Start Business Payments →
+              {/* CTA Buttons - Single Row, Equal Width */}
+              <div className="flex gap-4 mb-6">
+                <button className="flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift shadow-lg">
+                  Start Now →
                 </button>
-                <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
-                  Compare Exchange Rates →
+                <button className="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+                  View Rates →
                 </button>
               </div>
 
-              <p className="text-sm text-gray-500 mt-4">
+              <p className="text-sm text-gray-500">
                 Trusted by thousands of global businesses
               </p>
             </div>
 
             {/* Right Content - Calculator */}
             <div className="animate-fade-in-right">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 card-hover">
+              <div className="bg-white rounded-2xl shadow-2xl p-8 card-hover backdrop-blur-sm border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Calculate your transfer</h3>
                 <p className="text-gray-600 font-medium mb-6">1 USD = 88.15 INR</p>
                 
@@ -198,11 +206,13 @@ function App() {
                       type="text"
                       value={sendAmount}
                       onChange={(e) => setSendAmount(e.target.value)}
-                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent pr-24"
+                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent pr-20"
                     />
                     <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center bg-gray-100 px-3 py-2 rounded-md">
-                      <span className="text-lg mr-2">🇺🇸</span>
-                      <span className="font-semibold text-gray-700">USD</span>
+                      <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex items-center justify-center bg-blue-600">
+                        <span className="text-xs text-white font-bold">🇺🇸</span>
+                      </div>
+                      <span className="font-semibold text-gray-700 text-sm">USD</span>
                     </div>
                   </div>
                 </div>
@@ -215,23 +225,30 @@ function App() {
                       type="text"
                       value={receiveAmount}
                       readOnly
-                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg bg-gray-50 pr-24"
+                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg bg-gray-50 pr-20"
                     />
                     <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center">
-                      <select className="bg-transparent border-none text-gray-700 font-semibold focus:outline-none appearance-none cursor-pointer">
-                        <option value="INR">🇮🇳 INR</option>
-                        <option value="EUR">🇪🇺 EUR</option>
-                        <option value="GBP">🇬🇧 GBP</option>
-                        <option value="PHP">🇵🇭 PHP</option>
-                      </select>
-                      <svg className="w-4 h-4 ml-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <div className="flex items-center bg-white px-2 py-1 rounded-md border border-gray-200">
+                        <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex items-center justify-center">
+                          <span className="text-xs">🇮🇳</span>
+                        </div>
+                        <select className="bg-transparent border-none text-gray-700 font-semibold focus:outline-none appearance-none cursor-pointer text-sm pr-4">
+                          <option value="INR">INR</option>
+                          <option value="EUR">EUR</option>
+                          <option value="GBP">GBP</option>
+                          <option value="PHP">PHP</option>
+                          <option value="CAD">CAD</option>
+                          <option value="AUD">AUD</option>
+                        </select>
+                        <svg className="w-3 h-3 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary">
+                <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary shadow-lg hover:shadow-xl">
                   Sign Up to Send Money
                 </button>
               </div>
