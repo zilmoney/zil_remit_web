@@ -146,10 +146,10 @@ function App() {
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                The Smartest Way to Send International
-                <span className="block gradient-text">Payments</span>
+                Send Money
+                <span className="block gradient-text">Globally, Instantly</span>
                 <span className="block text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 mt-2">
-                  Fast, Secure & Low Fee
+                  Ultra-Low Fees, Zero Hassle
                 </span>
               </h1>
               
