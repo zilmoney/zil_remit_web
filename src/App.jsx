@@ -132,7 +132,7 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <img src={ZilRemitLogo} alt="ZilRemit" className="h-8 w-auto" />
+                <img src={ZilRemitLogo} alt="ZilRemit" className="h-10 w-auto" />
               </div>
             </div>
             
