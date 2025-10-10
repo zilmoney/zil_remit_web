@@ -146,9 +146,9 @@ function App() {
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                The Smartest Way to Send
-                <span className="block gradient-text">International Payments</span>
-                <span className="block text-2xl lg:text-3xl xl:text-4xl font-normal text-gray-600 mt-2">
+                The Smartest Way to Send International
+                <span className="block gradient-text">Payments</span>
+                <span className="block text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 mt-2">
                   Fast, Secure & Low Fee
                 </span>
               </h1>
@@ -261,48 +261,68 @@ function App() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Visual */}
+            {/* Left - Visual with City Background */}
             <div className="animate-fade-in-up">
-              <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute top-4 left-4 flex space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                
-                <div className="mt-12 flex items-center justify-center space-x-8">
-                  <div className="bg-white rounded-full px-6 py-3 shadow-lg flex items-center">
-                    <span className="text-2xl mr-2">🇺🇸</span>
-                    <span className="font-bold text-lg">USD</span>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                {/* City Skyline Background with Green Overlay */}
+                <div 
+                  className="relative h-80 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `linear-gradient(135deg, rgba(34, 197, 94, 0.75), rgba(22, 163, 74, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="100%" style="stop-color:%23E0F6FF;stop-opacity:1" /></linearGradient></defs><rect width="800" height="400" fill="url(%23sky)"/><rect x="50" y="200" width="40" height="200" fill="%23666"/><rect x="100" y="150" width="50" height="250" fill="%23777"/><rect x="160" y="180" width="35" height="220" fill="%23555"/><rect x="200" y="120" width="60" height="280" fill="%23888"/><rect x="270" y="160" width="45" height="240" fill="%23666"/><rect x="320" y="100" width="55" height="300" fill="%23999"/><rect x="380" y="140" width="40" height="260" fill="%23777"/><rect x="430" y="90" width="65" height="310" fill="%23AAA"/><rect x="500" y="130" width="50" height="270" fill="%23888"/><rect x="560" y="110" width="45" height="290" fill="%23999"/><rect x="610" y="170" width="35" height="230" fill="%23666"/><rect x="650" y="140" width="55" height="260" fill="%23777"/><rect x="710" y="190" width="40" height="210" fill="%23555"/></svg>')`
+                  }}
+                >
+                  {/* Browser Window Controls */}
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   </div>
                   
-                  <svg className="w-8 h-8 text-green-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                  
-                  <div className="bg-white rounded-full px-6 py-3 shadow-lg flex items-center">
-                    <span className="text-2xl mr-2">🇪🇺</span>
-                    <span className="font-bold text-lg">EUR</span>
+                  {/* Currency Exchange Visual */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex items-center space-x-8">
+                      {/* USD Flag (Fixed) */}
+                      <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-transform duration-300">
+                        <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
+                          <span className="text-lg">🇺🇸</span>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">USD</span>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="text-white">
+                        <svg className="w-10 h-10 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      
+                      {/* Dynamic Currency Flag (EEK as shown in reference) */}
+                      <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-all duration-500 cursor-pointer">
+                        <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
+                          <span className="text-lg">🇪🇪</span>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">EEK</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-300 to-transparent opacity-30"></div>
               </div>
             </div>
 
             {/* Right - Content */}
-            <div className="animate-fade-in-right">
+            <div className="animate-fade-in-right flex flex-col justify-center">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Global Business Payments in Minutes
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                ZilRemit eliminates long processing times and hidden fees that slow down global transactions. 
-                Send payments to suppliers, vendors, and partners worldwide in just a few clicks — with 
-                real-time status updates and the best available exchange rates.
+                Execute international business payments with real-time exchange rates and instant processing. 
+                Our B2B payment platform delivers funds to suppliers, vendors, and partners.
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
-                Start International Payments →
-              </button>
+              <div>
+                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift shadow-lg">
+                  Start International Payments →
+                </button>
+              </div>
             </div>
           </div>
         </div>
