@@ -13,7 +13,7 @@ function App() {
   });
 
   // Exchange rate calculation
-  const exchangeRate = 88.25;
+  const exchangeRate = 88.15;
   
   useEffect(() => {
     const amount = parseFloat(sendAmount) || 0;
@@ -54,13 +54,7 @@ function App() {
             {/* Logo */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <svg className="h-10 w-auto" viewBox="0 0 200 60" fill="none">
-                  <path d="M20 15L35 30L20 45L5 30L20 15Z" fill="#22c55e"/>
-                  <circle cx="20" cy="30" r="8" fill="white"/>
-                  <path d="M16 30L19 33L24 28" stroke="#22c55e" strokeWidth="2" fill="none"/>
-                  <text x="45" y="25" className="text-2xl font-bold" fill="#1f2937">Zil</text>
-                  <text x="45" y="45" className="text-2xl font-bold" fill="#22c55e">Remit</text>
-                </svg>
+                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-12 w-auto" />
               </div>
             </div>
 
@@ -193,8 +187,8 @@ function App() {
             {/* Right Content - Calculator */}
             <div className="animate-fade-in-right">
               <div className="bg-white rounded-2xl shadow-2xl p-8 card-hover">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Calculate Your Transfer</h3>
-                <p className="text-green-600 font-semibold mb-6">1 USD = {exchangeRate} INR</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Calculate your transfer</h3>
+                <p className="text-gray-600 font-medium mb-6">1 USD = 88.15 INR</p>
                 
                 {/* Send Amount */}
                 <div className="mb-6">
@@ -204,46 +198,41 @@ function App() {
                       type="text"
                       value={sendAmount}
                       onChange={(e) => setSendAmount(e.target.value)}
-                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent pr-20"
+                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent pr-24"
                     />
-                    <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center">
-                      <span className="text-2xl mr-2">🇺🇸</span>
+                    <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center bg-gray-100 px-3 py-2 rounded-md">
+                      <span className="text-lg mr-2">🇺🇸</span>
                       <span className="font-semibold text-gray-700">USD</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-center mb-6">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <p className="text-green-600 font-semibold">Exchange Rate: {exchangeRate}</p>
-                  </div>
-                </div>
-
-                <div className="flex justify-center mb-6">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-
                 {/* Receive Amount */}
                 <div className="mb-8">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Receiving Amount</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Receiving amount</label>
                   <div className="relative">
                     <input
                       type="text"
                       value={receiveAmount}
                       readOnly
-                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg bg-gray-50 pr-20"
+                      className="w-full px-4 py-4 text-2xl font-bold border border-gray-300 rounded-lg bg-gray-50 pr-24"
                     />
                     <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center">
-                      <span className="text-2xl mr-2">🇮🇳</span>
-                      <span className="font-semibold text-gray-700">INR</span>
+                      <select className="bg-transparent border-none text-gray-700 font-semibold focus:outline-none appearance-none cursor-pointer">
+                        <option value="INR">🇮🇳 INR</option>
+                        <option value="EUR">🇪🇺 EUR</option>
+                        <option value="GBP">🇬🇧 GBP</option>
+                        <option value="PHP">🇵🇭 PHP</option>
+                      </select>
+                      <svg className="w-4 h-4 ml-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </div>
                 </div>
 
                 <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary">
-                  Sign Up for Free Account
+                  Sign Up to Send Money
                 </button>
               </div>
             </div>
@@ -856,13 +845,7 @@ function App() {
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <svg className="h-10 w-auto mr-3" viewBox="0 0 200 60" fill="none">
-                  <path d="M20 15L35 30L20 45L5 30L20 15Z" fill="#22c55e"/>
-                  <circle cx="20" cy="30" r="8" fill="white"/>
-                  <path d="M16 30L19 33L24 28" stroke="#22c55e" strokeWidth="2" fill="none"/>
-                  <text x="45" y="25" className="text-2xl font-bold" fill="white">Zil</text>
-                  <text x="45" y="45" className="text-2xl font-bold" fill="#22c55e">Remit</text>
-                </svg>
+                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-12 w-auto mr-3 brightness-0 invert" />
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 ZilRemit makes international business payments simple, fast, and affordable. 
