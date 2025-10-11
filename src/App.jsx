@@ -432,8 +432,6 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
-            {/* Connecting lines for desktop */}
-            <div className="hidden md:block absolute top-16 left-1/3 right-1/3 h-0.5 bg-green-200"></div>
             
             {/* Step 1 */}
             <div className="text-center animate-fade-in-up">
