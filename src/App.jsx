@@ -861,9 +861,9 @@ function App() {
                 Send Money Globally — Faster Than Ever
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                ZilRemit connects you directly to global financial hubs like London, Frankfurt, Mumbai, and New York. 
-                With a secure payment network and optimized routing, you can complete international settlements 
-                in minutes — not days.
+                ZilRemit makes sending money abroad simple and reliable. Whether for personal or business purposes, 
+                you can send funds from USD to other countries within minutes in just 3–4 easy steps. 
+                Enjoy a fast, secure, and transparent experience every time you transfer money internationally.
               </p>
               <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
                 Process International Payments →
