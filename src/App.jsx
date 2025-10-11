@@ -322,7 +322,11 @@ function App() {
                       {/* USD Flag (Fixed) */}
                       <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-transform duration-300">
                         <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
-                          <span className="text-lg">🇺🇸</span>
+                          <img 
+                            src="https://flagcdn.com/w40/us.png" 
+                            alt="USA flag"
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">USD</span>
                       </div>
