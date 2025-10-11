@@ -4,13 +4,13 @@ import './App.css';
 // Animated Currency Component
 const AnimatedCurrency = () => {
   const currencies = [
-    { flag: '🇪🇪', code: 'EUR', country: 'Estonia' },
-    { flag: '🇫🇷', code: 'EUR', country: 'France' },
-    { flag: '🇩🇪', code: 'EUR', country: 'Germany' },
-    { flag: '🇮🇳', code: 'INR', country: 'India' },
-    { flag: '🇵🇭', code: 'PHP', country: 'Philippines' },
-    { flag: '🇸🇪', code: 'SEK', country: 'Sweden' },
-    { flag: '🇬🇧', code: 'GBP', country: 'UK' }
+    { flag: 'https://flagcdn.com/w320/ee.png', code: 'EUR', country: 'Estonia' },
+    { flag: 'https://flagcdn.com/w320/fr.png', code: 'EUR', country: 'France' },
+    { flag: 'https://flagcdn.com/w320/de.png', code: 'EUR', country: 'Germany' },
+    { flag: 'https://flagcdn.com/w320/in.png', code: 'INR', country: 'India' },
+    { flag: 'https://flagcdn.com/w320/ph.png', code: 'PHP', country: 'Philippines' },
+    { flag: 'https://flagcdn.com/w320/se.png', code: 'SEK', country: 'Sweden' },
+    { flag: 'https://flagcdn.com/w320/gb.png', code: 'GBP', country: 'UK' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,7 +28,11 @@ const AnimatedCurrency = () => {
   return (
     <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-all duration-500 cursor-pointer">
       <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
-        <span className="text-lg transition-all duration-300">{currentCurrency.flag}</span>
+        <img 
+          src={currentCurrency.flag} 
+          alt={`${currentCurrency.country} flag`}
+          className="w-full h-full object-cover transition-all duration-300"
+        />
       </div>
       <span className="font-bold text-gray-900 text-lg transition-all duration-300">{currentCurrency.code}</span>
     </div>
