@@ -1,6 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+// Animated Currency Component
+const AnimatedCurrency = () => {
+  const currencies = [
+    { flag: '🇪🇪', code: 'EUR', country: 'Estonia' },
+    { flag: '🇫🇷', code: 'EUR', country: 'France' },
+    { flag: '🇩🇪', code: 'EUR', country: 'Germany' },
+    { flag: '🇮🇳', code: 'INR', country: 'India' },
+    { flag: '🇵🇭', code: 'PHP', country: 'Philippines' },
+    { flag: '🇸🇪', code: 'SEK', country: 'Sweden' },
+    { flag: '🇬🇧', code: 'GBP', country: 'UK' }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % currencies.length);
+    }, 1000); // Change every 1 second
+
+    return () => clearInterval(interval);
+  }, [currencies.length]);
+
+  const currentCurrency = currencies[currentIndex];
+
+  return (
+    <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-all duration-500 cursor-pointer">
+      <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
+        <span className="text-lg transition-all duration-300">{currentCurrency.flag}</span>
+      </div>
+      <span className="font-bold text-gray-900 text-lg transition-all duration-300">{currentCurrency.code}</span>
+    </div>
+  );
+};
+
 function App() {
   const [sendAmount, setSendAmount] = useState('20000');
   const [receiveAmount, setReceiveAmount] = useState('1764930.14');
@@ -296,13 +330,8 @@ function App() {
                         </svg>
                       </div>
                       
-                      {/* Dynamic Currency Flag (EEK as shown in reference) */}
-                      <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-all duration-500 cursor-pointer">
-                        <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
-                          <span className="text-lg">🇪🇪</span>
-                        </div>
-                        <span className="font-bold text-gray-900 text-lg">EEK</span>
-                      </div>
+                      {/* Dynamic Currency Flag (Animated) */}
+                      <AnimatedCurrency />
                     </div>
                   </div>
                 </div>
