@@ -833,7 +833,7 @@ function App() {
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Send Money for Personal or Business Purposes
+                Send Money Globally — Faster Than Ever
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 ZilRemit makes sending money abroad simple and reliable. Whether for personal or business purposes, 
@@ -991,7 +991,7 @@ function App() {
                 Start Business Payments →
               </button>
               <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
-                Book A Demo →
+                Compare Exchange Rates →
               </button>
             </div>
           </div>
@@ -1069,14 +1069,14 @@ function App() {
         </div>
       </section>
 
-      {/* Send Money for Personal or Business Purposes */}
+      {/* Send Money Globally — Faster Than Ever */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Send Money for Personal or Business Purposes
+                Send Money Globally — Faster Than Ever
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Experience the future of international payments with our intuitive platform. 
@@ -1275,7 +1275,7 @@ function App() {
               Start Business Payments →
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
-              Book A Demo →
+              Compare Exchange Rates →
             </button>
           </div>
         </div>
