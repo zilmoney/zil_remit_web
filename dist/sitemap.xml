@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://zilremit.com/</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://zilremit.com/blog.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zilremit.com/blogs/complete-guide-international-business-payments-2025.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<url>
+<loc>https://zilremit.com/</loc>
+<lastmod>2025-10-11</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://zilremit.com/blogs/</loc>
+<lastmod>2025-10-11</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zilremit.com/blogs/complete-guide-international-business-payments-2025.html</loc>
+<lastmod>2025-10-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://zilremit.com/blogs/paying-freelancers-remote-teams-global-payments.html</loc>
+<lastmod>2025-10-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
 </urlset>
