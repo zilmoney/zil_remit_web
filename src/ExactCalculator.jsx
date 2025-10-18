@@ -810,7 +810,7 @@ const ExactCalculator = () => {
           <div id="receive-amount-error" className="error" style={{display:'none'}}></div>
         </div>
 
-        <a href="https://zilmoney.com/preregister/" className="send-button" id="signup-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://app.zilremit.com/signup" className="send-button" id="signup-link" target="_blank" rel="noopener noreferrer">
           Sign Up to Send Money
         </a>
       </div>
