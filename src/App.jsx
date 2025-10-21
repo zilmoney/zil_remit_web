@@ -1340,10 +1340,10 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-6">Company</h3>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
+                <li><a href="/about" className="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Careers</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Press</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Blog</a></li>
+                <li><a href="/blog.html" className="text-gray-300 hover:text-green-400 transition-colors">Blog</a></li>
               </ul>
             </div>
 
@@ -1361,7 +1361,7 @@ function App() {
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 ZilRemit. All rights reserved.
+              © 2025 ZilRemit. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Privacy Policy</a>
