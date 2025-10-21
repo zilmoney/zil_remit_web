@@ -1343,7 +1343,7 @@ function App() {
                 <li><a href="/about" className="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Careers</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Press</a></li>
-                <li><a href="/blog.html" className="text-gray-300 hover:text-green-400 transition-colors">Blog</a></li>
+                <li><a href="/blogs.html" className="text-gray-300 hover:text-green-400 transition-colors">Blog</a></li>
               </ul>
             </div>
 
