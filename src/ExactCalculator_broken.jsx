@@ -352,117 +352,121 @@ const ExactCalculator = () => {
 
   return (
     <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">Calculate your transfer</h2>
+      {/* Fluidic border effect */}
       
-      <div className="mb-8">
-        <span className="text-gray-600">1 USD = </span>
-        {isLoading ? (
-          <span className="inline-block w-16 h-4 bg-gray-200 animate-pulse rounded"></span>
-        ) : (
-          <span className="font-semibold">{exchangeRate.toFixed(2)}</span>
-        )}
-        <span className="ml-1 text-gray-600">{selectedCurrency}</span>
-      </div>
+      
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">Calculate your transfer</h2>
+        
+        <div className="mb-8">
+          <span className="text-gray-600">1 USD = </span>
+          {isLoading ? (
+            <span className="inline-block w-16 h-4 bg-gray-200 animate-pulse rounded"></span>
+          ) : (
+            <span className="font-semibold">{exchangeRate.toFixed(2)}</span>
+          )}
+          <span className="ml-1 text-gray-600">{selectedCurrency}</span>
+        
 
-      {/* Send Amount */}
-      <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">Send Amount</label>
-        <div className={`flex items-center border-2 rounded-xl bg-white transition-colors ${sendError ? 'border-red-500' : 'border-gray-200 focus-within:border-blue-500'}`}>
-          <input
-            type="text"
-            value={sendAmount}
-            onChange={handleSendAmountChange}
-            onFocus={() => setLastEditedField('send')}
-            onBlur={(e) => {
-              if (!isUpdatingInput && e.target.value) {
-                const value = parseFloat(e.target.value) || 0;
-                if (value > 0) {
-                  setSendAmount(formatNumber(value));
-                  if (value < 10) {
-                    setSendError('Minimum sending amount must be $10.00.');
-                  } else if (value > 100000) {
-                    setSendError('Maximum amount is 100,000.00');
-                  } else {
-                    setSendError('');
-                    calculateAmount('send');
+        {/* Send Amount */}
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-2">Send Amount</label>
+          <div className={`flex items-center border-2 rounded-xl bg-white transition-colors ${sendError ? 'border-red-500' : 'border-gray-200 focus-within:border-blue-500'}`}>
+            <input
+              type="text"
+              value={sendAmount}
+              onChange={handleSendAmountChange}
+              onFocus={() => setLastEditedField('send')}
+              onBlur={(e) => {
+                if (!isUpdatingInput && e.target.value) {
+                  const value = parseFloat(e.target.value) || 0;
+                  if (value > 0) {
+                    setSendAmount(formatNumber(value));
+                    if (value < 10) {
+                      setSendError('Minimum sending amount must be $10.00.');
+                    } else if (value > 100000) {
+                      setSendError('Maximum amount is 100,000.00');
+                    } else {
+                      setSendError('');
+                      calculateAmount('send');
+                    }
                   }
                 }
-              }
-            }}
-            placeholder="0.00"
-            className="flex-1 px-4 py-5 text-2xl font-semibold outline-none bg-transparent"
-          />
-          <div className="flex items-center px-4 py-5 gap-2">
-            <img src="https://zilmoney.com/wp-content/uploads/2025/09/us.png" alt="USD" className="w-6 h-6 rounded-full object-cover border border-gray-200" />
-            <span className="font-semibold text-gray-700">USD</span>
-          </div>
-        </div>
-        {sendError && <div className="text-red-500 text-sm mt-2">{sendError}</div>}
-      </div>
-
-      {/* Receive Amount */}
-      <div className="mb-8">
-        <label className="block text-sm font-medium text-gray-700 mb-2">Receiving amount</label>
-        <div className={`flex items-center border-2 rounded-xl bg-white transition-colors ${receiveError ? 'border-red-500' : 'border-gray-200 focus-within:border-blue-500'}`}>
-          <input
-            type="text"
-            value={receiveAmount}
-            onChange={handleReceiveAmountChange}
-            onFocus={() => setLastEditedField('receive')}
-            onBlur={(e) => {
-              if (!isUpdatingInput && e.target.value) {
-                const value = parseFloat(e.target.value) || 0;
-                if (value > 0) {
-                  setReceiveAmount(formatNumber(value));
-                  setReceiveError('');
-                  calculateAmount('receive');
-                }
-              }
-            }}
-            placeholder="0.00"
-            className="flex-1 px-4 py-5 text-2xl font-semibold outline-none bg-transparent"
-          />
-          <div className="relative">
-            <div 
-              className="flex items-center px-4 py-5 gap-2 cursor-pointer"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            >
-              <img src={selectedFlag} alt={selectedCountry} className="w-6 h-6 rounded-full object-cover border border-gray-200" />
-              <span className="font-semibold text-gray-700">{selectedCurrency}</span>
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+              }}
+              placeholder="0.00"
+              className="flex-1 px-4 py-5 text-2xl font-semibold outline-none bg-transparent"
+            />
+            <div className="flex items-center px-4 py-5 gap-2">
+              <img src="https://zilmoney.com/wp-content/uploads/2025/09/us.png" alt="USD" className="w-6 h-6 rounded-full object-cover border border-gray-200" />
+              <span className="font-semibold text-gray-700">USD</span>
             
-            {isDropdownOpen && (
-              <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-48 max-h-64 overflow-y-auto">
-                {countries.map((country) => (
-                  <div
-                    key={country.name}
-                    className="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer gap-3"
-                    onClick={() => selectCurrency(country.name, country.currency, country.flag)}
-                  >
-                    <img src={country.flag} alt={country.name} className="w-6 h-6 rounded-full object-cover border border-gray-200" />
-                    <span className="text-gray-700">{country.name}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-        {receiveError && <div className="text-red-500 text-sm mt-2">{receiveError}</div>}
-      </div>
+          
+          {sendError && <div className="text-red-500 text-sm mt-2">{sendError}</div>}
+        
 
-      {/* Sign Up Button */}
-      <a 
-        href="https://app.zilremit.com/signup" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="w-full bg-green-500 hover:bg-green-600 text-white py-5 px-8 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 inline-block text-center"
-      >
-        Sign Up to Send Money
-      </a>
-    </div>
+        {/* Receive Amount */}
+        <div className="mb-8">
+          <label className="block text-sm font-medium text-gray-700 mb-2">Receiving amount</label>
+          <div className={`flex items-center border-2 rounded-xl bg-white transition-colors ${receiveError ? 'border-red-500' : 'border-gray-200 focus-within:border-blue-500'}`}>
+            <input
+              type="text"
+              value={receiveAmount}
+              onChange={handleReceiveAmountChange}
+              onFocus={() => setLastEditedField('receive')}
+              onBlur={(e) => {
+                if (!isUpdatingInput && e.target.value) {
+                  const value = parseFloat(e.target.value) || 0;
+                  if (value > 0) {
+                    setReceiveAmount(formatNumber(value));
+                    setReceiveError('');
+                    calculateAmount('receive');
+                  }
+                }
+              }}
+              placeholder="0.00"
+              className="flex-1 px-4 py-5 text-2xl font-semibold outline-none bg-transparent"
+            />
+            <div className="relative">
+              <div 
+                className="flex items-center px-4 py-5 gap-2 cursor-pointer"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                <img src={selectedFlag} alt={selectedCountry} className="w-6 h-6 rounded-full object-cover border border-gray-200" />
+                <span className="font-semibold text-gray-700">{selectedCurrency}</span>
+                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              
+              
+              {isDropdownOpen && (
+                <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-48 max-h-64 overflow-y-auto">
+                  {countries.map((country) => (
+                    <div
+                      key={country.name}
+                      className="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer gap-3"
+                      onClick={() => selectCurrency(country.name, country.currency, country.flag)}
+                    >
+                      <img src={country.flag} alt={country.name} className="w-6 h-6 rounded-full object-cover border border-gray-200" />
+                      <span className="text-gray-700">{country.name}</span>
+                    
+                  ))}
+                
+              )}
+            
+          
+          {receiveError && <div className="text-red-500 text-sm mt-2">{receiveError}</div>}
+        
+
+        {/* Sign Up Button */}
+        <a 
+          href="https://app.zilremit.com/signup" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-full bg-green-500 hover:bg-green-600 text-white py-5 px-8 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 inline-block text-center"
+        >
+          Sign Up to Send Money
+        </a>
+      
+    
   );
 };
 

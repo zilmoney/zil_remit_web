@@ -833,7 +833,7 @@ function App() {
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Send Money for Personal or Business Purposes
+                Global Business Payments in Minutes
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 ZilRemit makes sending money abroad simple and reliable. Whether for personal or business purposes, 
@@ -847,7 +847,7 @@ function App() {
 
             {/* Right - Animated Payment Interface */}
             <div className="animate-fade-in-right">
-              <AnimatedPaymentInterface />
+              <img src="business_payments_interface.png" alt="Business Payments Interface" className="w-full h-auto rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -1069,14 +1069,14 @@ function App() {
         </div>
       </section>
 
-      {/* Send Money for Personal or Business Purposes */}
+      {/* Global Business Payments in Minutes */}
       <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Send Money for Personal or Business Purposes
+                Global Business Payments in Minutes
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Experience the future of international payments with our intuitive platform. 
@@ -1135,7 +1135,7 @@ function App() {
 
             {/* Right - Animated Payment Interface */}
             <div className="animate-fade-in-right">
-              <AnimatedPaymentInterface />
+              <img src="business_payments_interface.png" alt="Business Payments Interface" className="w-full h-auto rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
