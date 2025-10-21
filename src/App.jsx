@@ -1078,7 +1078,7 @@ function App() {
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Send Money for Personal or Business Purposes
+                Send Global Payments In Minuts
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Experience the future of international payments with our intuitive platform. 
