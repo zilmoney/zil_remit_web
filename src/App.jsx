@@ -48,249 +48,573 @@ const AnimatedPaymentInterface = () => {
   const [selectedCountry, setSelectedCountry] = useState('india');
   const [selectedRecipient, setSelectedRecipient] = useState('');
   const [selectedBank, setSelectedBank] = useState('');
-  const [sourceWallet, setSourceWallet] = useState('');
-  const [transferPurpose, setTransferPurpose] = useState('');
+  const [selectedWallet, setSelectedWallet] = useState('');
+  const [selectedPurpose, setSelectedPurpose] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
+  const [highlightedField, setHighlightedField] = useState('');
+  const [showCursor, setShowCursor] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isButtonLoading, setIsButtonLoading] = useState(false);
+  const [showSuccessParticles, setShowSuccessParticles] = useState(false);
 
   const countries = {
-    india: { name: 'India', flag: 'https://flagcdn.com/w32/in.png', currency: 'INR', rate: 83.25 },
-    philippines: { name: 'Philippines', flag: 'https://flagcdn.com/w32/ph.png', currency: 'PHP', rate: 56.25 },
-    uk: { name: 'United Kingdom', flag: 'https://flagcdn.com/w32/gb.png', currency: 'GBP', rate: 0.79 }
+    estonia: { flag: '🇪🇪', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/ee.png' },
+    france: { flag: '🇫🇷', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/fr.png' },
+    germany: { flag: '🇩🇪', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/de.png' },
+    india: { flag: '🇮🇳', currency: 'INR', rate: 83.043, flagUrl: 'https://flagcdn.com/w40/in.png' },
+    philippines: { flag: '🇵🇭', currency: 'PHP', rate: 56.25, flagUrl: 'https://flagcdn.com/w40/ph.png' },
+    sweden: { flag: '🇸🇪', currency: 'SEK', rate: 10.85, flagUrl: 'https://flagcdn.com/w40/se.png' },
+    uk: { flag: '🇬🇧', currency: 'GBP', rate: 0.79, flagUrl: 'https://flagcdn.com/w40/gb.png' }
   };
 
-  const recipients = ['John Doe', 'Maria Santos', 'David Smith'];
-  const banks = ['HDFC Bank', 'ICICI Bank', 'State Bank of India'];
+  const recipients = [
+    { value: 'john-doe', label: 'John Doe' },
+    { value: 'jane-smith', label: 'Jane Smith' },
+    { value: 'alex-johnson', label: 'Alex Johnson' }
+  ];
+
+  const banks = [
+    { value: 'hdfc', label: 'HDFC Bank' },
+    { value: 'icici', label: 'ICICI Bank' },
+    { value: 'sbi', label: 'State Bank of India' }
+  ];
+
+  const wallets = [
+    { value: 'main-wallet', label: 'Main Wallet ($1,250.00)' },
+    { value: 'business-wallet', label: 'Business Wallet ($3,500.00)' }
+  ];
+
+  const purposes = [
+    { value: 'family-support', label: 'Family Support' },
+    { value: 'business-payment', label: 'Business Payment' },
+    { value: 'education', label: 'Education' }
+  ];
+
+  // Animated cursor movement
+  const moveCursorTo = (elementId, offset = { x: 0, y: 0 }) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      const containerRect = element.closest('.zil-payment-container')?.getBoundingClientRect();
+      if (containerRect) {
+        setCursorPosition({
+          x: rect.left - containerRect.left + rect.width / 2 + offset.x,
+          y: rect.top - containerRect.top + rect.height / 2 + offset.y
+        });
+        setShowCursor(true);
+      }
+    }
+  };
+
+  const highlightField = (fieldId) => {
+    setHighlightedField(fieldId);
+    setTimeout(() => setHighlightedField(''), 600);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const startAnimation = async () => {
+      if (isAnimating) return;
       setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentStage(prev => prev === 3 ? 1 : prev + 1);
-        setIsAnimating(false);
-      }, 500);
-    }, 4000);
+      setCurrentStage(1);
+      setSendAmount('');
+      setSelectedCountry('india');
+      setSelectedRecipient('');
+      setSelectedBank('');
+      setSelectedWallet('');
+      setSelectedPurpose('');
+      setIsButtonLoading(false);
+      setShowSuccessParticles(false);
+      
+      // Stage 1 Animation
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Animate country selection
+      moveCursorTo('country-select');
+      await new Promise(resolve => setTimeout(resolve, 500));
+      highlightField('country-field');
+      const countries_list = ['india', 'uk', 'germany', 'philippines'];
+      const randomCountry = countries_list[Math.floor(Math.random() * countries_list.length)];
+      setSelectedCountry(randomCountry);
+      await new Promise(resolve => setTimeout(resolve, 400));
+      
+      // Animate send amount
+      moveCursorTo('send-amount');
+      await new Promise(resolve => setTimeout(resolve, 300));
+      highlightField('send-amount-field');
+      setSendAmount('1000');
+      await new Promise(resolve => setTimeout(resolve, 400));
+      
+      // Animate recipient selection
+      moveCursorTo('recipient-select');
+      await new Promise(resolve => setTimeout(resolve, 300));
+      highlightField('recipient-field');
+      setSelectedRecipient('john-doe');
+      await new Promise(resolve => setTimeout(resolve, 400));
+      
+      // Animate bank selection
+      moveCursorTo('bank-select');
+      await new Promise(resolve => setTimeout(resolve, 300));
+      highlightField('bank-field');
+      setSelectedBank('hdfc');
+      await new Promise(resolve => setTimeout(resolve, 400));
+      
+      // Click continue button
+      moveCursorTo('continue-btn-1');
+      await new Promise(resolve => setTimeout(resolve, 300));
+      setCurrentStage(2);
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Stage 2 Animation
+      moveCursorTo('wallet-select');
+      await new Promise(resolve => setTimeout(resolve, 400));
+      highlightField('wallet-field');
+      setSelectedWallet('main-wallet');
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      moveCursorTo('purpose-select');
+      await new Promise(resolve => setTimeout(resolve, 400));
+      highlightField('purpose-field');
+      setSelectedPurpose('family-support');
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Click continue button with loading
+      moveCursorTo('continue-btn-2');
+      await new Promise(resolve => setTimeout(resolve, 300));
+      setIsButtonLoading(true);
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Stage 3 - Success
+      setCurrentStage(3);
+      setShowCursor(false);
+      setShowSuccessParticles(true);
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      // Reset animation
+      setIsAnimating(false);
+    };
 
+    const interval = setInterval(startAnimation, 12000);
+    startAnimation(); // Start immediately
+    
     return () => clearInterval(interval);
   }, []);
 
-  const renderStage = () => {
-    switch(currentStage) {
-      case 1:
-        return (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800">Send Money Globally</h3>
-              <div className="text-sm text-gray-500">Fast, secure international transfers</div>
+  const calculateReceiveAmount = (amount) => {
+    if (!amount) return '0.00';
+    const rate = countries[selectedCountry]?.rate || 1;
+    return (parseFloat(amount) * rate).toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+  };
+
+  return (
+    <div className="relative max-w-md mx-auto zil-payment-container">
+      {/* Animated Cursor */}
+      {showCursor && (
+        <div 
+          className="absolute w-5 h-5 pointer-events-none z-50 transition-all duration-300"
+          style={{ 
+            left: cursorPosition.x, 
+            top: cursorPosition.y,
+            transform: 'translate(-50%, -50%)'
+          }}
+        >
+          <div className="w-0 h-0 border-l-[10px] border-l-gray-800 border-r-[5px] border-r-transparent border-b-[14px] border-b-transparent border-t-[6px] border-t-transparent"></div>
+        </div>
+      )}
+
+      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden relative h-[600px]">
+        {/* Stage 1: Recipient Setup */}
+        {currentStage === 1 && (
+          <div className="p-6 space-y-6 transition-all duration-500">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Send Money Globally</h3>
+              <p className="text-sm text-gray-600">Fast, secure international transfers</p>
             </div>
             
-            <div className="space-y-3">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Recipient Country</label>
-                <div className="flex items-center space-x-3 p-3 border border-gray-300 rounded-lg bg-white">
-                  <img src={countries[selectedCountry].flag} alt={countries[selectedCountry].name} className="w-6 h-6 rounded" />
-                  <select 
+            <div className="space-y-4">
+              {/* Country Selection */}
+              <div className={`transition-all duration-300 ${highlightedField === 'country-field' ? 'scale-105 ring-2 ring-green-500 ring-opacity-50 rounded-lg' : ''}`}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Recipient Country</label>
+                <div className="relative">
+                  <div className="absolute left-3 top-3 w-6 h-6 rounded-full overflow-hidden">
+                    <img 
+                      src={countries[selectedCountry]?.flagUrl} 
+                      alt={`${selectedCountry} flag`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <select
+                    id="country-select"
                     value={selectedCountry}
                     onChange={(e) => setSelectedCountry(e.target.value)}
-                    className="flex-1 bg-transparent border-none outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
                   >
-                    <option value="india">India (INR)</option>
-                    <option value="philippines">Philippines (PHP)</option>
-                    <option value="uk">United Kingdom (GBP)</option>
+                    {Object.entries(countries).map(([key, country]) => (
+                      <option key={key} value={key}>
+                        {key.charAt(0).toUpperCase() + key.slice(1)} ({country.currency})
+                      </option>
+                    ))}
                   </select>
-                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute right-3 top-3 pointer-events-none">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Send Amount */}
+              <div className={`transition-all duration-300 ${highlightedField === 'send-amount-field' ? 'scale-105 ring-2 ring-green-500 ring-opacity-50 rounded-lg' : ''}`}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Send Amount</label>
+                <div className="relative">
+                  <input
+                    id="send-amount"
+                    type="text"
+                    value={sendAmount}
+                    onChange={(e) => setSendAmount(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg font-semibold"
+                    placeholder="0.00"
+                  />
+                  <div className="absolute right-3 top-3 text-gray-500 font-medium">USD</div>
+                </div>
+              </div>
+
+              {/* Recipient Selection */}
+              <div className={`transition-all duration-300 ${highlightedField === 'recipient-field' ? 'scale-105 ring-2 ring-green-500 ring-opacity-50 rounded-lg' : ''}`}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Recipient</label>
+                <select
+                  id="recipient-select"
+                  value={selectedRecipient}
+                  onChange={(e) => setSelectedRecipient(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                >
+                  <option value="">Select Recipient</option>
+                  {recipients.map((recipient) => (
+                    <option key={recipient.value} value={recipient.value}>
+                      {recipient.label}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-3 top-11 pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Bank Selection */}
+              <div className={`transition-all duration-300 ${highlightedField === 'bank-field' ? 'scale-105 ring-2 ring-green-500 ring-opacity-50 rounded-lg' : ''}`}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Recipient Bank</label>
+                <select
+                  id="bank-select"
+                  value={selectedBank}
+                  onChange={(e) => setSelectedBank(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                >
+                  <option value="">Select Bank</option>
+                  {banks.map((bank) => (
+                    <option key={bank.value} value={bank.value}>
+                      {bank.label}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-3 top-11 pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
               </div>
               
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Send Amount</label>
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="1000" 
-                    value="1000"
-                    className="w-full p-3 border border-gray-300 rounded-lg pr-16"
-                    readOnly
-                  />
-                  <span className="absolute right-3 top-3 text-gray-500 font-medium">USD</span>
+              {/* Receive Amount Display */}
+              <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                <div className="text-sm text-gray-600 mb-1">Recipient receives</div>
+                <div className="text-2xl font-bold text-green-600">
+                  {calculateReceiveAmount(sendAmount)} {countries[selectedCountry]?.currency}
                 </div>
               </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Recipient</label>
-                <select className="w-full p-3 border border-gray-300 rounded-lg bg-white">
-                  <option>Select Recipient</option>
-                  {recipients.map(recipient => (
-                    <option key={recipient} value={recipient}>{recipient}</option>
+            </div>
+            
+            <button 
+              id="continue-btn-1"
+              className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
+                sendAmount && selectedRecipient && selectedBank 
+                  ? 'bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl' 
+                  : 'bg-gray-200 text-gray-500'
+              }`}
+              disabled={!sendAmount || !selectedRecipient || !selectedBank}
+            >
+              Continue Transfer
+            </button>
+          </div>
+        )}
+        
+        {/* Stage 2: Wallet & Purpose */}
+        {currentStage === 2 && (
+          <div className="p-6 space-y-6 transition-all duration-500">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Transfer Details</h3>
+              <p className="text-sm text-gray-600">Complete your transfer setup</p>
+            </div>
+            
+            <div className="space-y-4">
+              {/* Wallet Selection */}
+              <div className={`transition-all duration-300 ${highlightedField === 'wallet-field' ? 'scale-105 ring-2 ring-green-500 ring-opacity-50 rounded-lg' : ''}`}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Source Wallet</label>
+                <select
+                  id="wallet-select"
+                  value={selectedWallet}
+                  onChange={(e) => setSelectedWallet(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                >
+                  <option value="">Select Wallet</option>
+                  {wallets.map((wallet) => (
+                    <option key={wallet.value} value={wallet.value}>
+                      {wallet.label}
+                    </option>
                   ))}
                 </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Recipient Bank</label>
-                <select className="w-full p-3 border border-gray-300 rounded-lg bg-white">
-                  <option>Select Bank</option>
-                  {banks.map(bank => (
-                    <option key={bank} value={bank}>{bank}</option>
-                  ))}
-                </select>
+                <div className="absolute right-3 top-11 pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </div>
 
-              <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-                <div className="text-sm text-gray-600">Recipient receives</div>
-                <div className="text-2xl font-bold text-green-600">
-                  {(1000 * countries[selectedCountry].rate).toLocaleString()} {countries[selectedCountry].currency}
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      
-      case 2:
-        return (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800">Transfer Details</h3>
-              <div className="text-sm text-gray-500">Complete your transfer setup</div>
-            </div>
-            
-            <div className="space-y-3">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Source Wallet</label>
-                <select className="w-full p-3 border border-gray-300 rounded-lg bg-white">
-                  <option>Select Wallet</option>
-                  <option>Business Account</option>
-                  <option>Personal Account</option>
+              {/* Purpose Selection */}
+              <div className={`transition-all duration-300 ${highlightedField === 'purpose-field' ? 'scale-105 ring-2 ring-green-500 ring-opacity-50 rounded-lg' : ''}`}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Transfer Purpose</label>
+                <select
+                  id="purpose-select"
+                  value={selectedPurpose}
+                  onChange={(e) => setSelectedPurpose(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                >
+                  <option value="">Select Purpose</option>
+                  {purposes.map((purpose) => (
+                    <option key={purpose.value} value={purpose.value}>
+                      {purpose.label}
+                    </option>
+                  ))}
                 </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Transfer Purpose</label>
-                <select className="w-full p-3 border border-gray-300 rounded-lg bg-white">
-                  <option>Select Purpose</option>
-                  <option>Business Payment</option>
-                  <option>Family Support</option>
-                  <option>Investment</option>
-                </select>
-              </div>
-              
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="text-green-600">💰</span>
-                  <span className="font-semibold text-gray-800">Transfer Summary</span>
+                <div className="absolute right-3 top-11 pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
-                <div className="text-2xl font-bold text-green-600">
-                  $1000 USD → {(1000 * countries[selectedCountry].rate).toLocaleString()} {countries[selectedCountry].currency}
+              </div>
+
+              {/* Transfer Summary */}
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="flex items-center mb-3">
+                  <span className="text-lg mr-2">💰</span>
+                  <span className="text-sm font-semibold text-gray-700">Transfer Summary</span>
                 </div>
-                <div className="text-sm text-gray-600 mt-1">
-                  Fee: $5 • Rate: {countries[selectedCountry].rate}
+                <div className="text-lg font-bold text-gray-900">
+                  ${sendAmount} USD → {calculateReceiveAmount(sendAmount)} {countries[selectedCountry]?.currency}
                 </div>
               </div>
             </div>
             
-            <div className="flex space-x-3 pt-4">
-              <button className="flex-1 bg-gray-100 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+            <div className="flex gap-3">
+              <button 
+                className="flex-1 bg-white border border-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300"
+                onClick={() => setCurrentStage(1)}
+              >
                 Back
               </button>
-              <button className="flex-1 bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 transition-colors">
-                Complete Transfer
+              <button 
+                id="continue-btn-2"
+                className={`flex-1 py-3 rounded-lg font-semibold transition-all duration-300 relative ${
+                  selectedWallet && selectedPurpose
+                    ? 'bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl' 
+                    : 'bg-gray-200 text-gray-500'
+                }`}
+                disabled={!selectedWallet || !selectedPurpose}
+              >
+                {isButtonLoading ? (
+                  <div className="flex items-center justify-center">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                    Processing...
+                  </div>
+                ) : (
+                  'Complete Transfer'
+                )}
               </button>
             </div>
           </div>
-        );
-      
-      case 3:
-        return (
-          <div className="text-center space-y-4">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
+        )}
+        
+        {/* Stage 3: Success */}
+        {currentStage === 3 && (
+          <div className="p-6 text-center space-y-6 transition-all duration-500">
+            {/* Success Icon with Animation */}
+            <div className="relative">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto animate-bounce">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
+              
+              {/* Success Particles */}
+              {showSuccessParticles && (
+                <div className="absolute inset-0 pointer-events-none">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-2 h-2 bg-green-500 rounded-full animate-ping"
+                      style={{
+                        left: `${50 + Math.cos(i * Math.PI / 4) * 40}%`,
+                        top: `${50 + Math.sin(i * Math.PI / 4) * 40}%`,
+                        animationDelay: `${i * 0.1}s`,
+                        animationDuration: '1s'
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
             
-            <h3 className="text-xl font-bold text-gray-800">Transfer Successful!</h3>
-            <p className="text-gray-600">Your money is on its way</p>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Transfer Successful!</h3>
+              <p className="text-gray-600">Your money is on its way to {recipients.find(r => r.value === selectedRecipient)?.label || 'recipient'}</p>
+            </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg text-left space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Status:</span>
-                <span className="text-orange-600 font-semibold">Pending</span>
+            {/* Transaction Details */}
+            <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Date & Time</span>
+                <span className="text-sm font-semibold text-gray-900">{new Date().toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">From:</span>
-                <span className="font-medium">Your Business Account</span>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Status</span>
+                <span className="text-sm font-semibold text-yellow-600">Pending</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">To:</span>
-                <span className="font-medium">John Doe</span>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">From</span>
+                <span className="text-sm font-semibold text-gray-900">Your Wallet</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Amount:</span>
-                <span className="font-bold">$1000 USD</span>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">To</span>
+                <span className="text-sm font-semibold text-gray-900">{recipients.find(r => r.value === selectedRecipient)?.label || 'Recipient'}</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Recipient gets:</span>
-                <span className="font-bold text-green-600">
-                  {(1000 * countries[selectedCountry].rate).toLocaleString()} {countries[selectedCountry].currency}
-                </span>
+              <div className="border-t pt-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Amount Sent</span>
+                  <span className="text-sm font-bold text-gray-900">${sendAmount} USD</span>
+                </div>
+                <div className="flex justify-between items-center mt-1">
+                  <span className="text-sm text-gray-600">Amount Received</span>
+                  <span className="text-sm font-bold text-green-600">
+                    {calculateReceiveAmount(sendAmount)} {countries[selectedCountry]?.currency}
+                  </span>
+                </div>
               </div>
             </div>
             
-            <div className="flex space-x-3">
-              <button className="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors">
-                View Receipt
-              </button>
-              <button className="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors">
+            <div className="flex gap-3">
+              <button 
+                className="flex-1 bg-white border border-green-600 text-green-600 py-3 rounded-lg font-semibold hover:bg-green-50 transition-all duration-300"
+                onClick={() => {
+                  setCurrentStage(1);
+                  setSendAmount('');
+                  setSelectedRecipient('');
+                  setSelectedBank('');
+                  setSelectedWallet('');
+                  setSelectedPurpose('');
+                }}
+              >
                 Send Another
+              </button>
+              <button className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300">
+                View Transfer
               </button>
             </div>
           </div>
-        );
-      
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <div className={`bg-white rounded-2xl shadow-xl p-6 h-[600px] transition-all duration-500 ${isAnimating ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
-      {renderStage()}
+        )}
+      </div>
     </div>
   );
 };
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [animatedStats, setAnimatedStats] = useState({
+    fees: 0,
+    countries: 0,
+    partnerships: 0,
+    support: 0
+  });
+
+  // Animated counter effect
+  useEffect(() => {
+    const animateValue = (start, end, duration, callback) => {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        callback(Math.floor(progress * (end - start) + start));
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    // Animate stats on component mount
+    animateValue(0, 90, 2000, (val) => setAnimatedStats(prev => ({ ...prev, fees: val })));
+    animateValue(0, 7, 2000, (val) => setAnimatedStats(prev => ({ ...prev, countries: val })));
+    animateValue(0, 50, 2000, (val) => setAnimatedStats(prev => ({ ...prev, partnerships: val })));
+    animateValue(0, 24, 2000, (val) => setAnimatedStats(prev => ({ ...prev, support: val })));
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
+            {/* Logo */}
             <div className="flex items-center">
-              <img src="/Bluelogo.svg" alt="ZilRemit" className="h-8 w-auto" />
+              <div className="flex-shrink-0 flex items-center">
+                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-12 w-auto" />
+              </div>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-green-600 font-medium">Features</a>
-              <a href="#" className="text-gray-700 hover:text-green-600 font-medium">Solutions</a>
-              <a href="#" className="text-gray-700 hover:text-green-600 font-medium">Support</a>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                <a href="#features" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                  Features
+                </a>
+                <a href="#solutions" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                  Solutions
+                </a>
+                <a href="#pricing" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                  Pricing
+                </a>
+                <a href="#support" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                  Support
+                </a>
+              </div>
             </div>
+
+            {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <a href="https://app.zilremit.com/login" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+              <button className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
                 Sign In
-              </a>
-              <a href="https://app.zilremit.com/signup" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 btn-primary">
+              </button>
+              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 btn-primary">
                 Get Started
-              </a>
+              </button>
             </div>
+
+            {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600"
+                className="text-gray-700 hover:text-green-600 p-2"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -298,19 +622,30 @@ function App() {
               </button>
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
           {isMenuOpen && (
             <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">Features</a>
-                <a href="#" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">Solutions</a>
-                <a href="#" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">Support</a>
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
+                <a href="#features" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
+                  Features
+                </a>
+                <a href="#solutions" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
+                  Solutions
+                </a>
+                <a href="#pricing" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
+                  Pricing
+                </a>
+                <a href="#support" className="block text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
+                  Support
+                </a>
                 <div className="pt-4 pb-3 border-t border-gray-200">
-                  <a href="https://app.zilremit.com/login" className="block w-full text-left text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
+                  <button className="block w-full text-left text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
                     Sign In
-                  </a>
-                  <a href="https://app.zilremit.com/signup" className="mt-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-base font-medium btn-primary block text-center">
+                  </button>
+                  <button className="mt-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-base font-medium btn-primary">
                     Get Started
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -363,16 +698,59 @@ function App() {
         </div>
       </section>
 
-      {/* Business Payments Section */}
-      <section className="py-20 bg-white">
+      {/* Global Business Payments Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Content */}
+            {/* Left - Visual with City Background */}
             <div className="animate-fade-in-up">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
-                🏢 Business Payments Made Simple
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                {/* City Skyline Background with Green Overlay */}
+                <div 
+                  className="relative h-80 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `linear-gradient(135deg, rgba(34, 197, 94, 0.75), rgba(22, 163, 74, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="100%" style="stop-color:%23E0F6FF;stop-opacity:1" /></linearGradient></defs><rect width="800" height="400" fill="url(%23sky)"/><rect x="50" y="200" width="40" height="200" fill="%23666"/><rect x="100" y="150" width="50" height="250" fill="%23777"/><rect x="160" y="180" width="35" height="220" fill="%23555"/><rect x="200" y="120" width="60" height="280" fill="%23888"/><rect x="270" y="160" width="45" height="240" fill="%23666"/><rect x="320" y="100" width="55" height="300" fill="%23999"/><rect x="380" y="140" width="40" height="260" fill="%23777"/><rect x="430" y="90" width="65" height="310" fill="%23AAA"/><rect x="500" y="130" width="50" height="270" fill="%23888"/><rect x="560" y="110" width="45" height="290" fill="%23999"/><rect x="610" y="170" width="35" height="230" fill="%23666"/><rect x="650" y="140" width="55" height="260" fill="%23777"/><rect x="710" y="190" width="40" height="210" fill="%23555"/></svg>')`
+                  }}
+                >
+                  {/* Browser Window Controls */}
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  </div>
+                  
+                  {/* Currency Exchange Visual */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex items-center space-x-8">
+                      {/* USD Flag (Fixed) */}
+                      <div className="bg-white rounded-full px-6 py-4 flex items-center shadow-xl border-2 border-gray-100 hover:scale-105 transition-transform duration-300">
+                        <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center border border-gray-200 shadow-sm">
+                          <img 
+                            src="https://flagcdn.com/w40/us.png" 
+                            alt="USA flag"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">USD</span>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="text-white">
+                        <svg className="w-10 h-10 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      
+                      {/* Dynamic Currency Flag (Animated) */}
+                      <AnimatedCurrency />
+                    </div>
+                  </div>
+                </div>
               </div>
-              
+            </div>
+
+            {/* Right - Content */}
+            <div className="animate-fade-in-right flex flex-col justify-center">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Global Business Payments in Minutes
               </h2>
@@ -380,57 +758,10 @@ function App() {
                 Execute international business payments with real-time exchange rates and instant processing. 
                 Our B2B payment platform delivers funds to suppliers, vendors, and partners.
               </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Instant international business transfers</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Real-time exchange rates</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Enterprise-grade security</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Visual */}
-            <div className="animate-fade-in-right">
-              <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 shadow-xl">
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-green-600 rounded-full mb-6">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">$10,000 USD</h3>
-                  <div className="flex items-center justify-center space-x-4 mb-4">
-                    <span className="text-gray-600">converts to</span>
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <img src="https://flagcdn.com/w32/in.png" alt="India" className="w-8 h-8 rounded" />
-                    <span className="text-3xl font-bold text-green-600">₹8,32,500</span>
-                  </div>
-                  <p className="text-sm text-gray-500 mt-2">Live rate: 1 USD = 83.25 INR</p>
-                </div>
+              <div>
+                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift shadow-lg">
+                  Start International Payments →
+                </button>
               </div>
             </div>
           </div>
@@ -438,11 +769,15 @@ function App() {
       </section>
 
       {/* Complete B2B Solutions */}
-      <section className="py-20 bg-gray-50">
+      <section id="solutions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete B2B International Payment Solutions</h2>
-            <p className="text-xl text-gray-600">Advanced payment technology designed for businesses managing global operations and international suppliers.</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Complete B2B International Payment Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              All-in-one platform for seamless cross-border business payments.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -453,10 +788,10 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Instant Payments</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Instant Business Payments</h3>
               <p className="text-gray-600 leading-relaxed">
-                Process international payments in minutes, not days. Our optimized payment infrastructure 
-                delivers funds faster than traditional banks.
+                Send funds to vendors, suppliers, or partners instantly using multiple payment options — 
+                without the high costs of traditional banks.
               </p>
             </div>
 
@@ -505,9 +840,9 @@ function App() {
                 you can send funds from USD to other countries within minutes in just 3–4 easy steps. 
                 Enjoy a fast, secure, and transparent experience every time you transfer money internationally.
               </p>
-              <a href="https://app.zilremit.com/signup" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift inline-block">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
                 Process International Payments →
-              </a>
+              </button>
             </div>
 
             {/* Right - Animated Payment Interface */}
@@ -526,93 +861,162 @@ function App() {
             <p className="text-xl text-gray-600">Send Global Payments in 3 Simple Steps</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            
             {/* Step 1 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white">1</span>
+            <div className="text-center animate-fade-in-up">
+              <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                1
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Recipient Details</h3>
-              <p className="text-gray-600">Enter the recipient's name, account details, and the amount you want to send.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Add Recipient Details</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Enter the recipient's name, account number, and destination country.
+              </p>
             </div>
 
             {/* Step 2 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white">2</span>
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                2
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Source</h3>
-              <p className="text-gray-600">Select the source of funds, then choose the purpose of the transfer.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Select Payment Source</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Choose your funding source and specify the purpose of payment.
+              </p>
             </div>
 
             {/* Step 3 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white">3</span>
+            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                3
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Confirmation</h3>
-              <p className="text-gray-600">Review all details, check the fees, and confirm your transfer.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Confirm & Send</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Review the details, check exchange rates, and send instantly with complete transparency.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why We're Faster Than Banks */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-green-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Why We're Faster Than Banks</h2>
-          <p className="text-xl text-green-100 mb-12">Experience lightning-fast transfers that traditional banks can't match</p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">90%</div>
-              <div className="text-green-100">Lower Fees</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">2 Min</div>
-              <div className="text-green-100">Average Transfer Time</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">150+</div>
-              <div className="text-green-100">Countries Supported</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-green-100">Customer Support</div>
-            </div>
-          </div>
-          
-          <div className="inline-flex flex-col sm:flex-row gap-4">
-            <a href="https://app.zilremit.com/signup" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift inline-block">
-              Start Business Payments →
-            </a>
-            <a href="https://calendly.com/zmn/demo" className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift inline-block">
-              Book A Demo →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Complete B2B International Payment Solutions */}
-      <section className="py-20 bg-white">
+      {/* Why We're Faster */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete B2B International Payment Solutions</h2>
-            <p className="text-xl text-gray-600">Advanced payment technology designed for businesses managing global operations and international suppliers.</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why We're Faster Than Banks</h2>
+            <p className="text-xl text-gray-600">The Smarter Way to Send Money Across Borders</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Traditional Banks */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Traditional Banks</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-center text-red-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  2–5 business days for processing
+                </li>
+                <li className="flex items-center text-red-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  Multiple intermediary banks
+                </li>
+                <li className="flex items-center text-red-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  Hidden fees at each step
+                </li>
+                <li className="flex items-center text-red-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  Limited tracking visibility
+                </li>
+              </ul>
+            </div>
+
+            {/* ZilRemit */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg card-hover border-2 border-green-200">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">ZilRemit</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-center text-green-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Instant bank-to-bank transfers
+                </li>
+                <li className="flex items-center text-green-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  No middlemen involved
+                </li>
+                <li className="flex items-center text-green-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Transparent, upfront pricing
+                </li>
+                <li className="flex items-center text-green-600">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Clear payment status every step of the way
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex flex-col sm:flex-row gap-4">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
+                Start Business Payments →
+              </button>
+              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+                Book A Demo →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose ZilRemit */}
+      <section id="features" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose ZilRemit</h2>
+            <p className="text-xl text-gray-600">Built for Global Growth — Trusted Worldwide</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Feature 1 */}
             <div className="text-center p-8 rounded-2xl card-hover">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Instant Payments</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Best Exchange Rates</h3>
               <p className="text-gray-600 leading-relaxed">
-                Process international payments in minutes, not days. Our optimized payment infrastructure 
-                delivers funds faster than traditional banks.
+                Save up to 90% compared to banks with real-time rates and no hidden fees.
               </p>
             </div>
 
@@ -623,10 +1027,9 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprise-Grade Security</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprise Security</h3>
               <p className="text-gray-600 leading-relaxed">
-                Every transaction is encrypted and protected with advanced security technology, 
-                ensuring your business data stays private.
+                Advanced encryption and fraud monitoring keep your funds and data safe 24/7.
               </p>
             </div>
 
@@ -634,243 +1037,165 @@ function App() {
             <div className="text-center p-8 rounded-2xl card-hover">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Competitive Exchange Rates</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Unified B2B Dashboard</h3>
               <p className="text-gray-600 leading-relaxed">
-                Get more value on every transaction. ZilRemit provides transparent, 
-                real-time exchange rates with zero markup.
+                Manage all international payments, track expenses, and monitor cash flow from one smart dashboard.
               </p>
+            </div>
+          </div>
+
+          {/* Statistics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-gray-50 rounded-2xl p-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">{animatedStats.fees}%</div>
+              <div className="text-gray-600">Lower Fees than Banks</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">{animatedStats.countries}+</div>
+              <div className="text-gray-600">Countries Covered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">{animatedStats.partnerships}+</div>
+              <div className="text-gray-600">Bank Partnerships</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">{animatedStats.support}/7</div>
+              <div className="text-gray-600">Customer Support</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Our Payment Platform */}
+      {/* Send Money for Personal or Business Purposes */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Payment Platform</h2>
-            <p className="text-xl text-gray-600">Experience fast, secure, and cost-effective international transfers</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Feature 1 */}
-            <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Best Exchange Rates</h3>
-              <p className="text-gray-600 mb-6">
-                Save up to 80% with our real-time rates. We leverage advanced technology to offer rates up to 4% better than traditional providers.
-              </p>
-              <a href="https://calendly.com/zmn/demo" className="text-green-600 hover:text-green-700 font-semibold">
-                Compare Rates →
-              </a>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Bank-Level Security</h3>
-              <p className="text-gray-600 mb-6">
-                Bank-level encryption, 24/7 fraud monitoring, and regulatory compliance. Your money is always protected.
-              </p>
-              <a href="#" className="text-green-600 hover:text-green-700 font-semibold">
-                Security Features →
-              </a>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Complete Payment Suite</h3>
-              <p className="text-gray-600 mb-6">
-                Access a full range of B2B payment services, from ACH to credit card processing.
-              </p>
-              <a href="#" className="text-green-600 hover:text-green-700 font-semibold">
-                Explore Features →
-              </a>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://app.zilremit.com/signup" className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block">
-                Start Business Payments
-              </a>
-              <a href="https://calendly.com/zmn/demo" className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors inline-block">
-                Book A Demo →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-green-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">90%</div>
-              <div className="text-green-100">Lower Fees than Banks</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">91B+</div>
-              <div className="text-green-100">transaction value</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">22K+</div>
-              <div className="text-green-100">Total Bank Partnerships</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-green-100">Customer Support</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mobile App Section */}
-      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
-            <div>
+            <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Send Money Anywhere with Our Mobile App
+                Send Money for Personal or Business Purposes
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Experience the freedom of sending money globally from your smartphone. Fast, secure, and available 24/7.
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Experience the future of international payments with our intuitive platform. 
+                Send money to family, pay suppliers, or transfer funds globally in just a few clicks.
               </p>
-              
+
+              {/* Features */}
               <div className="space-y-6 mb-8">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Lightning Fast</h3>
-                    <p className="text-gray-600">Send money in seconds with just a few taps. No complicated forms or lengthy processes.</p>
+                    <h4 className="text-lg font-semibold text-gray-900">Lightning Fast</h4>
+                    <p className="text-gray-600">Complete transfers in minutes, not days.</p>
                   </div>
                 </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Real-Time Tracking</h3>
-                    <p className="text-gray-600">Track your transfers with instant updates. Know exactly when your money arrives.</p>
+                    <h4 className="text-lg font-semibold text-gray-900">Simple Process</h4>
+                    <p className="text-gray-600">Just 3 steps to send money anywhere in the world.</p>
                   </div>
                 </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Secure & Protected</h3>
-                    <p className="text-gray-600">Enhanced security with biometric login and two-factor authentication.</p>
+                    <h4 className="text-lg font-semibold text-gray-900">Bank-Level Security</h4>
+                    <p className="text-gray-600">Your money and data are protected with enterprise-grade security.</p>
                   </div>
                 </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                  Start Business Payments
+                </button>
+                <button className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                  Compare Exchange Rates
+                </button>
               </div>
             </div>
 
-            {/* Right - Visual */}
-            <div className="text-center">
-              <div className="inline-block bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 shadow-xl">
-                <div className="w-64 h-96 bg-gray-900 rounded-3xl mx-auto relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-700 p-6 text-white">
-                    <div className="text-center">
-                      <h3 className="text-lg font-bold mb-4">ZilRemit Mobile</h3>
-                      <div className="bg-white/20 rounded-2xl p-4 mb-4">
-                        <div className="text-2xl font-bold">$1,000</div>
-                        <div className="text-sm opacity-80">to India</div>
-                      </div>
-                      <div className="space-y-2 text-sm">
-                        <div className="bg-white/10 rounded-lg p-2">Exchange Rate: 83.25</div>
-                        <div className="bg-white/10 rounded-lg p-2">Fee: $5.00</div>
-                        <div className="bg-white/10 rounded-lg p-2">Total: ₹83,250</div>
-                      </div>
-                      <button className="w-full bg-white text-green-600 rounded-lg py-3 font-semibold mt-4">
-                        Send Now
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Right - Animated Payment Interface */}
+            <div className="animate-fade-in-right">
+              <AnimatedPaymentInterface />
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Stories, Real Results</h2>
-            <p className="text-xl text-gray-600">Why Choose Our Payment Platform</p>
-            <p className="text-lg text-gray-500 mt-2">Experience fast, secure, and cost-effective international transfers</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Trusted by Businesses Around the World</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                  B
+            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  RP
                 </div>
-                <div className="ml-4">
-                  <div className="font-bold text-gray-900">Business Owner</div>
+                <div>
+                  <h4 className="font-bold text-gray-900">Rajesh Patel</h4>
+                  <p className="text-gray-600 text-sm">Business Owner</p>
                 </div>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                "Incredibly fast service! Sent money to my family in India and it arrived within minutes. The rates were much better than my bank."
+                "Exactly what I needed for my business! Transfers are fast and cost far less than my bank."
+              </p>
+              <p className="text-green-600 font-semibold text-sm">
+                Sent USD 10,000 to suppliers in minutes.
               </p>
             </div>
 
             {/* Testimonial 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
-                  S
+            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  MR
                 </div>
-                <div className="ml-4">
-                  <div className="font-bold text-gray-900">Software Engineer</div>
+                <div>
+                  <h4 className="font-bold text-gray-900">Maria Rodriguez</h4>
+                  <p className="text-gray-600 text-sm">International Trader</p>
                 </div>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                "The best exchange rates I've found! I use it monthly to send money to my parents in Mexico. Saved over $200 in fees this year."
+                "The best exchange rates I've ever used. I moved all my vendor payments to ZilRemit."
+              </p>
+              <p className="text-green-600 font-semibold text-sm">
+                Operating in 25 international markets.
               </p>
             </div>
 
             {/* Testimonial 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
-                  E
+            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  TS
                 </div>
-                <div className="ml-4">
-                  <div className="font-bold text-gray-900">E-commerce Director</div>
+                <div>
+                  <h4 className="font-bold text-gray-900">Thomas Schmidt</h4>
+                  <p className="text-gray-600 text-sm">Supply Chain Manager</p>
                 </div>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
@@ -946,12 +1271,12 @@ function App() {
             Join over one million businesses switching to faster, lower-cost international transactions with ZilRemit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://app.zilremit.com/signup" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift inline-block">
+            <button className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
               Start Business Payments →
-            </a>
-            <a href="https://calendly.com/zmn/demo" className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift inline-block">
+            </button>
+            <button className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
               Book A Demo →
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -963,7 +1288,7 @@ function App() {
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
-                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-8 w-auto" />
+                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-12 w-auto mr-3 brightness-0 invert" />
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 ZilRemit makes international business payments simple, fast, and affordable. 
