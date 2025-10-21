@@ -699,7 +699,7 @@ function App() {
       </section>
 
       {/* Global Business Payments Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Visual with City Background */}
@@ -827,7 +827,7 @@ function App() {
       </section>
 
       {/* Rapid International Settlements */}
-      <section className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
@@ -854,7 +854,7 @@ function App() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white">
+      <section id="solutions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
@@ -900,7 +900,7 @@ function App() {
       </section>
 
       {/* Why We're Faster */}
-      <section className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why We're Faster Than Banks</h2>
@@ -1070,7 +1070,7 @@ function App() {
       </section>
 
       {/* Send Money for Personal or Business Purposes */}
-      <section className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
@@ -1142,7 +1142,7 @@ function App() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section id="solutions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Trusted by Businesses Around the World</h2>
@@ -1210,7 +1210,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">B2B International Payments FAQ</h2>
