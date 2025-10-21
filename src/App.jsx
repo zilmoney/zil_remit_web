@@ -489,7 +489,7 @@ const AnimatedPaymentInterface = () => {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-600">Status</span>
-                <span className="text-sm font-semibold text-yellow-600">Pending</span>
+                <span className="text-sm font-semibold text-yellow-600">Processing</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-600">From</span>
