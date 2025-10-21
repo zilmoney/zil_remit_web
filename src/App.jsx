@@ -585,14 +585,17 @@ function App() {
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#features" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#features" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
                   Features
                 </a>
-                <a href="#solutions" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#solutions" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
                   Solutions
                 </a>
-                <a href="#pricing" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#pricing" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
                   Pricing
+                </a>
+                <a href="#support" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+                  Support
                 </a>
                 <a href="#support" className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
                   Support
@@ -602,12 +605,12 @@ function App() {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+              <a href="https://app.zilremit.com/login" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
                 Sign In
-              </button>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 btn-primary">
+              </a>
+              <a href="https://app.zilremit.com/signup" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 btn-primary">
                 Get Started
-              </button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -640,12 +643,12 @@ function App() {
                   Support
                 </a>
                 <div className="pt-4 pb-3 border-t border-gray-200">
-                  <button className="block w-full text-left text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
+                  <a href="https://app.zilremit.com/login" className="block w-full text-left text-gray-700 hover:text-green-600 px-3 py-2 text-base font-medium">
                     Sign In
-                  </button>
-                  <button className="mt-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-base font-medium btn-primary">
+                  </a>
+                  <a href="https://app.zilremit.com/signup" className="mt-2 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-base font-medium btn-primary">
                     Get Started
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -752,7 +755,7 @@ function App() {
             {/* Right - Content */}
             <div className="animate-fade-in-right flex flex-col justify-center">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Global Business Payments in Minutes
+                Send Money for Personal or Business Purposes
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Execute international business payments with real-time exchange rates and instant processing. 
@@ -833,7 +836,7 @@ function App() {
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Global Business Payments in Minutes
+                Send Money for Personal or Business Purposes
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 ZilRemit makes sending money abroad simple and reliable. Whether for personal or business purposes, 
@@ -847,7 +850,9 @@ function App() {
 
             {/* Right - Animated Payment Interface */}
             <div className="animate-fade-in-right">
-              <img src="business_payments_interface.png" alt="Business Payments Interface" className="w-full h-auto rounded-lg shadow-lg" />
+              <div className="h-[600px]">
+                <AnimatedPaymentInterface />
+              </div>
             </div>
           </div>
         </div>
@@ -856,6 +861,11 @@ function App() {
       {/* How It Works */}
       <section id="solutions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Business Payments Interface Image */}
+          <div className="text-center mb-16">
+            <img src="business_payments.png" alt="Business Payments Success Interface" className="mx-auto rounded-2xl shadow-2xl max-w-4xl w-full" />
+          </div>
+          
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
             <p className="text-xl text-gray-600">Send Global Payments in 3 Simple Steps</p>
@@ -1076,7 +1086,7 @@ function App() {
             {/* Left - Content */}
             <div className="animate-fade-in-up">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Global Business Payments in Minutes
+                Send Money for Personal or Business Purposes
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Experience the future of international payments with our intuitive platform. 
@@ -1135,7 +1145,9 @@ function App() {
 
             {/* Right - Animated Payment Interface */}
             <div className="animate-fade-in-right">
-              <img src="business_payments_interface.png" alt="Business Payments Interface" className="w-full h-auto rounded-lg shadow-lg" />
+              <div className="h-[600px]">
+                <AnimatedPaymentInterface />
+              </div>
             </div>
           </div>
         </div>
