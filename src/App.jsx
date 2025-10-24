@@ -1145,73 +1145,7 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="solutions" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Trusted by Businesses Around the World</h2>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                  RP
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900">Rajesh Patel</h4>
-                  <p className="text-gray-600 text-sm">Business Owner</p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                "Exactly what I needed for my business! Transfers are fast and cost far less than my bank."
-              </p>
-              <p className="text-green-600 font-semibold text-sm">
-                Sent USD 10,000 to suppliers in minutes.
-              </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                  MR
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900">Maria Rodriguez</h4>
-                  <p className="text-gray-600 text-sm">International Trader</p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                "The best exchange rates I've ever used. I moved all my vendor payments to ZilRemit."
-              </p>
-              <p className="text-green-600 font-semibold text-sm">
-                Operating in 25 international markets.
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg card-hover border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                  TS
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900">Thomas Schmidt</h4>
-                  <p className="text-gray-600 text-sm">Supply Chain Manager</p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                "Perfect for overseas supplier payments. Super easy to use and no hidden charges."
-              </p>
-              <p className="text-green-600 font-semibold text-sm">
-                Used across 150+ countries.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section id="features" className="py-20 bg-gray-50">
