@@ -1351,10 +1351,10 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-6">Support</h3>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Contact Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Security</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Status</a></li>
+                <li><a href="/disclaimer.html" className="text-gray-300 hover:text-green-400 transition-colors">Disclaimer</a></li>
+                <li><a href="/privacy-policy.html" className="text-gray-300 hover:text-green-400 transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms-and-condition.html" className="text-gray-300 hover:text-green-400 transition-colors">Terms and condition</a></li>
+                <li><a href="/cookie-policy.html" className="text-gray-300 hover:text-green-400 transition-colors">Cookie Policy</a></li>
               </ul>
             </div>
           </div>
@@ -1363,11 +1363,6 @@ function App() {
             <p className="text-gray-400 text-sm">
               © 2025 ZilRemit. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Cookie Policy</a>
-            </div>
           </div>
         </div>
       </footer>
