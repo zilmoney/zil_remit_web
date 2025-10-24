@@ -989,12 +989,12 @@ function App() {
 
           <div className="text-center mt-12">
             <div className="inline-flex flex-col sm:flex-row gap-4">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
+              <a href="https://app.zilremit.com/signup" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift inline-block text-center">
                 Start Business Payments →
-              </button>
-              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+              </a>
+              <a href="https://calendly.com/zmn/demo" target="_blank" rel="noopener noreferrer" className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift inline-block text-center">
                 Book A Demo →
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1275,12 +1275,12 @@ function App() {
             Join over one million businesses switching to faster, lower-cost international transactions with ZilRemit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+            <a href="https://app.zilremit.com/signup" target="_blank" rel="noopener noreferrer" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift inline-block text-center">
               Start Business Payments →
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+            </a>
+            <a href="https://calendly.com/zmn/demo" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift inline-block text-center">
               Book A Demo →
-            </button>
+            </a>
           </div>
         </div>
       </section>
