@@ -759,9 +759,9 @@ function App() {
                 Our B2B payment platform delivers funds to suppliers, vendors, and partners.
               </p>
               <div>
-                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift shadow-lg">
+                <a href="https://app.zilremit.com/signup" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift shadow-lg inline-block text-center">
                   Start International Payments →
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -840,9 +840,9 @@ function App() {
                 you can send funds from USD to other countries within minutes in just 3–4 easy steps. 
                 Enjoy a fast, secure, and transparent experience every time you transfer money internationally.
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift">
+              <a href="https://app.zilremit.com/signup" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary hover-lift inline-block text-center">
                 Process International Payments →
-              </button>
+              </a>
             </div>
 
             {/* Right - Animated Payment Interface */}
@@ -1126,12 +1126,12 @@ function App() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                  Start Business Payments
-                </button>
-                <button className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors">
-                  Compare Exchange Rates
-                </button>
+                <a href="https://app.zilremit.com/signup" target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block text-center">
+                  Start Business Payments →
+                </a>
+                <a href="https://calendly.com/zmn/demo" target="_blank" rel="noopener noreferrer" className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors inline-block text-center">
+                  Book A Demo
+                </a>
               </div>
             </div>
 
