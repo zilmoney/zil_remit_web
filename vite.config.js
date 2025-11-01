@@ -11,6 +11,8 @@ const copyBlogsPlugin = () => {
     closeBundle() {
       const blogsDir = path.resolve(__dirname, 'blogs')
       const distBlogsDir = path.resolve(__dirname, 'dist/blogs')
+      const rootDir = path.resolve(__dirname)
+      const distDir = path.resolve(__dirname, 'dist')
       
       // Create dist/blogs directory if it doesn't exist
       if (!existsSync(distBlogsDir)) {
@@ -29,6 +31,17 @@ const copyBlogsPlugin = () => {
           }
         })
       }
+      
+      // Copy root-level HTML files to dist (except index.html which is handled by Vite)
+      const rootHtmlFiles = ['blog.html', 'blogs.html', 'cookie-policy.html', 'disclaimer.html', 'privacy-policy.html', 'terms-and-condition.html']
+      rootHtmlFiles.forEach(file => {
+        const src = path.join(rootDir, file)
+        const dest = path.join(distDir, file)
+        if (existsSync(src)) {
+          copyFileSync(src, dest)
+          console.log(`Copied root HTML: ${file}`)
+        }
+      })
     }
   }
 }
