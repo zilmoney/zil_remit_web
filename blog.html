@@ -35,6 +35,22 @@
             }
         }
     </script>
+    
+    <style>
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+        }
+        .category-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Google Tag Manager (noscript) -->
@@ -103,300 +119,418 @@
     </nav>
 
     <!-- Blog Hero Section -->
-    <section class="bg-white py-16">
+    <section class="bg-gradient-to-br from-zil-blue to-blue-900 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-zil-blue mb-6">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
                     ZilRemit Blog
                 </h1>
-                <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
                     Expert insights on international payments, money transfers, and global business finance. 
-                    Stay updated with the latest trends and strategies in the world of cross-border payments.
+                    Stay updated with the latest trends and strategies in cross-border payments.
                 </p>
-                
-                <!-- Search Bar -->
-                <div class="max-w-md mx-auto">
-                    <div class="relative">
-                        <input type="text" placeholder="Search articles..." 
-                               class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-zil-green focus:border-transparent">
-                        <svg class="absolute left-4 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories -->
-    <section class="bg-gray-50 py-12">
+    <!-- Categories Filter -->
+    <section class="bg-white py-8 border-b sticky top-16 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap justify-center gap-4">
-                <button class="bg-zil-blue text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">All Articles</button>
-                <button class="bg-white text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors border">Business Guides</button>
-                <button class="bg-white text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors border">Market Analysis</button>
-                <button class="bg-white text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors border">Compliance</button>
-                <button class="bg-white text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors border">Technology</button>
-                <button class="bg-white text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors border">Personal Finance</button>
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterArticles('all')" class="filter-btn bg-zil-blue text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors" data-category="all">All Articles</button>
+                <button onclick="filterArticles('Business Guide')" class="filter-btn bg-gray-100 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition-colors" data-category="Business Guide">Business Guide</button>
+                <button onclick="filterArticles('Freelancer Guide')" class="filter-btn bg-gray-100 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition-colors" data-category="Freelancer Guide">Freelancer Guide</button>
+                <button onclick="filterArticles('Payment Solutions')" class="filter-btn bg-gray-100 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition-colors" data-category="Payment Solutions">Payment Solutions</button>
             </div>
         </div>
     </section>
 
-    <!-- Published Articles -->
-    <section class="bg-white py-16">
+    <!-- Articles Grid -->
+    <section class="bg-gray-50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-zil-blue mb-12 text-center">Latest Articles</h2>
-            
-            <!-- Articles Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
                 
-                <!-- Featured Article - New -->
-                <div class="lg:col-span-2 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="p-8">
-                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                            <span class="bg-zil-green bg-opacity-20 text-zil-blue px-3 py-1 rounded-full font-medium">Freelancer Guide</span>
-                            <span>October 21, 2025</span>
-                            <span>•</span>
-                            <span>10 min read</span>
+                <!-- Article Card 1 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Nov 1, 2025</span>
                         </div>
-                        
-                        <h3 class="text-2xl font-bold text-zil-blue mb-4 hover:text-blue-700 transition-colors">
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/unlock-your-global-potential-modern-payments-platform-paves-way-us-business-expansion.html">
+                                Unlock Your Global Potential: How a Modern Payments Platform Paves the Way for U.S. Business Expansion
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how a modern international payments platform can help your U.S. business overcome global barriers, build trust with partners, and achieve sustainable growth.
+                        </p>
+                        <a href="/blogs/unlock-your-global-potential-modern-payments-platform-paves-way-us-business-expansion.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 2 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 27, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/4-ways-international-payments-stay-safe-enterprise-grade-protection.html">
+                                4 Ways International Payments Stay Safe with Enterprise-Grade Protection
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how ZilRemit.com ensures every international payment is protected with bank-level encryption, fraud monitoring, and regulatory compliance.
+                        </p>
+                        <a href="/blogs/4-ways-international-payments-stay-safe-enterprise-grade-protection.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 3 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 26, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/global-money-movement-made-effortless-rise-instant-international-transfers.html">
+                                Global Money Movement Made Effortless: The Rise of Instant International Transfers
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how ZilRemit.com is revolutionizing global money movement with instant transfers, transparent pricing, and enterprise-grade security.
+                        </p>
+                        <a href="/blogs/global-money-movement-made-effortless-rise-instant-international-transfers.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 4 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 25, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/7-reasons-global-businesses-turning-smarter-cross-border-payments.html">
+                                7 Reasons Global Businesses Are Turning to Smarter Cross-Border Payments
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover why global businesses are switching to smarter cross-border payment solutions with instant transfers, ultra-low fees, and transparent pricing.
+                        </p>
+                        <a href="/blogs/7-reasons-global-businesses-turning-smarter-cross-border-payments.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 5 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 24, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/conquer-global-markets-reliable-international-payments-platform-key-worldwide-success.html">
+                                Conquer Global Markets: Why a Reliable International Payments Platform is Your Key to Worldwide Success
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how a reliable international payments platform empowers U.S. small businesses to expand globally with speed, security, and transparency.
+                        </p>
+                        <a href="/blogs/conquer-global-markets-reliable-international-payments-platform-key-worldwide-success.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 6 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Freelancer Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-green-100 text-green-800">Freelancer Guide</span>
+                            <span class="text-sm text-gray-500">Oct 21, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
                             <a href="/blogs/best-platform-freelancers-expand-globally-instant-payments.html">
                                 The Best Platform for Freelancers to Expand Globally with Instant Payments
                             </a>
                         </h3>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Discover how ZilRemit empowers freelancers to expand globally with instant payments, transparent pricing, and multi-currency support across 7+ countries.
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how ZilRemit empowers freelancers to expand globally with instant payments, transparent pricing, and multi-currency support.
                         </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-zil-green bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <span class="text-zil-blue font-bold">ZR</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900">ZilRemit Team</p>
-                                    <p class="text-gray-600 text-sm">Payment Solutions Experts</p>
-                                </div>
-                            </div>
-                            
-                            <a href="/blogs/best-platform-freelancers-expand-globally-instant-payments.html" 
-                               class="bg-zil-green hover:bg-green-400 text-zil-blue px-6 py-2 rounded-lg font-medium transition-colors">
-                                Read Article
-                            </a>
-                        </div>
+                        <a href="/blogs/best-platform-freelancers-expand-globally-instant-payments.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                
-                <!-- Previous Featured Article -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                </article>
+
+                <!-- Article Card 7 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Payment Solutions">
                     <div class="p-6">
-                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Business Guide</span>
-                            <span>October 8, 2025</span>
-                            <span>•</span>
-                            <span>12 min read</span>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-purple-100 text-purple-800">Payment Solutions</span>
+                            <span class="text-sm text-gray-500">Oct 18, 2025</span>
                         </div>
-                        
-                        <h3 class="text-xl font-bold text-zil-blue mb-4 hover:text-blue-700 transition-colors">
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/5-myths-about-international-payments-zilremit-breaking-them-2025.html">
+                                5 Myths About International Payments—And How ZilRemit.com Is Breaking Them in 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover the truth behind 5 common myths about international payments and how ZilRemit is revolutionizing cross-border transactions.
+                        </p>
+                        <a href="/blogs/5-myths-about-international-payments-zilremit-breaking-them-2025.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 8 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Payment Solutions">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-purple-100 text-purple-800">Payment Solutions</span>
+                            <span class="text-sm text-gray-500">Oct 17, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/global-transfers-90-seconds-new-standard-international-payments.html">
+                                Global Transfers in 90 Seconds: The New Standard for International Payments
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how ZilRemit completes international transfers in just 90 seconds with enterprise-grade security and zero hidden fees.
+                        </p>
+                        <a href="/blogs/global-transfers-90-seconds-new-standard-international-payments.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 9 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 16, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/international-payments-made-simple-smarter-way-expand-beyond-borders.html">
+                                International Payments Made Simple: The Smarter Way to Expand Beyond Borders
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Learn how ZilRemit simplifies international payments for small and medium-sized businesses expanding globally.
+                        </p>
+                        <a href="/blogs/international-payments-made-simple-smarter-way-expand-beyond-borders.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 10 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 15, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/4-ways-reliable-international-payments-secure-business-success-2025.html">
+                                4 Ways Reliable International Payments Secure Your Business Success Path in 2025
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Learn how reliable international payment platforms help U.S. small businesses secure their path to global success in 2025.
+                        </p>
+                        <a href="/blogs/4-ways-reliable-international-payments-secure-business-success-2025.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 11 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 14, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/breaking-chains-business-cannot-afford-pain-traditional-international-payments.html">
+                                BREAKING THE CHAINS: Why Your Business Can No Longer Afford the Pain of Traditional International Payments
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how ZilRemit.com eliminates the complexity of international payments with instant transfers and transparent pricing.
+                        </p>
+                        <a href="/blogs/breaking-chains-business-cannot-afford-pain-traditional-international-payments.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 12 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 13, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
+                            <a href="/blogs/4-features-transforming-international-payments.html">
+                                These 4 Features Are Transforming How the World Thinks About International Payment
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how ZilRemit's 4 key features are revolutionizing international payments for remote teams and global businesses.
+                        </p>
+                        <a href="/blogs/4-features-transforming-international-payments.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article Card 13 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Oct 8, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
                             <a href="/blogs/international-payments-minutes-b2b-payment-hassle.html">
                                 Your Remote Team's Advantage: How International Payments in Minutes End the B2B Payment Hassle Today
                             </a>
                         </h3>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Discover how international payments in minutes transform remote team collaboration and eliminate traditional B2B payment challenges for global businesses.
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how international payments in minutes transform remote team collaboration and eliminate traditional B2B payment challenges.
                         </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-zil-green bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <span class="text-zil-blue font-bold text-sm">MA</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900 text-sm">Manus AI</p>
-                                    <p class="text-gray-600 text-xs">Financial Technology Expert</p>
-                                </div>
-                            </div>
-                            
-                            <a href="/blogs/international-payments-minutes-b2b-payment-hassle.html" 
-                               class="text-zil-blue hover:text-blue-700 font-medium text-sm transition-colors">
-                                Read More →
-                            </a>
-                        </div>
+                        <a href="/blogs/international-payments-minutes-b2b-payment-hassle.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                
-                <!-- Previous Featured Article -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                </article>
+
+                <!-- Article Card 14 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Freelancer Guide">
                     <div class="p-6">
-                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Business Guide</span>
-                            <span>October 8, 2025</span>
-                            <span>•</span>
-                            <span>12 min read</span>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-green-100 text-green-800">Freelancer Guide</span>
+                            <span class="text-sm text-gray-500">Oct 8, 2025</span>
                         </div>
-                        
-                        <h3 class="text-xl font-bold text-zil-blue mb-4 hover:text-blue-700 transition-colors">
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
                             <a href="/blogs/paying-freelancers-remote-teams-global-payments.html">
                                 The Future of Work is Global: Paying Your Freelancers and Remote Teams with Confidence
                             </a>
                         </h3>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Discover how modern payment solutions are transforming the way businesses pay their global workforce, eliminating traditional barriers and reducing costs.
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Discover how to pay freelancers and remote teams efficiently with fast, low-cost global payments.
                         </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-zil-green bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <span class="text-zil-blue font-bold text-sm">MA</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900 text-sm">Manus AI</p>
-                                    <p class="text-gray-600 text-xs">Financial Technology Expert</p>
-                                </div>
-                            </div>
-                            
-                            <a href="/blogs/paying-freelancers-remote-teams-global-payments.html" 
-                               class="text-zil-blue hover:text-blue-700 font-medium text-sm transition-colors">
-                                Read More →
-                            </a>
-                        </div>
+                        <a href="/blogs/paying-freelancers-remote-teams-global-payments.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                
-                <!-- Previous Featured Article -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                </article>
+
+                <!-- Article Card 15 -->
+                <article class="article-card bg-white rounded-xl shadow-md overflow-hidden" data-category="Business Guide">
                     <div class="p-6">
-                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Business Guide</span>
-                            <span>January 8, 2025</span>
-                            <span>•</span>
-                            <span>15 min read</span>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="category-badge bg-blue-100 text-blue-800">Business Guide</span>
+                            <span class="text-sm text-gray-500">Jan 8, 2025</span>
                         </div>
-                        
-                        <h3 class="text-xl font-bold text-zil-blue mb-4 hover:text-blue-700 transition-colors">
+                        <h3 class="text-xl font-bold text-zil-blue mb-3 hover:text-blue-700 transition-colors">
                             <a href="/blogs/complete-guide-international-business-payments-2025.html">
                                 Master Global Payments: The Ultimate Business Guide for 2025
                             </a>
                         </h3>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Comprehensive strategies for optimizing international business payments, reducing costs, and navigating regulatory compliance.
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Comprehensive guide to international business payments in 2025. Learn cost optimization strategies and compliance requirements.
                         </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-zil-green bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <span class="text-zil-blue font-bold text-sm">ZR</span>
-                                </div>
-                            </div>
-                            
-                            <a href="/blogs/complete-guide-international-business-payments-2025.html" 
-                               class="text-zil-blue hover:text-blue-700 font-medium text-sm transition-colors">
-                                Read More →
-                            </a>
-                        </div>
+                        <a href="/blogs/complete-guide-international-business-payments-2025.html" 
+                           class="inline-flex items-center text-zil-blue font-medium text-sm hover:text-blue-700 transition-colors">
+                            Read More 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                
-                <!-- Visual Card -->
-                <div class="bg-zil-blue rounded-2xl p-8 text-white text-center flex flex-col justify-center">
-                    <svg class="w-20 h-20 mx-auto mb-6 opacity-90" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-4">Expert Insights</h3>
-                    <p class="text-blue-100">
-                        Stay ahead with professional analysis and actionable strategies for international business success.
-                    </p>
-                </div>
-                
-                <!-- New Freelancer Article Card -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="p-6">
-                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">Freelancer Guide</span>
-                            <span>October 21, 2025</span>
-                            <span>•</span>
-                            <span>10 min read</span>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold text-zil-blue mb-4 hover:text-blue-700 transition-colors">
-                            <a href="/blogs/best-platform-freelancers-expand-globally-instant-payments.html">
-                                The Best Platform for Freelancers to Expand Globally with Instant Payments
-                            </a>
-                        </h3>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Discover how ZilRemit empowers freelancers to expand globally with instant payments, transparent pricing, and multi-currency support.
-                        </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-zil-green bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <span class="text-zil-blue font-bold text-sm">ZR</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900 text-sm">ZilRemit Team</p>
-                                    <p class="text-gray-600 text-xs">Payment Solutions Experts</p>
-                                </div>
-                            </div>
-                            
-                            <a href="/blogs/best-platform-freelancers-expand-globally-instant-payments.html" 
-                               class="text-zil-blue hover:text-blue-700 font-medium text-sm transition-colors">
-                                Read More →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Remote Team Article Card -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="p-6">
-                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-medium">Business Guide</span>
-                            <span>October 8, 2025</span>
-                            <span>•</span>
-                            <span>12 min read</span>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold text-zil-blue mb-4 hover:text-blue-700 transition-colors">
-                            <a href="/blogs/international-payments-minutes-b2b-payment-hassle.html">
-                                Your Remote Team's Advantage: International Payments in Minutes
-                            </a>
-                        </h3>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Transform remote team collaboration and eliminate traditional B2B payment challenges for global businesses.
-                        </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 h-8 bg-zil-green bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <span class="text-zil-blue font-bold text-sm">MA</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900 text-sm">Manus AI</p>
-                                    <p class="text-gray-600 text-xs">Financial Technology Expert</p>
-                                </div>
-                            </div>
-                            
-                            <a href="/blogs/international-payments-minutes-b2b-payment-hassle.html" 
-                               class="text-zil-blue hover:text-blue-700 font-medium text-sm transition-colors">
-                                Read More →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
+                </article>
+
             </div>
         </div>
     </section>
 
     <!-- Newsletter Signup -->
-    <section class="bg-zil-blue py-16">
+    <section class="bg-gradient-to-r from-zil-blue to-blue-900 py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
             <p class="text-blue-100 text-lg mb-8">
@@ -404,10 +538,10 @@
             </p>
             
             <div class="max-w-md mx-auto">
-                <div class="flex">
+                <div class="flex flex-col sm:flex-row gap-3">
                     <input type="email" placeholder="Enter your email" 
-                           class="flex-1 px-4 py-3 rounded-l-lg border-0 focus:ring-2 focus:ring-zil-green">
-                    <button class="bg-zil-green hover:bg-green-400 text-zil-blue px-6 py-3 rounded-r-lg font-medium transition-colors">
+                           class="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-zil-green">
+                    <button class="bg-zil-green hover:bg-green-400 text-zil-blue px-8 py-3 rounded-lg font-medium transition-colors whitespace-nowrap">
                         Subscribe
                     </button>
                 </div>
@@ -419,7 +553,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Company Info -->
@@ -442,54 +576,31 @@
                     <p class="text-gray-300 mb-6 max-w-md">
                         ZilRemit makes international money transfers fast, secure, and affordable. Send money worldwide with zero platform fees and the best exchange rates.
                     </p>
-                    <!-- Social Media Links -->
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/people/Zil-Remit/61581676174489/" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="https://x.com/ZRemit71430" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/zilremit/" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323C5.902 8.198 7.053 7.708 8.35 7.708s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387zm7.718 0c-1.297 0-2.448-.49-3.323-1.297-.897-.875-1.387-2.026-1.387-3.323s.49-2.448 1.297-3.323c.875-.897 2.026-1.387 3.323-1.387s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387z"/></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/company/zil-remit/" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="https://www.pinterest.com/zilremit/" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.341-.09.381-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624.001 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
-                        </a>
-                    </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="/#features" class="text-gray-300 hover:text-white transition-colors">Features</a></li>
-                        <li><a href="/#rates" class="text-gray-300 hover:text-white transition-colors">Exchange Rates</a></li>
-                        <li><a href="/blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="/#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/" class="text-gray-300 hover:text-zil-green transition-colors">Home</a></li>
+                        <li><a href="/#features" class="text-gray-300 hover:text-zil-green transition-colors">Features</a></li>
+                        <li><a href="/#rates" class="text-gray-300 hover:text-zil-green transition-colors">Rates</a></li>
+                        <li><a href="/blog.html" class="text-gray-300 hover:text-zil-green transition-colors">Blog</a></li>
                     </ul>
                 </div>
                 
-                <!-- Support -->
+                <!-- Contact -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="/disclaimer.html" class="text-gray-300 hover:text-white transition-colors">Disclaimer</a></li>
-                        <li><a href="/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="/terms-and-condition.html" class="text-gray-300 hover:text-white transition-colors">Terms <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li> Conditions</a></li>
-                        <li><a href="/cookie-policy.html" class="text-gray-300 hover:text-white transition-colors">Cookie Policy</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Security</a></li>
+                        <li><a href="mailto:support@zilremit.com" class="text-gray-300 hover:text-zil-green transition-colors">support@zilremit.com</a></li>
+                        <li class="text-gray-300">Available 24/7</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2025 ZilRemit. All rights reserved.</p>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 ZilRemit. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -498,6 +609,31 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
+        }
+
+        function filterArticles(category) {
+            const articles = document.querySelectorAll('.article-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update button styles
+            buttons.forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.remove('bg-gray-100', 'text-gray-700');
+                    btn.classList.add('bg-zil-blue', 'text-white');
+                } else {
+                    btn.classList.remove('bg-zil-blue', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-gray-700');
+                }
+            });
+            
+            // Filter articles
+            articles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
