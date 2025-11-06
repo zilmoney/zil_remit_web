@@ -62,6 +62,7 @@ function Footer() {
               <li><a href="/#features" className="text-gray-300 hover:text-white transition-colors">Features</a></li>
               <li><a href="/#rates" className="text-gray-300 hover:text-white transition-colors">Exchange Rates</a></li>
               <li><a href="/blog.html" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+              <li><Link to="/press-release" className="text-gray-300 hover:text-white transition-colors">Press Release</Link></li>
               <li><a href="/#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
