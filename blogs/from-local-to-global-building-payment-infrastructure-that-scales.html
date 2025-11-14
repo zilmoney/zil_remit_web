@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Local to Global: Building a Payment Infrastructure That Scales With Your Business | ZilRemit</title>
+    <title>From Local to Global: Building a Payment Infrastructure That Scales With Your Business | ZilRemit Blog</title>
     <meta name="description" content="Learn how to move beyond patchwork solutions and build a scalable payment foundation that supports your company's international growth from one country to one hundred.">
     <meta name="keywords" content="payment infrastructure, scaling international payments, global payment platform, cross border payments, payment automation, API integration, multi country payments">
     
@@ -12,246 +12,387 @@
     <meta property="og:url" content="https://zilremit.com/blogs/from-local-to-global-building-payment-infrastructure-that-scales.html">
     <meta property="og:title" content="From Local to Global: Building a Payment Infrastructure That Scales With Your Business">
     <meta property="og:description" content="Learn how to move beyond patchwork solutions and build a scalable payment foundation that supports your company's international growth from one country to one hundred.">
-    <meta property="og:image" content="https://zilremit.com/public/images/blog/FromLocaltoGlobalBuildingaPaymentInfrastructureThatScalesWithYourBusinessZR4.jpg">
+    <meta property="og:image" content="https://zilremit.com/images/blog/FromLocaltoGlobalBuildingaPaymentInfrastructureThatScalesWithYourBusinessZR4.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://zilremit.com/blogs/from-local-to-global-building-payment-infrastructure-that-scales.html">
     <meta property="twitter:title" content="From Local to Global: Building a Payment Infrastructure That Scales With Your Business">
     <meta property="twitter:description" content="Learn how to move beyond patchwork solutions and build a scalable payment foundation that supports your company's international growth from one country to one hundred.">
-    <meta property="twitter:image" content="https://zilremit.com/public/images/blog/FromLocaltoGlobalBuildingaPaymentInfrastructureThatScalesWithYourBusinessZR4.jpg">
-
+    <meta property="twitter:image" content="https://zilremit.com/images/blog/FromLocaltoGlobalBuildingaPaymentInfrastructureThatScalesWithYourBusinessZR4.jpg">
+    
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="i-ASeuFAoYyJ1nkazzQJw85K5BMxoEWdzSyORibKLqQ" />
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K5D7DRVR');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/zilmoney/zil_remit_web/494473d91975ae215c42415bbc9a55034721b582/public/favicon.svg">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
-    <style>
-        .text-zil-blue { color: #0066FF; }
-        .bg-zil-blue { background-color: #0066FF; }
-        .hover\:bg-zil-blue-dark:hover { background-color: #0052CC; }
-    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zil-green': '#3BF493',
+                        'zil-blue': '#20319D'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5D7DRVR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="header-placeholder"></div>
+
+    <!-- Article Hero Section -->
+    <section class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="/index.html" class="flex items-center">
-                        <img src="/public/images/logo.png" alt="ZilRemit Logo" class="h-8">
-                    </a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Article Content -->
+                <div>
+                    <!-- Breadcrumb -->
+                    <nav class="text-sm text-gray-600 mb-6">
+                        <a href="/blogs/" class="hover:text-zil-blue">Blog</a>
+                        <span class="mx-2">→</span>
+                        <span class="text-gray-900">Business Guide</span>
+                    </nav>
+                    
+                    <!-- Article Meta -->
+                    <div class="flex items-center space-x-4 text-sm text-gray-600 mb-6">
+                        <span class="bg-zil-green bg-opacity-20 text-zil-blue px-3 py-1 rounded-full font-medium">Business Guide</span>
+                        <span>November 13, 2025</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    
+                    <!-- Article Title -->
+                    <h1 class="text-4xl md:text-5xl font-bold text-zil-blue mb-6 leading-tight">
+                        From Local to Global: Building a Payment Infrastructure That Scales With Your Business
+                    </h1>
+                    
+                    <!-- Article Description -->
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                        Learn how to move beyond patchwork solutions and build a scalable payment foundation that supports your company's international growth from one country to one hundred.
+                    </p>
+                    
+
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/index.html" class="text-gray-700 hover:text-zil-blue">Home</a>
-                    <a href="/blog.html" class="text-gray-700 hover:text-zil-blue">Blog</a>
-                    <a href="https://zilremit.com" class="bg-zil-blue text-white px-6 py-2 rounded-lg hover:bg-zil-blue-dark">
-                        Get Started
-                    </a>
+                
+                <!-- Article Image -->
+                <div class="lg:order-last">
+                    <img src="/images/blog/FromLocaltoGlobalBuildingaPaymentInfrastructureThatScalesWithYourBusinessZR4.jpg" alt="Building Scalable Payment Infrastructure - ZilRemit platform" class="w-full rounded-2xl shadow-xl" loading="eager">
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Article Header -->
-    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="mb-8">
-            <div class="flex items-center gap-3 mb-4">
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Business Guide</span>
-                <span class="text-gray-500 text-sm">November 13, 2025</span>
+    <!-- Article Content -->
+    <article class="bg-gray-50 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-sm p-8 md:p-12">
+                
+                <!-- Introduction -->
+                <div class="prose prose-lg max-w-none mb-12">
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        Your business is growing. What started as a domestic operation has now expanded to a handful of international markets. But with that growth comes a new set of challenges, particularly when it comes to getting paid and paying your global partners.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        The patchwork of payment solutions that worked for one or two countries is now becoming a complex, costly, and time consuming bottleneck. This is a critical inflection point for any scaling business. The decisions you make about your payment infrastructure today will determine your ability to compete and grow in the global marketplace tomorrow.
+                    </p>
+                </div>
+
+                <!-- Breaking Point Section -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-zil-blue mb-8">The Breaking Point: When Patchwork Payment Systems Fail</h2>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        Many businesses start their international journey by adding payment solutions one by one. A processor for the US, another for Europe, a third for Asia. While this approach may work initially, it quickly leads to a number of significant problems as you scale:
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <strong>Operational Inefficiency:</strong> Your finance team is forced to juggle multiple platforms, each with its own interface, reporting, and reconciliation process. This manual effort is not only time consuming but also prone to errors.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <strong>Lack of Visibility:</strong> With funds flowing through multiple, disconnected systems, it is nearly impossible to get a clear, real time view of your global cash position. This makes financial planning and forecasting a significant challenge.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <strong>Rising Costs:</strong> Each new payment processor adds its own set of fees, from transaction costs to monthly maintenance charges. The lack of a unified system also means you miss out on the volume discounts that come with a consolidated payment flow.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        <strong>Compliance Headaches:</strong> Every country has its own set of payment regulations. As you expand, your compliance burden grows exponentially, increasing your risk of fines and penalties.
+                    </p>
+                </section>
+
+                <!-- Foundation Section -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-zil-blue mb-8">The Foundation for Growth: 4 Pillars of a Scalable Payment Infrastructure</h2>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        To move beyond these challenges, you need to think about your payment infrastructure not as a series of individual solutions, but as a unified platform built for global scale.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        Here are the four pillars of a modern, scalable payment infrastructure:
+                    </p>
+                </section>
+
+                <!-- 4 Pillars Section -->
+                <section class="mb-16">
+                    
+                    <!-- Pillar 1 -->
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-zil-green rounded-full flex items-center justify-center text-zil-blue font-bold text-xl mr-4">
+                                1
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">A Single, Unified Platform</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    A truly scalable payment infrastructure starts with a single platform that can handle all your global payments. This unified dashboard gives you a centralized view of your entire payment flow, from initiation to reconciliation. It eliminates the need to log in to multiple systems and provides a single source of truth for your global financial operations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pillar 2 -->
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-zil-green rounded-full flex items-center justify-center text-zil-blue font-bold text-xl mr-4">
+                                2
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Multi-Country Support</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    As you expand, you need a platform that can support payments across multiple countries. ZilRemit, for example, supports payments to 7+ countries. This allows you to pay your global partners, reducing friction and improving your supplier relationships.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pillar 3 -->
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-zil-green rounded-full flex items-center justify-center text-zil-blue font-bold text-xl mr-4">
+                                3
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Automated Compliance and Risk Management</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    A scalable payment platform should automate the complex work of compliance. This includes real time sanctions screening, KYC/AML verification, and adherence to the specific payment regulations of each country. By building compliance into the payment flow, you can reduce your risk and free up your team to focus on more strategic work.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pillar 4 -->
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-zil-green rounded-full flex items-center justify-center text-zil-blue font-bold text-xl mr-4">
+                                4
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Flexible and Developer Friendly APIs</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    To truly scale, your payment infrastructure needs to be integrated with your other business systems, from your accounting software to your ERP. A modern payment platform should offer a robust set of APIs that allow you to automate your payment workflows and build custom solutions that meet your unique business needs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mt-8">
+                        With these four pillars in place, you can confidently expand into new markets, knowing that your payment systems are ready to grow with you.
+                    </p>
+                </section>
+
+                <!-- Scaling in Action Section -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-zil-blue mb-8">⚙️ Scaling in Action: The SaaS Company</h2>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        Consider a SaaS company that is rapidly expanding its customer base in Europe and Asia. Initially, they used separate payment processors for each region. As they grew, they faced a number of challenges:
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <strong>Subscription Management:</strong> Managing recurring billing across multiple platforms was a nightmare.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <strong>Currency Conversion:</strong> They were losing a significant amount of revenue to high currency conversion fees.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <strong>Development Bottlenecks:</strong> Integrating new features and updates across their patchwork of payment systems was slow and expensive.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        By switching to a unified payment platform like ZilRemit, the company was able to centralize subscription billing, reduce currency costs with real time exchange rates and transparent pricing, and accelerate development with a single set of APIs.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        The result? A development team that could build and deploy new features much faster, while reducing overall payment costs.
+                    </p>
+                </section>
+
+                <!-- Thought Leadership Section -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-zil-blue mb-8">💭 Build for Tomorrow, Not Just for Today</h2>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        As your business looks to the future, it is critical to think about your payment infrastructure as a strategic asset. A scalable payment platform is not just about reducing costs and improving efficiency.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        It is about building a foundation that can support your growth, no matter where in the world it takes you. Continuing to add new payment processors for each new country creates a tangled web of systems that is difficult to oversee and expensive to maintain. To truly scale, you need a unified payment infrastructure that can grow with you.
+                    </p>
+                </section>
+
+                <!-- Final Takeaway Section -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-zil-blue mb-8">🚀 Conclusion</h2>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        Scaling a global business is a complex undertaking, but your payment infrastructure should not be a barrier to growth.
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        By moving away from a patchwork of single country solutions and embracing a unified, scalable payment platform, you can build a financial foundation that is as ambitious as your business goals. With the right infrastructure in place, you can confidently expand into new markets, knowing that your payment systems are ready to grow with you.
+                    </p>
+                    
+                    <p class="text-xl font-bold text-gray-900 leading-relaxed mb-6">
+                        💬 Ready to build a payment infrastructure that can keep up with your growth?
+                    </p>
+                    
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        Start your next international payment with confidence — powered by technology that scales with your ambition.
+                    </p>
+                </section>
+
+                <!-- FAQs Section -->
+                <section class="mb-8">
+                    <h2 class="text-3xl font-bold text-zil-blue mb-8">FAQs</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-zil-green pl-6 py-2">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">1. At what point should a business start thinking about a scalable payment infrastructure?</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                As soon as you start operating in more than one country. The earlier you adopt a unified platform, the easier it will be to scale. If you are already juggling multiple payment processors, it is a clear sign that you need a more scalable solution.
+                            </p>
+                        </div>
+                        
+                        <div class="border-l-4 border-zil-green pl-6 py-2">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">2. What is the difference between a payment processor and a payment infrastructure platform?</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                A payment processor typically handles the transaction itself, often in a single country or region. A payment infrastructure platform provides a complete, end to end solution for overseeing all your global payments, including compliance, reconciliation, and reporting.
+                            </p>
+                        </div>
+                        
+                        <div class="border-l-4 border-zil-green pl-6 py-2">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">3. How do APIs help with scaling?</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                APIs (Application Programming Interfaces) allow your payment platform to communicate with your other business systems. This enables you to automate your payment workflows, such as automatically paying supplier invoices from your accounting software or updating your CRM with payment information.
+                            </p>
+                        </div>
+                        
+                        <div class="border-l-4 border-zil-green pl-6 py-2">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">4. How does a unified platform help with compliance?</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                A unified platform can build compliance rules for each country directly into the payment flow. This means that every payment is automatically screened against the latest regulations, significantly reducing your compliance risk and administrative burden.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                From Local to Global: Building a Payment Infrastructure That Scales With Your Business
-            </h1>
-            <p class="text-xl text-gray-600 leading-relaxed">
-                Learn how to move beyond patchwork solutions and build a scalable payment foundation that supports your company's international growth from one country to one hundred.
-            </p>
-        </div>
-
-        <!-- Featured Image -->
-        <div class="mb-12">
-            <img src="/public/images/blog/FromLocaltoGlobalBuildingaPaymentInfrastructureThatScalesWithYourBusinessZR4.jpg" 
-                 alt="Building Scalable Payment Infrastructure" 
-                 class="w-full rounded-xl shadow-lg">
-        </div>
-
-        <!-- Article Content -->
-        <div class="prose prose-lg max-w-none">
-            <p class="text-gray-700 leading-relaxed mb-6">
-                Your business is growing. What started as a domestic operation has now expanded to a handful of international markets. But with that growth comes a new set of challenges, particularly when it comes to getting paid and paying your global partners. The patchwork of payment solutions that worked for one or two countries is now becoming a complex, costly, and time consuming bottleneck.
-            </p>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                This is a critical inflection point for any scaling business. The decisions you make about your payment infrastructure today will determine your ability to compete and grow in the global marketplace tomorrow. Continuing to add new payment processors for each new country creates a tangled web of systems that is difficult to oversee and expensive to maintain. To truly scale, you need a unified payment infrastructure that can grow with you.
-            </p>
-
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Breaking Point: When Patchwork Payment Systems Fail</h2>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                Many businesses start their international journey by adding payment solutions one by one. A processor for the US, another for Europe, a third for Asia. While this approach may work initially, it quickly leads to a number of significant problems as you scale:
-            </p>
-
-            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-3">
-                <li><strong>Operational Inefficiency:</strong> Your finance team is forced to juggle multiple platforms, each with its own interface, reporting, and reconciliation process. This manual effort is not only time consuming but also prone to errors.</li>
-                <li><strong>Lack of Visibility:</strong> With funds flowing through multiple, disconnected systems, it is nearly impossible to get a clear, real time view of your global cash position. This makes financial planning and forecasting a significant challenge.</li>
-                <li><strong>Rising Costs:</strong> Each new payment processor adds its own set of fees, from transaction costs to monthly maintenance charges. The lack of a unified system also means you miss out on the volume discounts that come with a consolidated payment flow.</li>
-                <li><strong>Compliance Headaches:</strong> Every country has its own set of payment regulations. As you expand, your compliance burden grows exponentially, increasing your risk of fines and penalties.</li>
-            </ul>
-
-            <blockquote class="border-l-4 border-zil-blue pl-4 italic text-gray-700 my-8">
-                According to industry experts, businesses that expand internationally must navigate a complex web of multiple currencies, exchange rates, and regulatory requirements. A scalable payment system is not just an advantage, it is a necessity for success.
-            </blockquote>
-
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Foundation for Growth: 4 Pillars of a Scalable Payment Infrastructure</h2>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                To move beyond these challenges, you need to think about your payment infrastructure not as a series of individual solutions, but as a unified platform built for global scale. Here are the four pillars of a modern, scalable payment infrastructure:
-            </p>
-
-            <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">1. A Single, Unified Platform</h3>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                A truly scalable payment infrastructure starts with a single platform that can handle all your global payments. This unified dashboard gives you a centralized view of your entire payment flow, from initiation to reconciliation. It eliminates the need to log in to multiple systems and provides a single source of truth for your global financial operations.
-            </p>
-
-            <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Multi-Country Support</h3>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                As you expand, you need a platform that can support payments across multiple countries. ZilRemit, for example, supports payments to 7+ countries. This allows you to pay your global partners, reducing friction and improving your supplier relationships.
-            </p>
-
-            <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Automated Compliance and Risk Management</h3>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                A scalable payment platform should automate the complex work of compliance. This includes real time sanctions screening, KYC/AML verification, and adherence to the specific payment regulations of each country. By building compliance into the payment flow, you can reduce your risk and free up your team to focus on more strategic work.
-            </p>
-
-            <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Flexible and Developer Friendly APIs</h3>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                To truly scale, your payment infrastructure needs to be integrated with your other business systems, from your accounting software to your ERP. A modern payment platform should offer a robust set of APIs that allow you to automate your payment workflows and build custom solutions that meet your unique business needs.
-            </p>
-
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">⚙️ Scaling in Action: The SaaS Company</h2>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                Consider a SaaS company that is rapidly expanding its customer base in Europe and Asia. Initially, they used separate payment processors for each region. As they grew, they faced a number of challenges:
-            </p>
-
-            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-3">
-                <li><strong>Subscription Management:</strong> Managing recurring billing across multiple platforms was a nightmare.</li>
-                <li><strong>Currency Conversion:</strong> They were losing a significant amount of revenue to high currency conversion fees.</li>
-                <li><strong>Development Bottlenecks:</strong> Integrating new features and updates across their patchwork of payment systems was slow and expensive.</li>
-            </ul>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                By switching to a unified payment platform like ZilRemit, the company was able to:
-            </p>
-
-            <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-3">
-                <li><strong>Centralize Subscription Billing:</strong> They now oversee all their global subscriptions from a single dashboard.</li>
-                <li><strong>Reduce Currency Costs:</strong> With real time exchange rates and transparent pricing, they significantly reduced their currency conversion costs.</li>
-                <li><strong>Accelerate Development:</strong> A single set of APIs allowed their development team to build and deploy new features much faster.</li>
-            </ul>
-
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">💭 Build for Tomorrow, Not Just for Today</h2>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                As your business looks to the future, it is critical to think about your payment infrastructure as a strategic asset. A scalable payment platform is not just about reducing costs and improving efficiency. It is about building a foundation that can support your growth, no matter where in the world it takes you.
-            </p>
-
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Conclusion</h2>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                Scaling a global business is a complex undertaking, but your payment infrastructure should not be a barrier to growth. By moving away from a patchwork of single country solutions and embracing a unified, scalable payment platform, you can build a financial foundation that is as ambitious as your business goals. With the right infrastructure in place, you can confidently expand into new markets, knowing that your payment systems are ready to grow with you.
-            </p>
-
-            <!-- FAQs -->
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">FAQs</h2>
-
-            <div class="space-y-6 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">1. At what point should a business start thinking about a scalable payment infrastructure?</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        As soon as you start operating in more than one country. The earlier you adopt a unified platform, the easier it will be to scale. If you are already juggling multiple payment processors, it is a clear sign that you need a more scalable solution.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">2. What is the difference between a payment processor and a payment infrastructure platform?</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        A payment processor typically handles the transaction itself, often in a single country or region. A payment infrastructure platform provides a complete, end to end solution for overseeing all your global payments, including compliance, reconciliation, and reporting.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">3. How do APIs help with scaling?</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        APIs (Application Programming Interfaces) allow your payment platform to communicate with your other business systems. This enables you to automate your payment workflows, such as automatically paying supplier invoices from your accounting software or updating your CRM with payment information.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">4. How does a unified platform help with compliance?</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        A unified platform can build compliance rules for each country directly into the payment flow. This means that every payment is automatically screened against the latest regulations, significantly reducing your compliance risk and administrative burden.
-                    </p>
-                </div>
-            </div>
-
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Ready to build a payment infrastructure that can keep up with your growth?
-            </p>
-
-            <div class="text-center my-8">
-                <a href="https://zilremit.com" class="inline-block bg-zil-blue text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-zil-blue-dark transition-colors">
-                    Get Started Now
-                </a>
-            </div>
-
-            <!-- References -->
-            <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-4">References</h2>
-            <ol class="list-decimal pl-6 text-gray-700 space-y-2 text-sm">
-                <li>Convera. "Expanding internationally? Tips for scaling B2B payments systems." Convera Blog, <a href="https://convera.com/blog/payments/expanding-internationally-tips-for-scaling-b2b-payments-systems/" class="text-zil-blue hover:underline">https://convera.com/blog/payments/expanding-internationally-tips-for-scaling-b2b-payments-systems/</a>. Accessed 13 November 2025.</li>
-            </ol>
         </div>
     </article>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <img src="/public/images/logo-white.png" alt="ZilRemit" class="h-8 mb-4">
-                    <p class="text-gray-400 text-sm">Fast, secure, and affordable international payments for businesses worldwide.</p>
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-br from-zil-blue to-blue-800 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Transform Your International Payments?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join thousands of businesses that have already optimized their global payment strategies with ZilRemit.
+            </p>
+            <a href="https://app.zilremit.com/signup" class="inline-block bg-zil-green hover:bg-green-400 text-zil-blue font-bold px-8 py-4 rounded-lg text-lg transition-all transform hover:scale-105 shadow-lg">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Common Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <svg width="120" height="35" viewBox="0 0 604.7 178" xmlns="http://www.w3.org/2000/svg" class="mb-4">
+                        <path fill="#3BF493" d="M93.2,50.4c-1-.6-2.1-1.2-3.2-1.9C65.9,35,37.7,26.2,15,10.7,10.4,7.5,6.4,5,1.6.9h0l.4,9.1v.9c1.6,16.3,5.5,24.6,20,32.6,16.3,9,35.1,13.6,52.6,19.9,5-5.7,11.3-10.2,18.5-12.9h0Z"/>
+                        <path fill="#3BF493" d="M69.7,70.2c-16.9-5.5-34.3-10-49.6-19.3-.9-.6-2.8-1.6-4.4-2.7-1.8-1.2-3.4-2.4-3.4-2.4.8,9.5.5,19.3,6.9,27,8.1,9.8,25.9,13.2,44.4,16.6.6-6.9,2.8-13.4,6.1-19.1h0Z"/>
+                        <path fill="#3BF493" d="M63.6,98.4c-12.1-2.3-23.7-4.6-32.1-8.4-3-1.3-6.6-3.1-8.5-4.5,0,0,0,5.7.2,8.1.3,3.4,1.1,6.1,1.9,7.8,4.5,9.6,15.4,11.6,24.9,13.4,6.5,1.2,13.3,2,20.1,2.6-3.5-5.7-5.8-12.2-6.5-19.2h0Z"/>
+                        <path fill="#3BF493" d="M67.2,99.7c-2.9-20.1,7-39.1,23.7-48.6-19.2,8.2-31.2,28.5-28,50.2,3.8,25.8,27.7,43.6,53.5,39.8.9-.1,1.8-.3,2.7-.5-25.2,2.3-48.1-15.5-51.8-40.9h0Z"/>
+                        <path fill="#FFFFFF" d="M75.4,94.4h19.5c.1,5.9.7,11.5,1.8,16.6-4.6,1.2-8.9,2.9-12.6,5.1-5.1-5.9-8.3-13.4-8.7-21.7h0ZM84.1,69.2c3.7,2.2,8,3.9,12.6,5.1-1.1,5.1-1.7,10.7-1.8,16.6h-19.5c.4-8.3,3.6-15.8,8.7-21.7h0ZM146.8,90.9h-19.5c-.1-5.9-.7-11.6-1.8-16.6,4.6-1.2,8.9-2.9,12.6-5,5.1,5.9,8.3,13.4,8.7,21.7h0ZM98.3,90.9c.1-5.6.7-11,1.7-15.9,3.6.7,7.3,1,11,1s7.4-.4,11-1.1c1,4.8,1.6,10.2,1.7,15.9h-25.5ZM123.8,94.4c-.1,5.6-.7,11.1-1.7,15.9-3.6-.7-7.3-1.1-11-1.1s-7.4.4-11,1c-1-4.8-1.6-10.2-1.7-15.9h25.5ZM124.7,70.9c-.5-1.9-1.1-3.7-1.7-5.4-1.2-3.2-2.7-5.9-4.3-7.8,6.5,1.4,12.3,4.5,16.9,8.9-3.2,1.8-6.9,3.2-10.9,4.2h0ZM119.7,66.8c.6,1.5,1.1,3.1,1.6,4.9-3.4.6-6.8,1-10.2,1s-6.9-.3-10.2-1c.5-1.7,1-3.4,1.6-4.9,2.4-6.3,5.6-9.9,8.6-9.9s6.2,3.6,8.6,9.9h0ZM99.2,65.5c-.6,1.7-1.2,3.5-1.7,5.4-4-1-7.6-2.5-10.9-4.3,4.6-4.4,10.5-7.5,16.9-8.9-1.6,2-3.1,4.6-4.3,7.8h0ZM97.5,114.3c.5,1.9,1.1,3.7,1.7,5.4,1.2,3.2,2.7,5.9,4.3,7.8-6.5-1.4-12.3-4.5-16.9-8.9,3.2-1.8,6.9-3.3,10.9-4.3h0ZM102.4,118.5c-.6-1.5-1.1-3.2-1.6-4.9,3.3-.6,6.8-1,10.2-1s6.9.3,10.2,1c-.5,1.7-1,3.4-1.6,4.9-2.4,6.3-5.6,9.9-8.6,9.9s-6.2-3.6-8.6-9.9h0ZM122.9,119.7c.6-1.7,1.2-3.5,1.7-5.4,4,1,7.7,2.5,10.9,4.2-4.6,4.4-10.5,7.5-16.9,8.9,1.6-2,3.1-4.6,4.3-7.8h0ZM125.5,111c1.1-5.1,1.7-10.8,1.8-16.6h19.5c-.4,8.3-3.6,15.8-8.7,21.7-3.6-2.2-7.9-3.9-12.6-5h0Z"/>
+                        <path fill="#FFFFFF" d="M158.7,130.8v-10.5l43.4-52.3,2,5.9h-44.6v-13.2h59v10.5l-43.3,52.3-2-5.9h46.8v13.2h-61.3Z"/>
+                        <path fill="#FFFFFF" d="M237.1,69.4c-2.9,0-5.2-.8-7-2.5-1.8-1.7-2.7-3.7-2.7-6.2s.9-4.5,2.7-6.2c1.8-1.7,4.1-2.5,7-2.5s5.2.8,7,2.4c1.8,1.6,2.7,3.6,2.7,6.1s-.9,4.8-2.6,6.5c-1.8,1.7-4.1,2.5-7.1,2.5h0ZM229.3,130.8v-53.9h15.6v53.9h-15.6Z"/>
+                        <path fill="#FFFFFF" d="M259.5,130.8V56.4h15.6v74.3h-15.6Z"/>
+                        <path fill="#FFFFFF" d="M298.1,130.8V60.6h30c9.8,0,17.3,2.2,22.7,6.8s8.1,10.7,8.1,18.7-1.2,9.7-3.7,13.5-6,6.7-10.5,8.7c-4.5,2-10,3-16.2,3h-21.3l7.2-7.1v26.6h-16.2,0ZM314.3,105.9l-7.2-7.6h20.4c5,0,8.8-1.1,11.2-3.2s3.7-5.2,3.7-9-1.2-6.9-3.7-9c-2.5-2.1-6.2-3.2-11.2-3.2h-20.4l7.2-7.7v39.8h0ZM342.6,130.8l-17.5-25.4h17.3l17.7,25.4h-17.5Z"/>
+                        <path fill="#FFFFFF" d="M397.3,131.6c-6.1,0-11.5-1.2-16.2-3.6-4.6-2.4-8.2-5.7-10.8-9.9-2.5-4.2-3.8-8.9-3.8-14.3s1.2-10.2,3.8-14.4c2.5-4.2,5.9-7.5,10.3-9.8s9.2-3.6,14.7-3.6,10,1.1,14.3,3.4,7.6,5.4,10.1,9.6c2.5,4.2,3.7,9.2,3.7,15s0,1.3,0,2c0,.8-.1,1.5-.2,2.1h-43.8v-9.1h35.6l-6,2.7c0-2.8-.6-5.2-1.7-7.3-1.1-2.1-2.7-3.7-4.7-4.9-2-1.2-4.3-1.8-7-1.8s-5,.6-7.1,1.8c-2,1.2-3.6,2.8-4.8,4.9-1.1,2.1-1.7,4.6-1.7,7.5v2.4c0,2.9.6,5.5,2,7.8,1.3,2.2,3.1,3.9,5.5,5.1,2.4,1.2,5.2,1.8,8.4,1.8s5.4-.4,7.6-1.3,4.2-2.2,6-3.9l8.3,9c-2.5,2.8-5.6,5-9.3,6.5s-8,2.2-12.9,2.2h0Z"/>
+                        <path fill="#FFFFFF" d="M433.8,130.8v-53.9h14.9v14.7l-2.8-4.3c1.9-3.7,4.5-6.5,8-8.4s7.4-2.9,11.8-2.9,9.3,1.2,13,3.8,6.2,6.3,7.4,11.5l-5.5-1.5c1.8-4.2,4.7-7.5,8.7-10,4-2.5,8.5-3.7,13.7-3.7s8.1.9,11.4,2.5c3.3,1.7,5.9,4.3,7.8,7.8s2.8,8,2.8,13.5v30.9h-15.6v-28.5c0-4.3-.9-7.5-2.7-9.6-1.8-2.1-4.3-3.1-7.6-3.1s-4.3.5-6.1,1.5c-1.8,1-3.2,2.6-4.2,4.7s-1.5,4.7-1.5,7.9v27h-15.6v-28.5c0-4.3-.9-7.5-2.7-9.6-1.8-2.1-4.3-3.1-7.6-3.1s-4.3.5-6.1,1.5c-1.8,1-3.2,2.6-4.2,4.7s-1.5,4.7-1.5,7.9v27h-15.6,0Z"/>
+                        <path fill="#FFFFFF" d="M546.7,69.4c-2.9,0-5.2-.8-7-2.5s-2.7-3.7-2.7-6.2.9-4.5,2.7-6.2c1.8-1.7,4.1-2.5,7-2.5s5.2.8,7,2.4c1.8,1.6,2.7,3.6,2.7,6.1s-.9,4.8-2.7,6.5c-1.8,1.7-4.1,2.5-7.1,2.5ZM538.8,130.8v-53.9h15.6v53.9h-15.6Z"/>
+                        <path fill="#FFFFFF" d="M562.6,88.9v-12h37.4v12h-37.4ZM591,131.6c-6.3,0-11.3-1.6-14.8-4.9-3.5-3.2-5.3-8.1-5.3-14.5v-47.3h15.6v47.1c0,2.3.6,4,1.8,5.3,1.2,1.2,2.8,1.9,4.9,1.9s4.6-.7,6.3-2l4.2,11c-1.6,1.1-3.5,2-5.8,2.5-2.2.6-4.6.9-7,.9h0Z"/>
+                    </svg>
+                    <p class="text-gray-400 mb-4">Fast, secure, and transparent international money transfers for businesses worldwide.</p>
                 </div>
+                
                 <div>
-                    <h3 class="font-semibold mb-4">Product</h3>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white">Features</a></li>
-                        <li><a href="#" class="hover:text-white">Pricing</a></li>
-                        <li><a href="#" class="hover:text-white">Security</a></li>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-zil-green transition-colors">Home</a></li>
+                        <li><a href="/#features" class="text-gray-400 hover:text-zil-green transition-colors">Features</a></li>
+                        <li><a href="/#rates" class="text-gray-400 hover:text-zil-green transition-colors">Rates</a></li>
+                        <li><a href="/blogs/" class="text-gray-400 hover:text-zil-green transition-colors">Blog</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h3 class="font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white">About</a></li>
-                        <li><a href="/blog.html" class="hover:text-white">Blog</a></li>
-                        <li><a href="#" class="hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Legal</h3>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white">Privacy</a></li>
-                        <li><a href="#" class="hover:text-white">Terms</a></li>
-                        <li><a href="#" class="hover:text-white">Compliance</a></li>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/#contact" class="hover:text-zil-green transition-colors">Contact Us</a></li>
+                        <li><a href="https://app.zilremit.com/signup" class="hover:text-zil-green transition-colors">Sign Up</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 ZilRemit. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <script src="/components/loader.js"></script>
 </body>
 </html>
