@@ -10,6 +10,8 @@ const AnimatedCurrency = () => {
     { flag: 'https://flagcdn.com/w320/fr.png', code: 'EUR', country: 'France' },
     { flag: 'https://flagcdn.com/w320/de.png', code: 'EUR', country: 'Germany' },
     { flag: 'https://flagcdn.com/w320/in.png', code: 'INR', country: 'India' },
+    { flag: 'https://flagcdn.com/w320/ie.png', code: 'EUR', country: 'Ireland' },
+    { flag: 'https://flagcdn.com/w320/it.png', code: 'EUR', country: 'Italy' },
     { flag: 'https://flagcdn.com/w320/ph.png', code: 'PHP', country: 'Philippines' },
     { flag: 'https://flagcdn.com/w320/se.png', code: 'SEK', country: 'Sweden' },
     { flag: 'https://flagcdn.com/w320/gb.png', code: 'GBP', country: 'UK' }
@@ -62,6 +64,8 @@ const AnimatedPaymentInterface = () => {
     france: { flag: '🇫🇷', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/fr.png' },
     germany: { flag: '🇩🇪', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/de.png' },
     india: { flag: '🇮🇳', currency: 'INR', rate: 83.043, flagUrl: 'https://flagcdn.com/w40/in.png' },
+    ireland: { flag: '🇮🇪', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/ie.png' },
+    italy: { flag: '🇮🇹', currency: 'EUR', rate: 0.92, flagUrl: 'https://flagcdn.com/w40/it.png' },
     philippines: { flag: '🇵🇭', currency: 'PHP', rate: 56.25, flagUrl: 'https://flagcdn.com/w40/ph.png' },
     sweden: { flag: '🇸🇪', currency: 'SEK', rate: 10.85, flagUrl: 'https://flagcdn.com/w40/se.png' },
     uk: { flag: '🇬🇧', currency: 'GBP', rate: 0.79, flagUrl: 'https://flagcdn.com/w40/gb.png' }
@@ -132,7 +136,7 @@ const AnimatedPaymentInterface = () => {
       moveCursorTo('country-select');
       await new Promise(resolve => setTimeout(resolve, 500));
       highlightField('country-field');
-      const countries_list = ['india', 'uk', 'germany', 'philippines'];
+      const countries_list = ['india', 'uk', 'germany', 'philippines', 'ireland', 'italy'];
       const randomCountry = countries_list[Math.floor(Math.random() * countries_list.length)];
       setSelectedCountry(randomCountry);
       await new Promise(resolve => setTimeout(resolve, 400));
@@ -564,7 +568,7 @@ function App() {
 
     // Animate stats on component mount
     animateValue(0, 90, 2000, (val) => setAnimatedStats(prev => ({ ...prev, fees: val })));
-    animateValue(0, 7, 2000, (val) => setAnimatedStats(prev => ({ ...prev, countries: val })));
+    animateValue(0, 9, 2000, (val) => setAnimatedStats(prev => ({ ...prev, countries: val })));
     animateValue(0, 50, 2000, (val) => setAnimatedStats(prev => ({ ...prev, partnerships: val })));
     animateValue(0, 24, 2000, (val) => setAnimatedStats(prev => ({ ...prev, support: val })));
   }, []);
