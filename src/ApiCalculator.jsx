@@ -10,6 +10,8 @@ const ApiCalculator = () => {
     'France': { code: 'FR', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/fr.png' },
     'Germany': { code: 'DE', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/de.png' },
     'India': { code: 'IN', currency: 'INR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/in.png' },
+    'Ireland': { code: 'IE', currency: 'EUR', flag: 'https://flagcdn.com/w320/ie.png' },
+    'Italy': { code: 'IT', currency: 'EUR', flag: 'https://flagcdn.com/w320/it.png' },
     'Philippines': { code: 'PH', currency: 'PHP', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/ph.png' },
     'Sweden': { code: 'SE', currency: 'SEK', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/se.png' },
     'United Kingdom': { code: 'GB', currency: 'GBP', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/gb.png' }

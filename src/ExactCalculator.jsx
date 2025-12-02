@@ -322,6 +322,8 @@ const ExactCalculator = () => {
         'France': { code: 'FR', currency: 'EUR' },
         'Germany': { code: 'DE', currency: 'EUR' },
         'India': { code: 'IN', currency: 'INR' },
+        'Ireland': { code: 'IE', currency: 'EUR' },
+        'Italy': { code: 'IT', currency: 'EUR' },
         'Philippines': { code: 'PH', currency: 'PHP' },
         'Sweden': { code: 'SE', currency: 'SEK' },
         'United Kingdom': { code: 'GB', currency: 'GBP' }
@@ -848,6 +850,14 @@ const ExactCalculator = () => {
                 <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'INR', 'https://zilmoney.com/wp-content/uploads/2025/09/in.png')}>
                   <img src="https://zilmoney.com/wp-content/uploads/2025/09/in.png" alt="India" className="flag-icon" />
                   <span>India</span>
+                </div>
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://flagcdn.com/w320/ie.png')}>
+                  <img src="https://flagcdn.com/w320/ie.png" alt="Ireland" className="flag-icon" />
+                  <span>Ireland</span>
+                </div>
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://flagcdn.com/w320/it.png')}>
+                  <img src="https://flagcdn.com/w320/it.png" alt="Italy" className="flag-icon" />
+                  <span>Italy</span>
                 </div>
                 <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'PHP', 'https://zilmoney.com/wp-content/uploads/2025/09/ph.png')}>
                   <img src="https://zilmoney.com/wp-content/uploads/2025/09/ph.png" alt="Philippines" className="flag-icon" />
