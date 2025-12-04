@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import CallbackForm from '../CallbackForm';
+import ExactCalculator from '../ExactCalculator';
 
 function SendMoneyEstonia() {
   const [animatedStats, setAnimatedStats] = useState({
@@ -36,40 +37,53 @@ function SendMoneyEstonia() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 min-h-screen flex items-center overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="absolute top-20 right-10 w-32 h-32 bg-green-100 rounded-full opacity-20 animate-float"></div>
         <div className="absolute bottom-20 left-10 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-float" style={{animationDelay: '1s'}}></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Estonia Flag */}
-            <div className="flex justify-center mb-6">
-              <img 
-                src="https://flagcdn.com/w160/ee.png" 
-                alt="Estonia Flag" 
-                className="h-20 w-auto rounded-lg shadow-lg"
-              />
-            </div>
-            
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Send Money From USA To <span className="gradient-text">ESTONIA</span>
-            </h1>
-            
-            <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
-              International business payments in minutes with lowest fees and best USD to EUR rates.
-            </p>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="animate-fade-in-up">
+              {/* Estonia Flag */}
+              <div className="flex justify-start mb-6">
+                <img 
+                  src="https://flagcdn.com/w160/ee.png" 
+                  alt="Estonia Flag" 
+                  className="h-20 w-auto rounded-lg shadow-lg"
+                />
+              </div>
+              
+              {/* Highlight Bar */}
+              <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
+                💸 Best USD to EUR rates for Estonia transfers
+              </div>
+              
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Send Money From USA To
+                <span className="block gradient-text">ESTONIA</span>
+                <span className="block text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 mt-2">
+                  Ultra-Low Fees, Zero Hassle
+                </span>
+              </h1>
+              
+              <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast delivery to LHV Bank, Swedbank, or SEB Bank.
+              </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              {/* Callback Form */}
               <CallbackForm />
-              <a 
-                href="#how-it-works" 
-                className="inline-flex items-center px-8 py-3 border-2 border-green-600 text-green-600 rounded-lg text-lg font-semibold hover:bg-green-50 transition-all duration-300"
-              >
-                See How It Works
-              </a>
+
+              <p className="text-sm text-gray-500 mt-4">
+                Trusted by thousands of businesses sending money to Estonia
+              </p>
+            </div>
+
+            {/* Right Content - Calculator */}
+            <div className="animate-fade-in-right">
+              <ExactCalculator />
             </div>
           </div>
         </div>
