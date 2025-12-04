@@ -48,6 +48,10 @@ const copyBlogsPlugin = () => {
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: true,
+    allowedHosts: ['5173-ius8palcrkmlvtjvs2k23-16b15d6d.manus-asia.computer']
+  },
   plugins: [react(), tailwindcss(), copyBlogsPlugin()],
   resolve: {
     alias: {

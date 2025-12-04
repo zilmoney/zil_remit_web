@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import About from './pages/About.jsx'
 import PressRelease from './pages/PressRelease.jsx'
+import SendMoneyEstonia from './pages/SendMoneyEstonia.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/press-release" element={<PressRelease />} />
+        <Route path="/send-money-estonia" element={<SendMoneyEstonia />} />
       </Routes>
     </Router>
   </StrictMode>,
