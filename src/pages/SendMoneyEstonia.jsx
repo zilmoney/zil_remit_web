@@ -47,23 +47,14 @@ function SendMoneyEstonia() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div className="animate-fade-in-up">
-              {/* Estonia Flag */}
-              <div className="flex justify-start mb-6">
-                <img 
-                  src="https://flagcdn.com/w160/ee.png" 
-                  alt="Estonia Flag" 
-                  className="h-20 w-auto rounded-lg shadow-lg"
-                />
-              </div>
-              
               {/* Highlight Bar */}
               <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
                 💸 Best USD to EUR rates for Estonia transfers
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Send Money From USA To
-                <span className="block gradient-text">ESTONIA</span>
+                <span className="block">Send Money From USA</span>
+                <span className="block gradient-text">To ESTONIA</span>
                 <span className="block text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 mt-2">
                   Ultra-Low Fees, Zero Hassle
                 </span>
@@ -327,31 +318,31 @@ function SendMoneyEstonia() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <a href="/send-money-estonia" className="bg-green-600 text-white p-4 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors">
-              Send Money to Estonia
+              Estonia
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to France
+              France
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to Germany
+              Germany
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to India
+              India
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to Philippines
+              Philippines
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to Sweden
+              Sweden
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to UK
+              UK
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to Italy
+              Italy
             </a>
             <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Send Money to Ireland
+              Ireland
             </a>
           </div>
         </div>
