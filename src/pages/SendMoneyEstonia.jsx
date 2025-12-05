@@ -457,7 +457,7 @@ function SendMoneyEstonia() {
                 Real-Time Instant Payments
               </h3>
               <p className="text-gray-600 text-sm">
-                Transfer your US Dollars to over 7+ countries with real-time exchange rates and secure processing.
+                Transfer your US Dollars to over 9+ countries with real-time exchange rates and secure processing.
               </p>
             </div>
 
@@ -487,7 +487,7 @@ function SendMoneyEstonia() {
                 Digital Payment Solutions
               </h3>
               <p className="text-gray-600 text-sm">
-                Transfer your US Dollars to over 7+ countries with real-time exchange rates and secure processing.
+                Transfer your US Dollars to over 9+ countries with real-time exchange rates and secure processing.
               </p>
             </div>
           </div>
