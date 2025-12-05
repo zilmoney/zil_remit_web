@@ -513,7 +513,7 @@ function SendMoneySweden() {
                 How do I get started with your platform?
               </h3>
               <p className="text-gray-600">
-                Create your business account, verify your company details, and start processing payments to Estonia with our lowest fees and best USD to EUR rates.
+                Create your business account, verify your company details, and start processing international payments with our lowest fees and best exchange rates.
               </p>
             </div>
 
