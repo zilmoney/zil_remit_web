@@ -8,6 +8,7 @@ import PressRelease from './pages/PressRelease.jsx'
 import SendMoneyEstonia from './pages/SendMoneyEstonia.jsx'
 import SendMoneySweden from './pages/SendMoneySweden.jsx'
 import SendMoneyFrance from './pages/SendMoneyFrance.jsx'
+import SendMoneyIndia from './pages/SendMoneyIndia.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/send-money-estonia" element={<SendMoneyEstonia />} />
         <Route path="/send-money-sweden" element={<SendMoneySweden />} />
         <Route path="/send-money-france" element={<SendMoneyFrance />} />
+        <Route path="/send-money-india" element={<SendMoneyIndia />} />
       </Routes>
     </Router>
   </StrictMode>,
