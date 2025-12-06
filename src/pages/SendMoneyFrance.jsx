@@ -80,6 +80,120 @@ function SendMoneyFrance() {
         </div>
       </section>
 
+      {/* Send Global Payments In Minutes */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Content */}
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Send Global Payments In Minutes
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Experience the future of international payments with our intuitive platform. 
+                Send money to family, pay suppliers, or transfer funds globally in just a few clicks.
+              </p>
+
+              {/* Features */}
+              <div className="space-y-6 mb-8">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900">Lightning Fast</h4>
+                    <p className="text-gray-600">Complete transfers in minutes, not days.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900">Simple Process</h4>
+                    <p className="text-gray-600">Just 3 steps to send money anywhere in the world.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900">Bank-Level Security</h4>
+                    <p className="text-gray-600">Your money and data are protected with enterprise-grade security.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="https://app.zilremit.com/signup" target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block text-center">
+                  Start Business Payments →
+                </a>
+                <a href="https://calendly.com/zmn/demo" target="_blank" rel="noopener noreferrer" className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors inline-block text-center">
+                  Book A Demo
+                </a>
+              </div>
+            </div>
+
+            {/* Right - Mockup Image */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-2xl">
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Transfer Details</h3>
+                    <p className="text-sm text-gray-600">Complete your transfer setup</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Source Wallet</label>
+                      <div className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900">
+                        Main Wallet ($1,250.00)
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Transfer Purpose</label>
+                      <div className="bg-green-50 border-2 border-green-500 rounded-lg px-4 py-3 text-gray-900 font-medium">
+                        Family Support
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border border-green-200">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">💰</span>
+                        <span className="text-sm font-medium text-gray-700">Transfer Summary</span>
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900">
+                        $1000 USD → 56,250.00 PHP
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-3 pt-2">
+                      <button className="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                        Back
+                      </button>
+                      <button className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Complete Transfer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
       <section id="how-it-works" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
