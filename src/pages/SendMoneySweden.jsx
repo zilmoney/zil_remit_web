@@ -317,32 +317,41 @@ function SendMoneySweden() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <a href="/send-money-estonia" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Estonia
+            <a href="/send-money-estonia" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/ee.png" alt="Estonia flag" className="w-8 h-6 object-cover rounded" />
+              <span>Estonia</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              France
+            <a href="/send-money-france" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/fr.png" alt="France flag" className="w-8 h-6 object-cover rounded" />
+              <span>France</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Germany
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/de.png" alt="Germany flag" className="w-8 h-6 object-cover rounded" />
+              <span>Germany</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              India
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/in.png" alt="India flag" className="w-8 h-6 object-cover rounded" />
+              <span>India</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Philippines
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/ph.png" alt="Philippines flag" className="w-8 h-6 object-cover rounded" />
+              <span>Philippines</span>
             </a>
-            <a href="/send-money-sweden" className="bg-green-600 text-white p-4 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors">
-              Sweden
+            <a href="/send-money-sweden" className="bg-green-600 text-white p-4 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/se.png" alt="Sweden flag" className="w-8 h-6 object-cover rounded" />
+              <span>Sweden</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              UK
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/gb.png" alt="UK flag" className="w-8 h-6 object-cover rounded" />
+              <span>UK</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Italy
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/it.png" alt="Italy flag" className="w-8 h-6 object-cover rounded" />
+              <span>Italy</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors">
-              Ireland
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+              <img src="https://flagcdn.com/w40/ie.png" alt="Ireland flag" className="w-8 h-6 object-cover rounded" />
+              <span>Ireland</span>
             </a>
           </div>
         </div>
