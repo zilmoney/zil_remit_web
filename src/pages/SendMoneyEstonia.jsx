@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import CallbackForm from '../CallbackForm';
 import ExactCalculator from '../ExactCalculator';
-
+import AnimatedPaymentInterface from '../components/AnimatedPaymentInterface';
 function SendMoneyEstonia() {
   const [animatedStats, setAnimatedStats] = useState({
     fees: 0,
@@ -158,50 +158,10 @@ function SendMoneyEstonia() {
               </div>
             </div>
 
-            {/* Right - Mockup Image */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-2xl">
-                <div className="bg-white rounded-xl shadow-lg p-6">
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Transfer Details</h3>
-                    <p className="text-sm text-gray-600">Complete your transfer setup</p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Source Wallet</label>
-                      <div className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900">
-                        Main Wallet ($1,250.00)
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Transfer Purpose</label>
-                      <div className="bg-green-50 border-2 border-green-500 rounded-lg px-4 py-3 text-gray-900 font-medium">
-                        Family Support
-                      </div>
-                    </div>
-                    
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border border-green-200">
-                      <div className="flex items-center mb-2">
-                        <span className="text-2xl mr-2">💰</span>
-                        <span className="text-sm font-medium text-gray-700">Transfer Summary</span>
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900">
-                        $1000 USD → 56,250.00 PHP
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-3 pt-2">
-                      <button className="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
-                        Back
-                      </button>
-                      <button className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                        Complete Transfer
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            {/* Right - Animated Payment Interface */}
+            <div className="animate-fade-in-right">
+              <div className="h-[600px]">
+                <AnimatedPaymentInterface />
               </div>
             </div>
           </div>
