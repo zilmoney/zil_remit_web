@@ -643,10 +643,10 @@ function SendMoneyEstonia() {
             {/* FAQ 4 */}
             <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Can I cancel my subscription at any time?
+                Are the transfer fees and exchange rates transparent with ZilRemit?
               </h3>
               <p className="text-gray-600">
-                Yes, you can cancel or modify your account settings at any time through your business dashboard.
+                Yes — ZilRemit shows the total cost (fees + FX conversion) upfront so you know exactly what the recipient receives before confirming the payment.
               </p>
             </div>
           </div>
