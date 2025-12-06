@@ -7,6 +7,7 @@ import About from './pages/About.jsx'
 import PressRelease from './pages/PressRelease.jsx'
 import SendMoneyEstonia from './pages/SendMoneyEstonia.jsx'
 import SendMoneySweden from './pages/SendMoneySweden.jsx'
+import SendMoneyFrance from './pages/SendMoneyFrance.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/press-release" element={<PressRelease />} />
         <Route path="/send-money-estonia" element={<SendMoneyEstonia />} />
         <Route path="/send-money-sweden" element={<SendMoneySweden />} />
+        <Route path="/send-money-france" element={<SendMoneyFrance />} />
       </Routes>
     </Router>
   </StrictMode>,
