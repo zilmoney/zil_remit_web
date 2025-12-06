@@ -601,14 +601,7 @@ function SendMoneySweden() {
             </div>
 
             {/* FAQ 2 */}
-            <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                What payment methods do you accept?
-              </h3>
-              <p className="text-gray-600">
-                We accept business bank transfers, corporate cards, ACH, wire transfers, and multiple other payment methods for your convenience.
-              </p>
-            </div>
+
 
             {/* FAQ 3 */}
             <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
