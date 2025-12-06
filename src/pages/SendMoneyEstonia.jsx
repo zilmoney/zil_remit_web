@@ -81,15 +81,42 @@ function SendMoneyEstonia() {
       </section>
 
       {/* Fast Payments Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-br from-green-50 via-white to-green-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Fast Payments to Estonia
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Send money to Estonia for business with our secure platform, featuring competitive USD to EUR exchange rates and fast delivery of funds to any Estonian bank, like LHV Bank, Swedbank, or SEB Bank.
-            </p>
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-green-100">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Fast Payments to Estonia
+              </h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Send money to Estonia for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast delivery of funds to any Estonian bank, like <span className="font-semibold">LHV Bank, Swedbank, or SEB Bank</span>.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm font-medium text-gray-700">Real-time Rates</span>
+                </div>
+                <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm font-medium text-gray-700">Instant Processing</span>
+                </div>
+                <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm font-medium text-gray-700">Secure Transfers</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
