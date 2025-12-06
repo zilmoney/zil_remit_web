@@ -80,20 +80,6 @@ function SendMoneyFrance() {
         </div>
       </section>
 
-      {/* Fast Payments Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Fast Payments to France
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our platform makes it simple to pay suppliers in France, providing favorable USD to EUR exchange rates, instant processing, and delivery to any French bank, such as BNP Paribas, Crédit Agricole, or Société Générale.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* How It Works Section */}
       <section id="how-it-works" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,47 +88,47 @@ function SendMoneyFrance() {
               How It Works
             </h2>
             <p className="text-lg text-gray-600">
-              Send money globally in just 3 simple steps
+              Send Global Payments in 3 Simple Steps
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <span className="text-2xl font-bold text-green-600">1</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                Recipient Details
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Add Recipient Details
               </h3>
-              <p className="text-gray-600 text-center">
-                Enter the recipient's name, account details, and the amount you want to send.
+              <p className="text-gray-600">
+                Enter the recipient's name, account number, and destination country.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <span className="text-2xl font-bold text-green-600">2</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                Source
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Select Payment Source
               </h3>
-              <p className="text-gray-600 text-center">
-                Select the source of funds, then choose the purpose of the transfer.
+              <p className="text-gray-600">
+                Choose your funding source and specify the purpose of payment.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <span className="text-2xl font-bold text-green-600">3</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                Confirmation
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Confirm & Send
               </h3>
-              <p className="text-gray-600 text-center">
-                Review all details, check the fees, and confirm your transfer.
+              <p className="text-gray-600">
+                Review the details, check exchange rates, and send instantly with complete transparency.
               </p>
             </div>
           </div>
