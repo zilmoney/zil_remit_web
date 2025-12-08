@@ -555,6 +555,16 @@ function SendMoneyFrance() {
                 Yes — ZilRemit shows the total cost (fees + FX conversion) upfront so you know exactly what the recipient receives before confirming the payment.
               </p>
             </div>
+
+            {/* FAQ 5 */}
+            <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Do I need to pre-fund a foreign bank account with ZilRemit?
+              </h3>
+              <p className="text-gray-600">
+                No, pre-funding a foreign bank account is not required with ZilRemit. Payments are sent directly from the wallet to the recipient's account without the need for a prior deposit.
+              </p>
+            </div>
           </div>
         </div>
       </section>
