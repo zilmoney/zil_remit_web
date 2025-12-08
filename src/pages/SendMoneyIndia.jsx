@@ -551,59 +551,6 @@ function SendMoneyIndia() {
         </div>
       </section>
 
-      {/* Smart Cross-Border Payments Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Smart Cross-Border Payments for Modern Businesses
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature 1 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Transparent Pricing Always
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Transfer funds with clear pricing and no exchange rate markups to ensure your recipient gets exactly what you intend.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                No Pre-Funding Required
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Send payments directly from the wallet without pre-funding foreign accounts to ensure easy access to your capital.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Real-Time Instant Payments
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Transfer your US Dollars to over 9+ countries with real-time exchange rates and secure processing.
-              </p>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Multi-Currency Flexibility
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Manage and transfer funds across multiple currencies to enjoy seamless global access under one account.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
