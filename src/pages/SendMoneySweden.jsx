@@ -551,59 +551,6 @@ function SendMoneySweden() {
         </div>
       </section>
 
-      {/* Payment Solutions Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Secure Payment Solutions for Your Business
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Solution 1 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Real-Time Instant Payments
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Transfer your US Dollars to over 9+ countries with real-time exchange rates and secure processing.
-              </p>
-            </div>
-
-            {/* Solution 2 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                ACH Bank Transfers
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Cost-effective business payments to domestic banks with same-day or next-day processing.
-              </p>
-            </div>
-
-            {/* Solution 3 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Wire Transfers
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Traditional international wire transfers with bank-to-bank security. Reliable for large business payments with comprehensive tracking and documentation.
-              </p>
-            </div>
-
-            {/* Solution 4 */}
-            <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Digital Payment Solutions
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Transfer your US Dollars to over 9+ countries with real-time exchange rates and secure processing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
