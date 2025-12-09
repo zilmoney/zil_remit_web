@@ -450,7 +450,7 @@ function SendMoneyGermany() {
               <img src="https://flagcdn.com/w40/it.png" alt="Italy flag" className="w-8 h-6 object-cover rounded" />
               <span>Italy</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+            <a href="/send-money-ireland" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
               <img src="https://flagcdn.com/w40/ie.png" alt="Ireland flag" className="w-8 h-6 object-cover rounded" />
               <span>Ireland</span>
             </a>

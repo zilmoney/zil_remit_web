@@ -4,7 +4,7 @@ import Footer from '../components/layout/Footer';
 import CallbackForm from '../CallbackForm';
 import ExactCalculator from '../ExactCalculator';
 import AnimatedPaymentInterface from '../components/AnimatedPaymentInterface';
-function SendMoneyEstonia() {
+function SendMoneyIreland() {
   const [animatedStats, setAnimatedStats] = useState({
     fees: 0,
     accounts: 0,
@@ -49,26 +49,26 @@ function SendMoneyEstonia() {
             <div className="animate-fade-in-up">
               {/* Highlight Bar */}
               <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
-                💸 Best USD to EUR rates for Estonia transfers
+                💸 Best USD to EUR rates for Ireland transfers
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 <span className="block">Send Money From USA</span>
-                <span className="block gradient-text">To ESTONIA</span>
+                <span className="block gradient-text">To IRELAND</span>
                 <span className="block text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 mt-2">
                   Ultra-Low Fees, Zero Hassle
                 </span>
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to EUR rates. Fast delivery to LHV Bank, Swedbank, or SEB Bank.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast delivery to AIB, Bank of Ireland, or Permanent TSB.
               </p>
 
               {/* Callback Form */}
               <CallbackForm />
 
               <p className="text-sm text-gray-500 mt-4">
-                Trusted by thousands of businesses sending money to Estonia
+                Trusted by thousands of businesses sending money to Ireland
               </p>
             </div>
 
@@ -91,10 +91,10 @@ function SendMoneyEstonia() {
                 </svg>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Fast Payments to Estonia
+                Fast Payments to Ireland
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Send money to Estonia for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast delivery of funds to any Estonian bank, like <span className="font-semibold">LHV Bank, Swedbank, or SEB Bank</span>.
+                Send money to Ireland for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast delivery of funds to any Irish bank, like <span className="font-semibold">AIB, Bank of Ireland, or Permanent TSB</span>.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
@@ -312,7 +312,7 @@ function SendMoneyEstonia() {
                   <svg className="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-700">Real time transfer update</span>
+                  <span className="text-gray-700">Transparent pricing, no hidden fees</span>
                 </li>
               </ul>
             </div>
@@ -320,140 +320,72 @@ function SendMoneyEstonia() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-green-600 to-green-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Ready to Transform Your International Payments?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join over 2 million businesses and individuals who trust us with their global payments
-          </p>
-          <a 
-            href="https://app.zilremit.com/signup" 
-            className="inline-block bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg"
-          >
-            Sign Up
-          </a>
-        </div>
-      </section>
-
-      {/* Why Choose Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our Payment Platform
-            </h2>
-            <p className="text-lg text-gray-600">
-              Experience fast, secure, and cost-effective international transfers
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Best Exchange Rates
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Save up to 80% with our real-time rates. We leverage advanced technology to offer rates up to 4% better than traditional providers.
-              </p>
-              <a href="#rates" className="text-green-600 font-semibold hover:text-green-700 inline-flex items-center">
-                Compare Rates →
-              </a>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Enterprise Security
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Bank-level encryption, 24/7 fraud monitoring, and regulatory compliance. Your money is always protected.
-              </p>
-              <a href="#security" className="text-green-600 font-semibold hover:text-green-700 inline-flex items-center">
-                Security Features →
-              </a>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                B2B Payment Hub
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Access a full range of B2B payment services, from ACH to credit card processing.
-              </p>
-              <a href="#features" className="text-green-600 font-semibold hover:text-green-700 inline-flex items-center">
-                Explore Features →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Locations */}
+      {/* Service Locations Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Check Our Service Locations
             </h2>
+            <p className="text-lg text-gray-600">
+              Send money to 9+ countries with the best exchange rates
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <a href="/send-money-estonia" className="bg-green-600 text-white p-4 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/ee.png" alt="Estonia flag" className="w-8 h-6 object-cover rounded" />
-              <span>Estonia</span>
+            {/* Estonia */}
+            <a href="/send-money-estonia" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/ee.png" alt="Estonia Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Estonia</span>
             </a>
-            <a href="/send-money-france" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/fr.png" alt="France flag" className="w-8 h-6 object-cover rounded" />
-              <span>France</span>
+
+            {/* France */}
+            <a href="/send-money-france" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/fr.png" alt="France Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">France</span>
             </a>
-            <a href="/send-money-germany" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/de.png" alt="Germany flag" className="w-8 h-6 object-cover rounded" />
-              <span>Germany</span>
+
+            {/* Germany */}
+            <a href="/send-money-germany" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/de.png" alt="Germany Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Germany</span>
             </a>
-            <a href="/send-money-india" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/in.png" alt="India flag" className="w-8 h-6 object-cover rounded" />
-              <span>India</span>
+
+            {/* India */}
+            <a href="/send-money-india" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">India</span>
             </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/ph.png" alt="Philippines flag" className="w-8 h-6 object-cover rounded" />
-              <span>Philippines</span>
+
+            {/* Philippines */}
+            <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center opacity-60 cursor-not-allowed">
+              <img src="https://flagcdn.com/w80/ph.png" alt="Philippines Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Philippines</span>
+            </div>
+
+            {/* Sweden */}
+            <a href="/send-money-sweden" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/se.png" alt="Sweden Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Sweden</span>
             </a>
-            <a href="/send-money-sweden" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/se.png" alt="Sweden flag" className="w-8 h-6 object-cover rounded" />
-              <span>Sweden</span>
-            </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/gb.png" alt="UK flag" className="w-8 h-6 object-cover rounded" />
-              <span>UK</span>
-            </a>
-            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/it.png" alt="Italy flag" className="w-8 h-6 object-cover rounded" />
-              <span>Italy</span>
-            </a>
-            <a href="/send-money-ireland" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
-              <img src="https://flagcdn.com/w40/ie.png" alt="Ireland flag" className="w-8 h-6 object-cover rounded" />
-              <span>Ireland</span>
-            </a>
+
+            {/* UK */}
+            <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center opacity-60 cursor-not-allowed">
+              <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">UK</span>
+            </div>
+
+            {/* Italy */}
+            <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center opacity-60 cursor-not-allowed">
+              <img src="https://flagcdn.com/w80/it.png" alt="Italy Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Italy</span>
+            </div>
+
+            {/* Ireland - Current Page */}
+            <div className="bg-green-600 rounded-xl p-6 shadow-lg flex flex-col items-center border-2 border-green-700">
+              <img src="https://flagcdn.com/w80/ie.png" alt="Ireland Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-white font-semibold">Ireland</span>
+            </div>
           </div>
         </div>
       </section>
@@ -463,26 +395,26 @@ function SendMoneyEstonia() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Send Money Anywhere with Our Mobile App
+              Manage Payments On The Go
             </h2>
             <p className="text-lg text-gray-600">
-              Experience the freedom of sending money globally from your smartphone. Fast, secure, and available 24/7.
+              Download our mobile app for seamless international payments anytime, anywhere
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Quick Transfers
+                Mobile-First Design
               </h3>
               <p className="text-gray-600">
-                Send money in seconds with just a few taps. No complicated forms or lengthy processes.
+                Intuitive interface optimized for mobile devices with quick access to all features.
               </p>
             </div>
 
@@ -494,10 +426,10 @@ function SendMoneyEstonia() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Real-time Notifications
+                Real-Time Notifications
               </h3>
               <p className="text-gray-600">
-                Track your transfers with instant updates. Know exactly when your money arrives.
+                Get instant updates on your transfers and account activity with push notifications.
               </p>
             </div>
 
@@ -615,4 +547,4 @@ function SendMoneyEstonia() {
   );
 }
 
-export default SendMoneyEstonia;
+export default SendMoneyIreland;
