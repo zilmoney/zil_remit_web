@@ -203,7 +203,7 @@ function SendMoneyEstonia() {
               How It Works
             </h2>
             <p className="text-lg text-gray-600">
-              Send money globally in just 3 simple steps
+              Send Global Payments in 3 Simple Steps
             </p>
           </div>
 
@@ -214,10 +214,10 @@ function SendMoneyEstonia() {
                 <span className="text-2xl font-bold text-green-600">1</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                Recipient Details
+                Add Recipient Details
               </h3>
               <p className="text-gray-600 text-center">
-                Enter the recipient's name, account details, and the amount you want to send.
+                Enter the recipient's name, account number, and destination country.
               </p>
             </div>
 
@@ -227,10 +227,10 @@ function SendMoneyEstonia() {
                 <span className="text-2xl font-bold text-green-600">2</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                Source
+                Select Payment Source
               </h3>
               <p className="text-gray-600 text-center">
-                Select the source of funds, then choose the purpose of the transfer.
+                Choose your funding source and specify the purpose of payment.
               </p>
             </div>
 
@@ -240,10 +240,10 @@ function SendMoneyEstonia() {
                 <span className="text-2xl font-bold text-green-600">3</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                Confirmation
+                Confirm & Send
               </h3>
               <p className="text-gray-600 text-center">
-                Review all details, check the fees, and confirm your transfer.
+                Review the details, check exchange rates, and send instantly with complete transparency.
               </p>
             </div>
           </div>
