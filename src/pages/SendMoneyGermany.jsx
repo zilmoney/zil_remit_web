@@ -61,7 +61,7 @@ function SendMoneyGermany() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to EUR rates. Fast delivery to Deutsche Bank, Commerzbank, or DZ Bank.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to Deutsche Bank, Commerzbank, or DZ Bank.
               </p>
 
               {/* Callback Form */}
@@ -94,7 +94,7 @@ function SendMoneyGermany() {
                 Fast Payments to Germany
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Send money to Germany for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast delivery of funds to any German bank, like <span className="font-semibold">Deutsche Bank, Commerzbank, or DZ Bank</span>.
+                Send money to Germany for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast transfers of funds to any German bank, like <span className="font-semibold">Deutsche Bank, Commerzbank, or DZ Bank</span>.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">

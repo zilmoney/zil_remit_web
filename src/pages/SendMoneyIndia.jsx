@@ -61,7 +61,7 @@ function SendMoneyIndia() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to INR rates.
+                International business payments in minutes with lowest fees and best USD to INR rates. Fast transfers to SBI, HDFC, or ICICI.
               </p>
 
               {/* Callback Form */}

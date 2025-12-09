@@ -61,7 +61,7 @@ function SendMoneyEstonia() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to EUR rates. Fast delivery to LHV Bank, Swedbank, or SEB Bank.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to LHV Bank, Swedbank, or SEB Bank.
               </p>
 
               {/* Callback Form */}
@@ -94,7 +94,7 @@ function SendMoneyEstonia() {
                 Fast Payments to Estonia
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Send money to Estonia for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast delivery of funds to any Estonian bank, like <span className="font-semibold">LHV Bank, Swedbank, or SEB Bank</span>.
+                Send money to Estonia for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast transfers of funds to any Estonian bank, like <span className="font-semibold">LHV Bank, Swedbank, or SEB Bank</span>.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">

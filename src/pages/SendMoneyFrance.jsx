@@ -61,7 +61,7 @@ function SendMoneyFrance() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to EUR rates.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to BNP Paribas, Crédit Agricole, or Société Générale.
               </p>
 
               {/* Callback Form */}

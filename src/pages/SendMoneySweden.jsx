@@ -61,7 +61,7 @@ function SendMoneySweden() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to SEK rates.
+                International business payments in minutes with lowest fees and best USD to SEK rates. Fast transfers to SEB, Handelsbanken, or Swedbank.
               </p>
 
               {/* Callback Form */}
