@@ -11,6 +11,7 @@ import SendMoneyFrance from './pages/SendMoneyFrance.jsx'
 import SendMoneyIndia from './pages/SendMoneyIndia.jsx'
 import SendMoneyGermany from './pages/SendMoneyGermany.jsx'
 import SendMoneyIreland from './pages/SendMoneyIreland.jsx'
+import SendMoneyItaly from './pages/SendMoneyItaly.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/send-money-india" element={<SendMoneyIndia />} />
         <Route path="/send-money-germany" element={<SendMoneyGermany />} />
         <Route path="/send-money-ireland" element={<SendMoneyIreland />} />
+        <Route path="/send-money-italy" element={<SendMoneyItaly />} />
       </Routes>
     </Router>
   </StrictMode>,
