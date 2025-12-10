@@ -1203,6 +1203,76 @@ function App() {
         </div>
       </section>
 
+      {/* Service Locations Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Check Our Service Locations
+            </h2>
+            <p className="text-lg text-gray-600">
+              Send money to 9+ countries with the best exchange rates
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {/* Estonia */}
+            <a href="/send-money-estonia" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/ee.png" alt="Estonia Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Estonia</span>
+            </a>
+
+            {/* France */}
+            <a href="/send-money-france" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/fr.png" alt="France Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">France</span>
+            </a>
+
+            {/* Germany */}
+            <a href="/send-money-germany" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/de.png" alt="Germany Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Germany</span>
+            </a>
+
+            {/* India */}
+            <a href="/send-money-india" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/in.png" alt="India Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">India</span>
+            </a>
+
+            {/* Philippines */}
+            <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center opacity-60 cursor-not-allowed">
+              <img src="https://flagcdn.com/w80/ph.png" alt="Philippines Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Philippines</span>
+            </div>
+
+            {/* Sweden */}
+            <a href="/send-money-sweden" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/se.png" alt="Sweden Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Sweden</span>
+            </a>
+
+            {/* UK */}
+            <a href="/send-money-uk" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">UK</span>
+            </a>
+
+            {/* Italy */}
+            <a href="/send-money-italy" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/it.png" alt="Italy Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Italy</span>
+            </a>
+
+            {/* Ireland */}
+            <a href="/send-money-ireland" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/ie.png" alt="Ireland Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">Ireland</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-20 bg-gradient-to-br from-green-600 to-green-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

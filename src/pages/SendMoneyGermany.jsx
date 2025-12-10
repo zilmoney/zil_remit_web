@@ -4,7 +4,7 @@ import Footer from '../components/layout/Footer';
 import CallbackForm from '../CallbackForm';
 import ExactCalculator from '../ExactCalculator';
 import AnimatedPaymentInterface from '../components/AnimatedPaymentInterface';
-function SendMoneyEstonia() {
+function SendMoneyGermany() {
   const [animatedStats, setAnimatedStats] = useState({
     fees: 0,
     accounts: 0,
@@ -49,26 +49,26 @@ function SendMoneyEstonia() {
             <div className="animate-fade-in-up">
               {/* Highlight Bar */}
               <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
-                💸 Best USD to EUR rates for Estonia transfers
+                💸 Best USD to EUR rates for Germany transfers
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 <span className="block">Send Money From USA</span>
-                <span className="block gradient-text">To ESTONIA</span>
+                <span className="block gradient-text">To GERMANY</span>
                 <span className="block text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-600 mt-2">
                   Ultra-Low Fees, Zero Hassle
                 </span>
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to LHV Bank, Swedbank, or SEB Bank.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to Deutsche Bank, Commerzbank, or DZ Bank.
               </p>
 
               {/* Callback Form */}
               <CallbackForm />
 
               <p className="text-sm text-gray-500 mt-4">
-                Trusted by thousands of businesses sending money to Estonia
+                Trusted by thousands of businesses sending money to Germany
               </p>
             </div>
 
@@ -91,10 +91,10 @@ function SendMoneyEstonia() {
                 </svg>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Fast Payments to Estonia
+                Fast Payments to Germany
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Send money to Estonia for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast transfers of funds to any Estonian bank, like <span className="font-semibold">LHV Bank, Swedbank, or SEB Bank</span>.
+                Send money to Germany for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to EUR</span> exchange rates and fast transfers of funds to any German bank, like <span className="font-semibold">Deutsche Bank, Commerzbank, or DZ Bank</span>.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
@@ -418,7 +418,7 @@ function SendMoneyEstonia() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <a href="/send-money-estonia" className="bg-green-600 text-white p-4 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors flex flex-col items-center gap-2">
+            <a href="/send-money-estonia" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
               <img src="https://flagcdn.com/w40/ee.png" alt="Estonia flag" className="w-8 h-6 object-cover rounded" />
               <span>Estonia</span>
             </a>
@@ -426,7 +426,7 @@ function SendMoneyEstonia() {
               <img src="https://flagcdn.com/w40/fr.png" alt="France flag" className="w-8 h-6 object-cover rounded" />
               <span>France</span>
             </a>
-            <a href="/send-money-germany" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+            <a href="/send-money-germany" className="bg-green-600 text-white p-4 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors flex flex-col items-center gap-2">
               <img src="https://flagcdn.com/w40/de.png" alt="Germany flag" className="w-8 h-6 object-cover rounded" />
               <span>Germany</span>
             </a>
@@ -442,7 +442,7 @@ function SendMoneyEstonia() {
               <img src="https://flagcdn.com/w40/se.png" alt="Sweden flag" className="w-8 h-6 object-cover rounded" />
               <span>Sweden</span>
             </a>
-            <a href="/send-money-uk" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
+            <a href="#" className="bg-white border-2 border-gray-200 p-4 rounded-lg text-center font-semibold hover:border-green-600 hover:text-green-600 transition-colors flex flex-col items-center gap-2">
               <img src="https://flagcdn.com/w40/gb.png" alt="UK flag" className="w-8 h-6 object-cover rounded" />
               <span>UK</span>
             </a>
@@ -615,4 +615,4 @@ function SendMoneyEstonia() {
   );
 }
 
-export default SendMoneyEstonia;
+export default SendMoneyGermany;

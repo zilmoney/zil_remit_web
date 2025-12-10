@@ -7,7 +7,7 @@ function Header() {
   const isHome = location.pathname === '/';
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <nav className="bg-white shadow-sm border-b border-gray-100 fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -21,31 +21,31 @@ function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a href={isHome ? "#features" : "/#features"} className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+            <div className="ml-10 flex items-center space-x-2">
+              <a href={isHome ? "#features" : "/#features"} className="text-gray-700 hover:text-green-600 hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
                 Features
               </a>
-              <a href={isHome ? "#solutions" : "/#solutions"} className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+              <a href={isHome ? "#solutions" : "/#solutions"} className="text-gray-700 hover:text-green-600 hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
                 Solutions
               </a>
-              <a href={isHome ? "#pricing" : "/#pricing"} className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+              <a href={isHome ? "#pricing" : "/#pricing"} className="text-gray-700 hover:text-green-600 hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
                 Pricing
               </a>
-              <Link to="/about" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+              <Link to="/about" className="text-gray-700 hover:text-green-600 hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
                 About
               </Link>
-              <a href={isHome ? "#support" : "/#support"} className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+              <a href={isHome ? "#support" : "/#support"} className="text-gray-700 hover:text-green-600 hover:bg-green-50 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
                 Support
               </a>
             </div>
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a href="https://app.zilremit.com/login" className="text-gray-700 hover:text-green-600 px-4 py-2 text-sm font-medium transition-colors">
+          <div className="hidden md:flex items-center space-x-3">
+            <a href="https://app.zilremit.com/login" className="text-gray-700 hover:text-green-600 hover:bg-green-50 px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200">
               Sign In
             </a>
-            <a href="https://app.zilremit.com/signup" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 btn-primary">
+            <a href="https://app.zilremit.com/signup" className="bg-green-600 hover:bg-green-700 hover:shadow-lg text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 transform hover:scale-105">
               Get Started
             </a>
           </div>
