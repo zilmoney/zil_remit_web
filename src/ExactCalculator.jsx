@@ -817,7 +817,7 @@ const ExactCalculator = () => {
           <div className="currency-input" id="send-amount-container">
             <input type="text" id="send-amount" placeholder="0.00" />
             <div className="currency-display">
-              <img src="https://zilmoney.com/wp-content/uploads/2025/09/us.png" alt="USD" className="flag-icon" id="send-flag" />
+              <img src="https://flagcdn.com/w320/us.png" alt="USD" className="flag-icon" id="send-flag" />
               <span className="currency-code" id="send-currency">USD</span>
             </div>
           </div>
@@ -830,25 +830,25 @@ const ExactCalculator = () => {
             <input type="text" id="receive-amount" placeholder="0.00" />
             <div className="currency-dropdown">
               <div className="currency-selector" onClick={() => window.toggleDropdown && window.toggleDropdown('receive')}>
-                <img src="https://zilmoney.com/wp-content/uploads/2025/09/in.png" alt="India" className="flag-icon" id="receive-flag" />
+                <img src="https://flagcdn.com/w320/in.png" alt="India" className="flag-icon" id="receive-flag" />
                 <span className="currency-code" id="receive-currency">INR</span>
                 <div className="dropdown-arrow"></div>
               </div>
               <div className="dropdown-content" id="receive-dropdown">
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://zilmoney.com/wp-content/uploads/2025/09/ee.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/ee.png" alt="Estonia" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://flagcdn.com/w320/ee.png')}>
+                  <img src="https://flagcdn.com/w320/ee.png" alt="Estonia" className="flag-icon" />
                   <span>Estonia</span>
                 </div>
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://zilmoney.com/wp-content/uploads/2025/09/fr.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/fr.png" alt="France" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://flagcdn.com/w320/fr.png')}>
+                  <img src="https://flagcdn.com/w320/fr.png" alt="France" className="flag-icon" />
                   <span>France</span>
                 </div>
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://zilmoney.com/wp-content/uploads/2025/09/de.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/de.png" alt="Germany" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://flagcdn.com/w320/de.png')}>
+                  <img src="https://flagcdn.com/w320/de.png" alt="Germany" className="flag-icon" />
                   <span>Germany</span>
                 </div>
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'INR', 'https://zilmoney.com/wp-content/uploads/2025/09/in.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/in.png" alt="India" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'INR', 'https://flagcdn.com/w320/in.png')}>
+                  <img src="https://flagcdn.com/w320/in.png" alt="India" className="flag-icon" />
                   <span>India</span>
                 </div>
                 <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'EUR', 'https://flagcdn.com/w320/ie.png')}>
@@ -859,16 +859,16 @@ const ExactCalculator = () => {
                   <img src="https://flagcdn.com/w320/it.png" alt="Italy" className="flag-icon" />
                   <span>Italy</span>
                 </div>
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'PHP', 'https://zilmoney.com/wp-content/uploads/2025/09/ph.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/ph.png" alt="Philippines" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'PHP', 'https://flagcdn.com/w320/ph.png')}>
+                  <img src="https://flagcdn.com/w320/ph.png" alt="Philippines" className="flag-icon" />
                   <span>Philippines</span>
                 </div>
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'SEK', 'https://zilmoney.com/wp-content/uploads/2025/09/se.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/se.png" alt="Sweden" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'SEK', 'https://flagcdn.com/w320/se.png')}>
+                  <img src="https://flagcdn.com/w320/se.png" alt="Sweden" className="flag-icon" />
                   <span>Sweden</span>
                 </div>
-                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'GBP', 'https://zilmoney.com/wp-content/uploads/2025/09/gb.png')}>
-                  <img src="https://zilmoney.com/wp-content/uploads/2025/09/gb.png" alt="United Kingdom" className="flag-icon" />
+                <div className="dropdown-item" onClick={() => window.selectCurrency && window.selectCurrency('receive', 'GBP', 'https://flagcdn.com/w320/gb.png')}>
+                  <img src="https://flagcdn.com/w320/gb.png" alt="United Kingdom" className="flag-icon" />
                   <span>United Kingdom</span>
                 </div>
               </div>

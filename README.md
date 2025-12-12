@@ -148,7 +148,7 @@ The calculator uses simulated exchange rates. For production, integrate with a r
 
 ## License
 
-This project is created for ZilRemit and powered by Zil Money.
+This project is created for ZilRemit and .
 
 ---
 

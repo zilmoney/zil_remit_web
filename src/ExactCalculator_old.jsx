@@ -20,7 +20,7 @@ const ExactCalculator = () => {
   const [exchangeRate, setExchangeRate] = useState(0);
   const [selectedCountry, setSelectedCountry] = useState('India');
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
-  const [selectedFlag, setSelectedFlag] = useState('https://zilmoney.com/wp-content/uploads/2025/09/in.png');
+  const [selectedFlag, setSelectedFlag] = useState('https://flagcdn.com/w320/in.png');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isApiCallInProgress, setIsApiCallInProgress] = useState(false);
@@ -341,13 +341,13 @@ const ExactCalculator = () => {
   }, [selectedCountry]);
 
   const countries = [
-    { name: 'Estonia', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/ee.png' },
-    { name: 'France', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/fr.png' },
-    { name: 'Germany', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/de.png' },
-    { name: 'India', currency: 'INR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/in.png' },
-    { name: 'Philippines', currency: 'PHP', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/ph.png' },
-    { name: 'Sweden', currency: 'SEK', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/se.png' },
-    { name: 'United Kingdom', currency: 'GBP', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/gb.png' }
+    { name: 'Estonia', currency: 'EUR', flag: 'https://flagcdn.com/w320/ee.png' },
+    { name: 'France', currency: 'EUR', flag: 'https://flagcdn.com/w320/fr.png' },
+    { name: 'Germany', currency: 'EUR', flag: 'https://flagcdn.com/w320/de.png' },
+    { name: 'India', currency: 'INR', flag: 'https://flagcdn.com/w320/in.png' },
+    { name: 'Philippines', currency: 'PHP', flag: 'https://flagcdn.com/w320/ph.png' },
+    { name: 'Sweden', currency: 'SEK', flag: 'https://flagcdn.com/w320/se.png' },
+    { name: 'United Kingdom', currency: 'GBP', flag: 'https://flagcdn.com/w320/gb.png' }
   ];
 
   return (
@@ -393,7 +393,7 @@ const ExactCalculator = () => {
             className="flex-1 px-4 py-5 text-2xl font-semibold outline-none bg-transparent"
           />
           <div className="flex items-center px-4 py-5 gap-2">
-            <img src="https://zilmoney.com/wp-content/uploads/2025/09/us.png" alt="USD" className="w-6 h-6 rounded-full object-cover border border-gray-200" />
+            <img src="https://flagcdn.com/w320/us.png" alt="USD" className="w-6 h-6 rounded-full object-cover border border-gray-200" />
             <span className="font-semibold text-gray-700">USD</span>
           </div>
         </div>

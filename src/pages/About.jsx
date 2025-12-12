@@ -25,7 +25,7 @@ function About() {
               Our founder faced a real-life challenge while running Tyler Petroleum, a $60+ million annual revenue business. He relied on multiple platforms like Bill.com, Deluxe Checks, and Mint.com for payments, banking, and tracking, leading to inefficiency and frustration.
             </p>
             <p>
-              Inspired by his experience managing thousands of vendors, serving as a Local ATM Processor, and operating retail and Western Union locations, he envisioned an all-in-one solution. This led to the creation of ZilRemit powered by Zil Money—a unified platform simplifying payments and banking for businesses everywhere.
+              Inspired by his experience managing thousands of vendors, serving as a Local ATM Processor, and operating retail and Western Union locations, he envisioned an all-in-one solution. This led to the creation of ZilRemit —a unified platform simplifying payments and banking for businesses everywhere.
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ function About() {
               <div className="text-5xl font-bold text-blue-900 mb-2">$91B+</div>
               <div className="text-gray-600 mb-4">Gross Transaction Volume</div>
               <div className="text-2xl font-semibold text-green-600 mb-2">Revolution</div>
-              <p className="text-gray-700">In payments processed through ZilRemit powered by Zil Money</p>
+              <p className="text-gray-700">In payments processed through ZilRemit </p>
             </div>
             
             {/* Stat 2 */}
@@ -79,7 +79,7 @@ function About() {
                 <p className="text-blue-900 font-semibold mb-1">Chief Executive Officer</p>
                 <p className="text-gray-600 mb-4">Harvard Fin Tech.</p>
                 <p className="text-gray-700">
-                  Sabeer Nelli is a visionary entrepreneur whose leadership has been the driving force behind Zil Money's rapid ascent in the fintech landscape. With an extensive background in both the oil market and fintech, Sabeer's entrepreneurial journey began in 2005 with the founding of Tyler Petroleum. His expertise in managing complex financial transactions and his relentless pursuit of innovative solutions led him to create Zil Money a fintech neo-bank tailored to address the financial needs of small and medium-sized enterprises (SMEs).
+                  Sabeer Nelli is a visionary entrepreneur whose leadership has been the driving force behind 's rapid ascent in the fintech landscape. With an extensive background in both the oil market and fintech, Sabeer's entrepreneurial journey began in 2005 with the founding of Tyler Petroleum. His expertise in managing complex financial transactions and his relentless pursuit of innovative solutions led him to create  a fintech neo-bank tailored to address the financial needs of small and medium-sized enterprises (SMEs).
                 </p>
               </div>
             </div>
@@ -124,7 +124,7 @@ function About() {
                 <p className="text-blue-900 font-semibold mb-1">Chief Financial Officer</p>
                 <p className="text-gray-600 mb-4">Indian Institute of Technology, Mumbai, Pace University</p>
                 <p className="text-gray-700">
-                  Afzal Modak is a seasoned finance executive with a distinguished career in managing large-scale financial operations and strategic investments. His experience includes serving as CFO at GE Capital, where he oversaw multi-billion-dollar financial operations, and as a partner at GSV Investment Fund, where he focused on high-growth technology companies. Afzal's deep understanding of financial strategy, capital markets, and investment management is critical to ZilMoney's growth strategy and its pursuit of securing the necessary capital to scale the business.
+                  Afzal Modak is a seasoned finance executive with a distinguished career in managing large-scale financial operations and strategic investments. His experience includes serving as CFO at GE Capital, where he oversaw multi-billion-dollar financial operations, and as a partner at GSV Investment Fund, where he focused on high-growth technology companies. Afzal's deep understanding of financial strategy, capital markets, and investment management is critical to 's growth strategy and its pursuit of securing the necessary capital to scale the business.
                 </p>
               </div>
             </div>
@@ -138,7 +138,7 @@ function About() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">Mohanraj Makkuni</h3>
                 <p className="text-blue-900 font-semibold mb-1">Chief Marketing Officer</p>
                 <p className="text-gray-700">
-                  Mohanraj Makkuni brings a remarkable combination of strategic vision, global leadership, and a profound understanding of enterprise dynamics to his role as Chief Marketing Officer at Zil Money. Tasked with cultivating and strengthening relationships with large-scale businesses, Mohan plays a pivotal role in aligning Zil Money's innovative fintech solutions with the evolving needs of enterprise clients. His mission is to position Zil Money as the leading banking and payment solutions partner for businesses worldwide.
+                  Mohanraj Makkuni brings a remarkable combination of strategic vision, global leadership, and a profound understanding of enterprise dynamics to his role as Chief Marketing Officer at . Tasked with cultivating and strengthening relationships with large-scale businesses, Mohan plays a pivotal role in aligning 's innovative fintech solutions with the evolving needs of enterprise clients. His mission is to position  as the leading banking and payment solutions partner for businesses worldwide.
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@ function About() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">Amber Devolk</h3>
                 <p className="text-blue-900 font-semibold mb-1">Chief Compliance Officer & BSA</p>
                 <p className="text-gray-700">
-                  Amber Devolk is a distinguished Chief Compliance Officer with over 18 years of experience in compliance, risk management, and corporate legal matters across a variety of sectors including fintech, banking, telecommunications, and entertainment. As Zil Money's Chief Compliance Officer (CCO) and BSA Officer, Amber plays a pivotal role in shaping the regulatory strategy and ensuring compliance across all of Zil Money's banking and financial services. Known for her strategic thinking, adept regulatory navigation, and award-winning customer service, Amber's leadership helps Zilmoney maintain its reputation as a trusted, zero-fee banking platform for small and medium-sized enterprises (SMEs).
+                  Amber Devolk is a distinguished Chief Compliance Officer with over 18 years of experience in compliance, risk management, and corporate legal matters across a variety of sectors including fintech, banking, telecommunications, and entertainment. As 's Chief Compliance Officer (CCO) and BSA Officer, Amber plays a pivotal role in shaping the regulatory strategy and ensuring compliance across all of 's banking and financial services. Known for her strategic thinking, adept regulatory navigation, and award-winning customer service, Amber's leadership helps Zilmoney maintain its reputation as a trusted, zero-fee banking platform for small and medium-sized enterprises (SMEs).
                 </p>
               </div>
             </div>

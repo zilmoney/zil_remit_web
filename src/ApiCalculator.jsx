@@ -6,15 +6,15 @@ const ApiCalculator = () => {
   
   // Country to currency code mapping
   const countryCurrencyMap = {
-    'Estonia': { code: 'EE', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/ee.png' },
-    'France': { code: 'FR', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/fr.png' },
-    'Germany': { code: 'DE', currency: 'EUR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/de.png' },
-    'India': { code: 'IN', currency: 'INR', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/in.png' },
+    'Estonia': { code: 'EE', currency: 'EUR', flag: 'https://flagcdn.com/w320/ee.png' },
+    'France': { code: 'FR', currency: 'EUR', flag: 'https://flagcdn.com/w320/fr.png' },
+    'Germany': { code: 'DE', currency: 'EUR', flag: 'https://flagcdn.com/w320/de.png' },
+    'India': { code: 'IN', currency: 'INR', flag: 'https://flagcdn.com/w320/in.png' },
     'Ireland': { code: 'IE', currency: 'EUR', flag: 'https://flagcdn.com/w320/ie.png' },
     'Italy': { code: 'IT', currency: 'EUR', flag: 'https://flagcdn.com/w320/it.png' },
-    'Philippines': { code: 'PH', currency: 'PHP', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/ph.png' },
-    'Sweden': { code: 'SE', currency: 'SEK', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/se.png' },
-    'United Kingdom': { code: 'GB', currency: 'GBP', flag: 'https://zilmoney.com/wp-content/uploads/2025/09/gb.png' }
+    'Philippines': { code: 'PH', currency: 'PHP', flag: 'https://flagcdn.com/w320/ph.png' },
+    'Sweden': { code: 'SE', currency: 'SEK', flag: 'https://flagcdn.com/w320/se.png' },
+    'United Kingdom': { code: 'GB', currency: 'GBP', flag: 'https://flagcdn.com/w320/gb.png' }
   };
 
   const [sendAmount, setSendAmount] = useState('');
@@ -344,7 +344,7 @@ const ApiCalculator = () => {
           />
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center bg-gray-100 px-3 py-2 rounded-md">
             <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex items-center justify-center bg-blue-600">
-              <img src="https://zilmoney.com/wp-content/uploads/2025/09/us.png" alt="USD" className="w-full h-full object-cover" />
+              <img src="https://flagcdn.com/w320/us.png" alt="USD" className="w-full h-full object-cover" />
             </div>
             <span className="font-semibold text-gray-700 text-sm">USD</span>
           </div>
@@ -402,7 +402,7 @@ const ApiCalculator = () => {
       </div>
 
       <a 
-        href="https://zilmoney.com/preregister/" 
+        href="https://app.zilremit.com/signup" 
         target="_blank" 
         rel="noopener noreferrer"
         className={`block w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-primary shadow-lg hover:shadow-xl text-center ${
