@@ -358,10 +358,10 @@ function SendMoneyPhilippines() {
               <span className="text-gray-900 font-semibold">India</span>
             </a>
 
-            {/* Philippines */}
-            <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center opacity-60 cursor-not-allowed">
+            {/* Philippines - Current Page */}
+            <div className="bg-green-600 rounded-xl p-6 shadow-lg flex flex-col items-center border-2 border-green-700">
               <img src="https://flagcdn.com/w80/ph.png" alt="Philippines Flag" className="w-12 h-8 object-cover mb-3 rounded" />
-              <span className="text-gray-900 font-semibold">Philippines</span>
+              <span className="text-white font-semibold">Philippines</span>
             </div>
 
             {/* Sweden */}
@@ -370,11 +370,11 @@ function SendMoneyPhilippines() {
               <span className="text-gray-900 font-semibold">Sweden</span>
             </a>
 
-            {/* Philippines - Current Page */}
-            <div className="bg-green-600 rounded-xl p-6 shadow-lg flex flex-col items-center border-2 border-green-700">
-              <img src="https://flagcdn.com/w80/gb.png" alt="Philippines Flag" className="w-12 h-8 object-cover mb-3 rounded" />
-              <span className="text-white font-semibold">Philippines</span>
-            </div>
+            {/* UK */}
+            <a href="/send-money-uk" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
+              <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" className="w-12 h-8 object-cover mb-3 rounded" />
+              <span className="text-gray-900 font-semibold">UK</span>
+            </a>
 
             {/* Italy */}
             <a href="/send-money-italy" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-green-500 flex flex-col items-center">
