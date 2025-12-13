@@ -61,7 +61,7 @@ function SendMoneyGermany() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to Deutsche Bank, Commerzbank, or DZ Bank.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to major banks.
               </p>
 
               {/* Callback Form */}
