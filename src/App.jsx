@@ -682,8 +682,8 @@ function App() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Enjoy instant transfers with transparent rates and zero hidden fees. 
-                Experience how effortless sending money abroad can be.
+                Enjoy instant international money transfers with transparent rates and zero hidden fees. 
+                Experience how effortless sending money abroad can be with Zil Remit, an international money transfer platform and an independent product brand operated by Zil Money, built for fast, secure global payments.
               </p>
 
               {/* Callback Form */}
