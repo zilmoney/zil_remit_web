@@ -96,7 +96,7 @@ function SendMoneyPhilippines() {
                 Fast Payments to Philippines
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Send money to Philippines for business with our secure platform, featuring competitive <span className="font-semibold text-green-600">USD to PHP</span> exchange rates and fast transfers of funds to any Philippines bank. Major banks headquartered in the Philippines include <span className="font-semibold">BDO Unibank, Bank of the Philippine Islands (BPI), and Metrobank</span>, all based in Makati City.
+                Send money to Philippines for business using our secure platform, which offers competitive <span className="font-semibold text-green-600">USD to PHP</span> exchange rates and fast transfers of funds to any Philippine bank, including <span className="font-semibold">BDO Unibank, BPI, or Metrobank</span>.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
