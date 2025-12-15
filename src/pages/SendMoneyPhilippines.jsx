@@ -62,7 +62,7 @@ function SendMoneyPhilippines() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                International business payments in minutes with lowest fees and best USD to PHP rates. Fast transfers to major banks in the Philippines.
+                Enjoy instant international money transfers with transparent rates and zero hidden fees. Experience how effortless sending money abroad can be with Zil Remit, an international money transfer platform and an independent product brand operated by Zil Money, built for fast, secure global payments.
               </p>
 
               {/* Callback Form */}
