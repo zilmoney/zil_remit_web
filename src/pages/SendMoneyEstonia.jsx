@@ -593,7 +593,7 @@ function SendMoneyEstonia() {
                 Are the transfer fees and exchange rates transparent with ZilRemit?
               </h3>
               <p className="text-gray-600">
-                Yes — ZilRemit shows the total cost (fees + FX conversion) upfront so you know exactly what the recipient receives before confirming the payment.
+                Yes, ZilRemit shows the total cost (fees + FX conversion) upfront so you know exactly what the recipient receives before confirming the payment.
               </p>
             </div>
 
