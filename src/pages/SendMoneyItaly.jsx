@@ -62,8 +62,7 @@ function SendMoneyItaly() {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Enjoy instant transfers with transparent rates and zero hidden fees. 
-                Experience how effortless sending money abroad can be.
+                International business payments in minutes with lowest fees and best USD to EUR rates. Fast transfers to Intesa Sanpaolo, UniCredit, or Banco BPM.
               </p>
 
               {/* Callback Form */}
