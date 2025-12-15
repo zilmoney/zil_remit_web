@@ -469,7 +469,7 @@ function SendMoneyPhilippines() {
                 {animatedStats.accounts}M+
               </div>
               <div className="text-xl text-gray-700">
-                Online business accounts
+                Online Business Accounts
               </div>
             </div>
             <div>
