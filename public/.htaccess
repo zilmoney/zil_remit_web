@@ -5,14 +5,10 @@
   RewriteEngine On
   RewriteBase /
 
-  # Custom 404 error page
-  ErrorDocument 404 /404.html
-
-  # Redirect all requests to index.html for SPA routing
+  # Serve index.html for all routes (SPA routing)
   # except for files that exist
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} !^/404\.html$
   RewriteRule . /index.html [L]
 </IfModule>
 

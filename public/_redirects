@@ -1,2 +1,5 @@
-# Redirect all 404 errors to the custom 404 page
-/* /404.html 404
+# Serve 404.html for direct access to 404 page
+/404.html /404.html 200
+
+# SPA fallback - serve index.html for all other routes (React Router will handle 404s)
+/* /index.html 200
