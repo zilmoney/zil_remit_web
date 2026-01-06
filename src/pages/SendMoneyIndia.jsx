@@ -13,6 +13,7 @@ function SendMoneyIndia() {
 
   // Animated counter effect
   useEffect(() => {
+    document.title = "Send Money From USA To INDIA Ultra-Low Fees, Zero Hassle";
     const animateValue = (start, end, duration, callback) => {
       let startTimestamp = null;
       const step = (timestamp) => {

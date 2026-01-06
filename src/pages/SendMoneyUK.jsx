@@ -14,6 +14,7 @@ function SendMoneyUK() {
 
   // Animated counter effect
   useEffect(() => {
+    document.title = "Send Money From USA To UK Ultra-Low Fees, Zero Hassle";
     const animateValue = (start, end, duration, callback) => {
       let startTimestamp = null;
       const step = (timestamp) => {

@@ -14,6 +14,7 @@ function SendMoneyItaly() {
 
   // Animated counter effect
   useEffect(() => {
+    document.title = "Send Money From USA To ITALY Ultra-Low Fees, Zero Hassle";
     const animateValue = (start, end, duration, callback) => {
       let startTimestamp = null;
       const step = (timestamp) => {
