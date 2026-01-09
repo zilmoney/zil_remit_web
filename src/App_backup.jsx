@@ -690,7 +690,7 @@ function App() {
               <CallbackForm />
 
               <p className="text-sm text-gray-500">
-                Trusted by thousands of global businesses
+                Zil Remit is a Global Payment Solution by Zil Money.
               </p>
             </div>
 
