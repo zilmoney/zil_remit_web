@@ -336,19 +336,11 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        // Load header
-        fetch('/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-
-        // Load footer
-        fetch('/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
     </script>
+    <script src="/components/loader.js"></script>
 </body>
 </html>
