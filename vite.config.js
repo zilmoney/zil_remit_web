@@ -33,7 +33,7 @@ const copyBlogsPlugin = () => {
       }
       
       // Copy root-level HTML files to dist (except index.html which is handled by Vite)
-      const rootHtmlFiles = ['404.html', 'blog.html', 'blog-page-2.html', 'blogs.html', 'cookie-policy.html', 'disclaimer.html', 'privacy-policy.html', 'terms-and-condition.html']
+      const rootHtmlFiles = ['404.html', 'blog.html', 'blog-page-2.html', 'blog-page-3.html', 'blog-page-4.html', 'blog-page-5.html', 'blogs.html', 'cookie-policy.html', 'disclaimer.html', 'privacy-policy.html', 'terms-and-condition.html']
       rootHtmlFiles.forEach(file => {
         const src = path.join(rootDir, file)
         const dest = path.join(distDir, file)
