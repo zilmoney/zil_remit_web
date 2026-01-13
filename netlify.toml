@@ -10,6 +10,12 @@
   to = "/404.html"
   status = 200
 
+# Serve news.html directly
+[[redirects]]
+  from = "/news.html"
+  to = "/news.html"
+  status = 200
+
 # SPA routing - serve index.html for all routes (React Router handles 404s)
 [[redirects]]
   from = "/*"
