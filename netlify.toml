@@ -2,7 +2,7 @@
 
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "pnpm install && pnpm run build"
 
 # Serve 404.html for direct access
 [[redirects]]
