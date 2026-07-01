@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZilRemit Blog — Design Preview</title>
+<meta name="description" content="International payment insights, exchange-rate guides, and country-by-country playbooks for sending business payments across borders with ZilRemit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#3BF493; --green-deep:#12b674; --blue:#20319D; --ink:#101a3a;
+    --muted:#5b6172; --faint:#8a90a0; --line:#eceef2; --bg:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;color:var(--blue);}
+  .brand b{color:var(--green-deep);font-weight:800;}
+  .brand svg{width:30px;height:30px;}
+  .navlinks{display:flex;align-items:center;gap:26px;}
+  .navlinks a{color:var(--muted);font-size:14px;font-weight:500;transition:color .15s;}
+  .navlinks a:hover{color:var(--green-deep);}
+  .navlinks a.active{color:var(--blue);font-weight:600;}
+  .btn-cta{background:var(--green);color:#07351f;font-weight:700;padding:9px 20px;border-radius:24px;font-size:14px;transition:transform .15s,box-shadow .15s;}
+  .btn-cta:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(59,244,147,.4);}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;}
+
+  /* ---------- HERO ---------- */
+  .hero{text-align:center;padding:66px 24px 44px;background:radial-gradient(1200px 420px at 50% -60%,#eafff5 0%,#ffffff 70%);}
+  .hero .eyebrow{display:inline-block;background:#eafff5;color:var(--green-deep);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:20px;margin-bottom:18px;}
+  .hero h1{font-size:clamp(30px,5vw,52px);line-height:1.12;font-weight:700;letter-spacing:-.01em;}
+  .hero h1 em{color:var(--green-deep);font-style:normal;}
+  .hero p{color:var(--muted);font-size:clamp(14px,2vw,17px);max-width:580px;margin:16px auto 26px;line-height:1.6;}
+  .search{max-width:480px;margin:0 auto;display:flex;background:#fff;border:1px solid #d7dbe4;border-radius:30px;padding:6px 6px 6px 20px;box-shadow:0 10px 30px rgba(20,30,60,.08);}
+  .search input{border:0;flex:1;font-size:15px;outline:none;background:transparent;color:var(--ink);}
+  .search input::placeholder{color:#a6abb8;}
+  .search button{background:var(--blue);color:#fff;border:0;border-radius:26px;padding:11px 24px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s;}
+  .search button:hover{background:#182578;}
+
+  /* ---------- SECTION ---------- */
+  section.block{padding:40px 0 8px;}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+  .sec-head .bar{width:30px;height:5px;border-radius:4px;background:var(--green);}
+  .sec-head h2{font-size:24px;font-weight:700;}
+  .sec-head .more{margin-left:auto;color:var(--green-deep);font-size:14px;font-weight:600;}
+
+  /* ---------- TOP STORIES ---------- */
+  .top{display:grid;grid-template-columns:1.55fr 1fr;gap:24px;}
+  .feat{position:relative;border-radius:20px;overflow:hidden;color:#fff;min-height:400px;background:linear-gradient(135deg,#12b674,#20319D);}
+  .feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,30,.1) 30%,rgba(8,12,30,.9));}
+  .feat .body{position:absolute;left:0;right:0;bottom:0;padding:30px;z-index:2;}
+  .pill{display:inline-block;background:var(--green);color:#07351f;font-size:12px;font-weight:700;padding:5px 13px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;}
+  .feat h3{font-size:clamp(20px,2.4vw,27px);line-height:1.25;margin:16px 0 10px;font-weight:700;max-width:90%;}
+  .feat .meta{font-size:13px;opacity:.9;}
+  .feat:hover h3{text-decoration:underline;}
+
+  .stack{display:flex;flex-direction:column;gap:18px;justify-content:space-between;}
+  .mini{display:flex;gap:14px;align-items:center;padding:6px;border-radius:14px;transition:background .15s;}
+  .mini:hover{background:#f7f9fc;}
+  .mini .thumb{width:104px;height:82px;border-radius:12px;flex:none;}
+  .kicker{color:var(--green-deep);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;}
+  .mini h4{font-size:15px;line-height:1.35;margin:5px 0;font-weight:600;}
+  .mini .meta{color:var(--faint);font-size:12px;}
+
+  /* ---------- CHIPS ---------- */
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;}
+  .chip{padding:8px 18px;border-radius:22px;background:#f1f3f7;color:var(--blue);font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent;transition:all .15s;}
+  .chip:hover{border-color:var(--green);}
+  .chip.on{background:var(--green);color:#07351f;}
+
+  /* ---------- GRID ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(20,30,60,.05);transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,30,60,.12);}
+  .card .thumb{height:170px;}
+  .card .b{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+  .card h4{font-size:16.5px;line-height:1.35;margin:9px 0 10px;font-weight:600;}
+  .card:hover h4{color:var(--blue);}
+  .card .exc{color:var(--muted);font-size:13.5px;line-height:1.55;margin-bottom:16px;}
+  .card .meta{display:flex;align-items:center;gap:9px;color:var(--faint);font-size:12px;border-top:1px solid #f0f1f5;padding-top:13px;margin-top:auto;}
+  .av{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));flex:none;}
+  .dot{width:3px;height:3px;border-radius:50%;background:#c3c7d2;}
+  .no-results{display:none;text-align:center;color:var(--faint);padding:50px 0;font-size:15px;grid-column:1/-1;}
+
+  /* gradient thumbs (stand-ins for real images) */
+  .g1{background:linear-gradient(135deg,#3BF493,#20319D);}
+  .g2{background:linear-gradient(135deg,#0f9d63,#20319D);}
+  .g3{background:linear-gradient(135deg,#7ce7bd,#3f57c9);}
+  .g4{background:linear-gradient(135deg,#3BF493,#0f9d63);}
+  .g5{background:linear-gradient(135deg,#5ad6ff,#20319D);}
+  .g6{background:linear-gradient(135deg,#bff6dd,#3f57c9);}
+
+  /* ---------- PAGINATION ---------- */
+  .pag{display:flex;justify-content:center;gap:10px;padding:44px 0 8px;}
+  .pag a{min-width:42px;height:42px;padding:0 12px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:#f1f3f7;color:var(--blue);font-size:14px;font-weight:600;transition:all .15s;}
+  .pag a:hover{background:#e3e7f0;}
+  .pag a.on{background:var(--blue);color:#fff;}
+
+  /* ---------- DISCLAIMER ---------- */
+  .disclaimer{max-width:1180px;margin:38px auto 0;padding:16px 24px;}
+  .disclaimer p{background:#fff8e1;border-radius:10px;padding:14px 18px;color:#7a6a3a;font-size:12px;line-height:1.6;}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:46px;background:#0d1430;color:#aeb4c7;}
+  .foot-inner{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px;padding:52px 0 32px;}
+  .foot-brand .brand{color:#fff;margin-bottom:12px;}
+  .foot-brand p{font-size:13px;line-height:1.6;max-width:280px;}
+  .foot-col h5{color:#fff;font-size:14px;font-weight:600;margin-bottom:14px;}
+  .foot-col a{display:block;font-size:13px;margin-bottom:9px;color:#aeb4c7;transition:color .15s;}
+  .foot-col a:hover{color:var(--green);}
+  .foot-bottom{border-top:1px solid #23294a;padding:20px 0;text-align:center;font-size:12px;color:#7c839c;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .top{grid-template-columns:1fr;}
+    .feat{min-height:320px;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .foot-inner{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:620px){
+    .navlinks{display:none;}
+    .burger{display:flex;}
+    .grid{grid-template-columns:1fr;}
+    .foot-inner{grid-template-columns:1fr;gap:24px;}
+    .hero{padding:44px 20px 32px;}
+    .search button{padding:11px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand">
+      <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="65" cy="65" r="62" fill="#20319D"/><path d="M40 42h50L48 88h44" stroke="#3BF493" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Zil<b>Remit</b>
+    </a>
+    <nav class="navlinks">
+      <a href="/">Home</a>
+      <a href="/#features">Features</a>
+      <a href="/#rates">Rates</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+      <a href="/#signup" class="btn-cta">Get Started</a>
+    </nav>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <span class="eyebrow">ZilRemit Insights</span>
+  <h1>The ZilRemit <em>Blog</em></h1>
+  <p>Guides, exchange-rate insights, and playbooks for sending business payments across borders — one country at a time.</p>
+  <form class="search" onsubmit="return false;">
+    <input id="searchInput" type="text" placeholder="Search articles — e.g. &ldquo;send money to Germany&rdquo;" aria-label="Search articles">
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<div class="wrap">
+
+  <!-- ===== TOP STORIES ===== -->
+  <section class="block">
+    <div class="sec-head"><span class="bar"></span><h2>Top Stories</h2></div>
+    <div class="top">
+      <a class="feat g1" href="blogs/60-second-standard-send-money-philippines-us-elite-2026-exchange-rates.html">
+        <div class="body">
+          <span class="pill">Send Money · Philippines</span>
+          <h3>The 60-Second Standard: Send Money to the Philippines from the US with Elite 2026 Exchange Rates</h3>
+          <div class="meta">ZilRemit Team &nbsp;·&nbsp; Jun 30, 2026 &nbsp;·&nbsp; 6 min read</div>
+        </div>
+      </a>
+      <div class="stack">
+        <a class="mini" href="blogs/eurozone-power-play-5-ways-send-money-germany-command-global-b2b-success-2026.html">
+          <span class="thumb g2"></span>
+          <span><span class="kicker">Send Money · Germany</span><h4>The Eurozone Power Play: 5 Ways to Send Money to Germany and Command B2B Success</h4><span class="meta">Jun 28 · 5 min</span></span>
+        </a>
+        <a class="mini" href="blogs/zero-delay-transfer-instantly-send-money-india-us-guarantee-agility-minutes.html">
+          <span class="thumb g3"></span>
+          <span><span class="kicker">Send Money · India</span><h4>Zero-Delay Transfer: Instantly Send Money to India from the US in Minutes</h4><span class="meta">Jun 26 · 4 min</span></span>
+        </a>
+        <a class="mini" href="blogs/expanding-to-france-start-with-smarter-cross-border-payments.html">
+          <span class="thumb g6"></span>
+          <span><span class="kicker">Send Money · France</span><h4>Expanding to France? Start With Smarter Cross-Border Payments</h4><span class="meta">Jun 24 · 5 min</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LATEST ===== -->
+  <section class="block">
+    <div class="sec-head"><span class="bar"></span><h2>Latest Articles</h2><a class="more" href="blog-page-2.html">View all →</a></div>
+
+    <div class="chips" id="chips">
+      <span class="chip on" data-filter="all">All</span>
+      <span class="chip" data-filter="europe">Europe</span>
+      <span class="chip" data-filter="asia">Asia</span>
+      <span class="chip" data-filter="uk">UK</span>
+      <span class="chip" data-filter="germany">Germany</span>
+      <span class="chip" data-filter="france">France</span>
+      <span class="chip" data-filter="italy">Italy</span>
+      <span class="chip" data-filter="business">Business Payments</span>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <a class="card" href="blogs/building-internal-confidence-sending-money-uk-business-payments.html" data-cat="europe uk business" data-title="Building Internal Confidence Around Sending Money to the UK for Business Payments">
+        <span class="thumb g1"></span>
+        <div class="b"><span class="kicker">Send Money · UK</span><h4>Building Internal Confidence Around Sending Money to the UK for Business Payments</h4><p class="exc">How finance teams build trust in every UK payment they send — clarity, speed and control.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 30, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/expanding-business-sweden-make-payments-seamlessly.html" data-cat="europe sweden business" data-title="Expanding Your Business to Sweden Make Payments Seamlessly">
+        <span class="thumb g2"></span>
+        <div class="b"><span class="kicker">Send Money · Sweden</span><h4>Expanding Your Business to Sweden? Make Payments Seamlessly</h4><p class="exc">A practical guide to seamless SEK business transfers as you scale into the Nordics.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 27, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/streamlined-international-payments-to-italy.html" data-cat="europe italy" data-title="Now Live Streamlined International Payments to Italy">
+        <span class="thumb g3"></span>
+        <div class="b"><span class="kicker">Send Money · Italy</span><h4>Now Live: Streamlined International Payments to Italy</h4><p class="exc">Faster, clearer euro payments to your Italian partners and suppliers.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 25, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/beyond-border-limits-send-money-estonia-unlock-b2b-strategic-advantage.html" data-cat="europe estonia business" data-title="Beyond Border Limits Send Money to Estonia Unlock B2B Strategic Advantage">
+        <span class="thumb g4"></span>
+        <div class="b"><span class="kicker">Send Money · Estonia</span><h4>Beyond Border Limits: Send Money to Estonia and Unlock a B2B Advantage</h4><p class="exc">Why Estonia is your next strategic payment corridor for European expansion.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 22, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/ireland-global-payment-network.html" data-cat="europe ireland" data-title="Ireland Becomes a New Part of Our Global Payment Network">
+        <span class="thumb g5"></span>
+        <div class="b"><span class="kicker">Send Money · Ireland</span><h4>Ireland Becomes a New Part of Our Global Payment Network</h4><p class="exc">Send money to Ireland with the speed and transparency your deadlines demand.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 20, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/eurozone-power-play-5-ways-send-money-germany-command-global-b2b-success-2026.html" data-cat="europe germany business" data-title="The Eurozone Power Play 5 Ways to Send Money to Germany">
+        <span class="thumb g6"></span>
+        <div class="b"><span class="kicker">Send Money · Germany</span><h4>The Eurozone Power Play: 5 Ways to Send Money to Germany</h4><p class="exc">Command global B2B success in the Eurozone with a smarter payment strategy.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 18, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/60-second-standard-send-money-philippines-us-elite-2026-exchange-rates.html" data-cat="asia philippines" data-title="The 60-Second Standard Send Money to the Philippines Elite 2026 Exchange Rates">
+        <span class="thumb g1"></span>
+        <div class="b"><span class="kicker">Send Money · Philippines</span><h4>The 60-Second Standard: Send Money to the Philippines with Elite Rates</h4><p class="exc">Set a new benchmark for US→Philippines transfers with 2026 exchange rates.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 16, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/zero-delay-transfer-instantly-send-money-india-us-guarantee-agility-minutes.html" data-cat="asia india business" data-title="Zero-Delay Transfer Instantly Send Money to India from the US">
+        <span class="thumb g3"></span>
+        <div class="b"><span class="kicker">Send Money · India</span><h4>Zero-Delay Transfer: Instantly Send Money to India from the US</h4><p class="exc">Guarantee agility in minutes for your India-bound business payments.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 14, 2026</div></div>
+      </a>
+
+      <a class="card" href="blogs/expanding-to-france-start-with-smarter-cross-border-payments.html" data-cat="europe france business" data-title="Expanding to France Start With Smarter Cross-Border Payments">
+        <span class="thumb g6"></span>
+        <div class="b"><span class="kicker">Send Money · France</span><h4>Expanding to France? Start With Smarter Cross-Border Payments</h4><p class="exc">Make cross-border payments your competitive edge as you enter the French market.</p><div class="meta"><span class="av"></span>ZilRemit<span class="dot"></span>Jun 12, 2026</div></div>
+      </a>
+
+      <p class="no-results" id="noResults">No articles match your search. Try another keyword or reset the filters.</p>
+    </div>
+
+    <!-- ===== PAGINATION ===== -->
+    <nav class="pag">
+      <a href="#">‹</a>
+      <a href="#" class="on">1</a>
+      <a href="blog-page-2.html">2</a>
+      <a href="blog-page-3.html">3</a>
+      <a href="blog-page-4.html">4</a>
+      <a href="blog-page-5.html">5</a>
+      <a href="blog-page-2.html">›</a>
+    </nav>
+  </section>
+</div>
+
+<!-- ===== DISCLAIMER ===== -->
+<div class="disclaimer">
+  <p>ZilRemit is a cross-border money movement service powered by Zil Money Corporation. Exchange rates, delivery times, and availability vary by destination and are shown for illustration only. This blog is for informational purposes and does not constitute financial, legal, or tax advice.</p>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <div class="brand" style="color:#fff">Zil<b>Remit</b></div>
+      <p>Fast, transparent international payments for businesses — send money to 200+ countries with bank-level security.</p>
+    </div>
+    <div class="foot-col"><h5>Company</h5><a href="/#about">About</a><a href="blog.html">Blog</a><a href="/#contact">Contact</a><a href="/#careers">Careers</a></div>
+    <div class="foot-col"><h5>Product</h5><a href="/#features">Features</a><a href="/#rates">Exchange Rates</a><a href="/#countries">Countries</a><a href="/#pricing">Pricing</a></div>
+    <div class="foot-col"><h5>Legal</h5><a href="/cookie-policy.html">Cookie Policy</a><a href="/disclaimer.html">Disclaimer</a><a href="/#privacy">Privacy</a><a href="/#terms">Terms</a></div>
+  </div>
+  <div class="foot-bottom">© 2026 ZilRemit · Powered by Zil Money Corporation. All rights reserved.</div>
+</footer>
+
+<script>
+  // ---- Category chip filtering ----
+  var chips = document.querySelectorAll('.chip');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#grid .card'));
+  var searchInput = document.getElementById('searchInput');
+  var noResults = document.getElementById('noResults');
+  var activeFilter = 'all';
+
+  function applyFilters(){
+    var q = (searchInput.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var cat = card.getAttribute('data-cat') || '';
+      var title = (card.getAttribute('data-title') || '').toLowerCase();
+      var matchCat = activeFilter === 'all' || cat.indexOf(activeFilter) !== -1;
+      var matchSearch = q === '' || title.indexOf(q) !== -1;
+      var visible = matchCat && matchSearch;
+      card.style.display = visible ? 'flex' : 'none';
+      if(visible) shown++;
+    });
+    noResults.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('on'); });
+      chip.classList.add('on');
+      activeFilter = chip.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+
+  // ---- Mobile menu (simple) ----
+  document.querySelector('.burger').addEventListener('click', function(){
+    var l = document.querySelector('.navlinks');
+    l.style.display = (l.style.display === 'flex') ? 'none' : 'flex';
+    l.style.position='absolute'; l.style.top='64px'; l.style.right='24px';
+    l.style.flexDirection='column'; l.style.background='#fff';
+    l.style.padding='16px 20px'; l.style.borderRadius='12px';
+    l.style.boxShadow='0 12px 30px rgba(20,30,60,.15)';
+  });
+</script>
+</body>
+</html>
