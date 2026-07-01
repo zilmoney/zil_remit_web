@@ -26,6 +26,8 @@
   .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;color:var(--blue);}
   .brand b{color:var(--green-deep);font-weight:800;}
   .brand svg{width:30px;height:30px;}
+  .brand-logo{height:42px;width:auto;display:block;}
+  @media(max-width:620px){ .brand-logo{height:34px;} }
   .navlinks{display:flex;align-items:center;gap:26px;}
   .navlinks a{color:var(--muted);font-size:14px;font-weight:500;transition:color .15s;}
   .navlinks a:hover{color:var(--green-deep);}
@@ -142,9 +144,8 @@
 <!-- ===== NAV ===== -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="/" class="brand">
-      <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="65" cy="65" r="62" fill="#20319D"/><path d="M40 42h50L48 88h44" stroke="#3BF493" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Zil<b>Remit</b>
+    <a href="/" class="brand" aria-label="ZilRemit — Powered by Zil Money">
+      <img src="zilremit-logo.svg" alt="ZilRemit — Powered by Zil Money" class="brand-logo">
     </a>
     <nav class="navlinks">
       <a href="/">Home</a>
