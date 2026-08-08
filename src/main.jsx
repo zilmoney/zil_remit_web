@@ -15,10 +15,12 @@ import SendMoneyItaly from './pages/SendMoneyItaly.jsx'
 import SendMoneyUK from './pages/SendMoneyUK.jsx'
 import SendMoneyPhilippines from './pages/SendMoneyPhilippines.jsx'
 import NotFound from './pages/NotFound.jsx'
+import BookDemoModal from './components/BookDemoModal.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
+      <BookDemoModal />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
