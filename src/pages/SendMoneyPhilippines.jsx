@@ -70,7 +70,7 @@ function SendMoneyPhilippines() {
               <CallbackForm />
 
               <p className="text-sm text-gray-500 mt-4">
-                Zil Remit is a Global Payment Solution by Zil Money.
+                Zil Remit powered by Zil Money, is a financial technology company and not a bank. Banking services are provided by our partner bank, Member FDIC. FDIC insurance applies only to eligible products associated with those that have funds held in accounts at the partner bank, subject to applicable limits and requirements.
               </p>
             </div>
 
