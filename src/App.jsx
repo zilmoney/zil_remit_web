@@ -582,7 +582,7 @@ function App() {
             {/* Logo */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-12 w-auto" />
+                <img src="/ZilRemit-pwrd-by-ZM.svg" alt="ZilRemit" className="h-12 w-auto" />
               </div>
             </div>
 

@@ -170,7 +170,7 @@ const MODAL_HTML = `
 
     <!-- panel: noagents -->
     <div id="zm-panel-noagents" style="display:none;">
-      <img src="/Bluelogo.svg" alt="ZilRemit" style="height:22px;width:auto;display:block;margin:0 0 12px;">
+      <img src="/ZilRemit-pwrd-by-ZM.svg" alt="ZilRemit" style="height:22px;width:auto;display:block;margin:0 0 12px;">
       <h2 style="font-size:22px;font-weight:700;line-height:1.3;margin:0 0 6px;color:#1F2937;">No one could join</h2>
       <p style="font-size:14px;line-height:1.6;color:#4B5563;margin:0 0 20px;">Everyone got pulled into something. Leave your details and we'll book you in.</p>
       <a href="https://calendly.com/zmn/demo" target="_blank" rel="noopener" style="display:block;text-align:center;padding:15px 20px;font-size:15px;font-weight:600;color:#FFFFFF;background:#16A34A;border-radius:999px;text-decoration:none;">Book a demo instead</a>
