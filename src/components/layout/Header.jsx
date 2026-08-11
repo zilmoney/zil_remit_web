@@ -14,7 +14,7 @@ function Header() {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/">
-                <img src="/Bluelogo.svg" alt="ZilRemit" className="h-12 w-auto" />
+                <img src="/ZilRemit-pwrd-by-ZM.svg" alt="ZilRemit" className="h-12 w-auto" />
               </Link>
             </div>
           </div>
