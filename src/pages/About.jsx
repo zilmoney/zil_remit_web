@@ -11,7 +11,7 @@ function About() {
       <section className="bg-gradient-to-br from-blue-900 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Transform Your Business with All-In-One Modern Payments and Modern Banking Solutions.
+            Transform Your Business with an All-In-One Modern Payment Solution.
           </h1>
         </div>
       </section>
@@ -25,7 +25,7 @@ function About() {
               Our founder faced a real-life challenge while running Tyler Petroleum, a $60+ million annual revenue business. He relied on multiple platforms like Bill.com, Deluxe Checks, and Mint.com for payments, banking, and tracking, leading to inefficiency and frustration.
             </p>
             <p>
-              Inspired by his experience managing thousands of vendors, serving as a Local ATM Processor, and operating retail and Western Union locations, he envisioned an all-in-one solution. This led to the creation of ZilRemit —a unified platform simplifying payments and banking for businesses everywhere.
+              Inspired by his experience managing thousands of vendors, serving as a Local ATM Processor, and operating retail and Western Union locations, he envisioned an all-in-one solution. This led to the creation of ZilRemit —a unified payment solution simplifying payments for businesses everywhere.
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ function About() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">Mohanraj Makkuni</h3>
                 <p className="text-blue-900 font-semibold mb-1">Chief Marketing Officer</p>
                 <p className="text-gray-700">
-                  Mohanraj Makkuni brings a remarkable combination of strategic vision, global leadership, and a profound understanding of enterprise dynamics to his role as Chief Marketing Officer at . Tasked with cultivating and strengthening relationships with large-scale businesses, Mohan plays a pivotal role in aligning 's innovative fintech solutions with the evolving needs of enterprise clients. His mission is to position  as the leading banking and payment solutions partner for businesses worldwide.
+                  Mohanraj Makkuni brings a remarkable combination of strategic vision, global leadership, and a profound understanding of enterprise dynamics to his role as Chief Marketing Officer at . Tasked with cultivating and strengthening relationships with large-scale businesses, Mohan plays a pivotal role in aligning 's innovative fintech solutions with the evolving needs of enterprise clients. His mission is to position  as the leading payment solutions partner for businesses worldwide.
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@ function About() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">Amber Devolk</h3>
                 <p className="text-blue-900 font-semibold mb-1">Chief Compliance Officer & BSA</p>
                 <p className="text-gray-700">
-                  Amber Devolk is a distinguished Chief Compliance Officer with over 18 years of experience in compliance, risk management, and corporate legal matters across a variety of sectors including fintech, banking, telecommunications, and entertainment. As 's Chief Compliance Officer (CCO) and BSA Officer, Amber plays a pivotal role in shaping the regulatory strategy and ensuring compliance across all of 's banking and financial services. Known for her strategic thinking, adept regulatory navigation, and award-winning customer service, Amber's leadership helps Zilmoney maintain its reputation as a trusted, zero-fee banking platform for small and medium-sized enterprises (SMEs).
+                  Amber Devolk is a distinguished Chief Compliance Officer with over 18 years of experience in compliance, risk management, and corporate legal matters across a variety of sectors including fintech, banking, telecommunications, and entertainment. As 's Chief Compliance Officer (CCO) and BSA Officer, Amber plays a pivotal role in shaping the regulatory strategy and ensuring compliance across all of 's payment and financial services. Known for her strategic thinking, adept regulatory navigation, and award-winning customer service, Amber's leadership helps Zilmoney maintain its reputation as a trusted, zero-fee payment platform for small and medium-sized enterprises (SMEs).
                 </p>
               </div>
             </div>
