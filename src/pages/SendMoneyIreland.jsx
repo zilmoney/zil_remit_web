@@ -69,7 +69,7 @@ function SendMoneyIreland() {
               <CallbackForm />
 
               <p className="text-sm text-gray-500 mt-4">
-                Zil Remit powered by Zil Money, is a financial technology company and not a bank. Banking services are provided by our partner bank, Member FDIC. FDIC insurance applies only to eligible products associated with those that have funds held in accounts at the partner bank, subject to applicable limits and requirements.
+                Zil Money is a financial technology company, not a bank. Banking and money movement services are provided through partner financial institutions and licensed service providers. FDIC insurance coverage applies only to eligible deposit products and accounts, and is subject to applicable terms, conditions, limitations, and requirements. Additional information regarding partner institutions, products, and services is available in the applicable terms and agreements.
               </p>
             </div>
 
