@@ -697,7 +697,7 @@ function App() {
               <CallbackForm />
 
               <p className="text-sm text-gray-500">
-                Zil Money is a financial technology company, not a bank. Banking and money movement services are provided through partner financial institutions and licensed service providers. FDIC insurance coverage applies only to eligible deposit products and accounts, and is subject to applicable terms, conditions, limitations, and requirements. Additional information regarding partner institutions, products, and services is available in the applicable terms and agreements.
+                Zil Money is a financial technology company, not a bank. Banking and money movement services are provided through partner financial institutions, including Citizens Bank, N.A., and licensed service providers. FDIC insurance coverage applies only to eligible deposit products and accounts, and is subject to applicable terms, conditions, limitations, and requirements. Additional information regarding partner institutions, products, and services is available in the applicable terms and agreements.
               </p>
             </div>
 
