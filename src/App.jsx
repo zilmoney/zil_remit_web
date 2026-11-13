@@ -542,6 +542,48 @@ const AnimatedPaymentInterface = () => {
   );
 };
 
+// Sticky bottom disclaimer bar — appears after the user scrolls down
+const StickyDisclaimer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsVisible(window.scrollY > 300);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (isDismissed) return null;
+
+  return (
+    <div
+      role="note"
+      aria-hidden={!isVisible}
+      className={`fixed bottom-0 left-0 right-0 z-40 bg-slate-50/95 backdrop-blur border-t border-slate-200 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : 'translate-y-full'
+      }`}
+    >
+      <div className="relative max-w-7xl mx-auto px-10 py-2.5">
+        <p className="text-xs text-slate-600 text-center leading-relaxed">
+          Zil Money® is a financial technology company, not a bank. Banking services provided by Citizens Bank, N.A, FDIC-insured
+        </p>
+        <button
+          type="button"
+          onClick={() => setIsDismissed(true)}
+          aria-label="Close disclaimer"
+          tabIndex={isVisible ? 0 : -1}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-500 hover:text-slate-800 transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [animatedStats, setAnimatedStats] = useState({
@@ -1388,6 +1430,8 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <StickyDisclaimer />
     </div>
   );
 }
