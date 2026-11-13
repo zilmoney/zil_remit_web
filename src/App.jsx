@@ -669,8 +669,15 @@ function App() {
             {/* Left Content */}
             <div className="animate-fade-in-up">
               {/* Highlight Bar */}
-              <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
-                💸 No one beats ZilRemit's ultra-low transfer fees
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium shadow-lg">
+                  💸 No one beats ZilRemit's ultra-low transfer fees
+                </div>
+
+                {/* BBB Accreditation Seal */}
+                <a href="https://www.bbb.org/us/tx/tyler/profile/financial-technology/zil-money-corporation-1075-28140142/#sealclick" target="_blank" rel="nofollow noopener noreferrer" className="inline-block">
+                  <img src="https://seal-easttexas.bbb.org/seals/blue-seal-200-42-bbb-28140142.png" style={{ border: 0 }} alt="Zil Money Corporation BBB Business Review" width="171" height="36" />
+                </a>
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
